@@ -1,0 +1,35 @@
+{{#docs-viewer as |viewer|}}
+  {{#viewer.nav as |nav|}}
+    {{ nav.section "Introduction" }}
+    {{ nav.item "Introduction" "docs" }}
+
+    {{ nav.section "Components" }}
+    {{ nav.item "Alert" "docs.components.alert" }}
+    {{ nav.item "Blanket" "docs.components.blanket" }}
+    {{ nav.item "Button" "docs.components.button" }}
+    {{ nav.item "Card" "docs.components.card" }}
+    {{ nav.item "CircleButton" "docs.components.circle-button" }}
+    {{ nav.item "Dropdown" "docs.components.dropdown" }}
+    {{ nav.item "EmptyState" "docs.components.empty-state" }}
+    {{ nav.item "Modal" "docs.components.modal" }}
+    {{ nav.item "Spinner" "docs.components.spinner" }}
+
+    {{ nav.section "Form Controls" }}
+    {{ nav.item "Checkbox" "docs.components.checkbox" }}
+    {{ nav.item "Field" "docs.components.field" }}
+    {{ nav.item "Form" "docs.components.form" }}
+    {{ nav.item "Input" "docs.components.input" }}
+    {{ nav.item "Label" "docs.components.label" }}
+    {{ nav.item "PowerSelect" "docs.components.power-select" }}
+    {{ nav.item "Select" "docs.components.select" }}
+    {{ nav.item "TextArea" "docs.components.text-area" }}
+
+    {{ nav.section "Services" }}
+    {{ nav.item "dialog" "docs.services.dialog" }}
+    {{ nav.item "notify" "docs.services.notify" }}
+  {{/viewer.nav}}
+
+  {{#viewer.main class="docs-w-full"}}
+    {{ outlet }}
+  {{/viewer.main}}
+{{/docs-viewer}}
