@@ -1,0 +1,50 @@
+@mixin button-variant(
+  $background,
+  $border,
+  $focus: rgba($border, .6),
+  $hover-background: darken($background, 6%),
+  $hover-border: darken($border, 6%),
+  $active-background: darken($background, 10%),
+  $active-border: darken($border, 10%)
+) {
+  color: color-yiq($background);
+  background-color: $background;
+  border-color: $border;
+
+  &:hover {
+    color: color-yiq($hover-background);
+    background-color: $hover-background;
+    border-color: $hover-border;
+  }
+
+  &:focus,
+  &.focus {
+    box-shadow: 0 0 0 .125rem $focus;
+  }
+
+  // Disabled comes first so active can properly restyle
+  &.disabled,
+  &:disabled {
+    color: color-yiq($background);
+    background-color: $background;
+    border-color: $border;
+  }
+
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled).active {
+    color: color-yiq($active-background);
+    background-color: $active-background;
+    border-color: $active-border;
+
+    &:focus {
+      box-shadow: 0 0 0 .125rem $focus;
+    }
+  }
+}
+
+@mixin button-size($padding-y, $padding-x, $font-size, $line-height, $border-radius) {
+  padding: $padding-y $padding-x;
+  font-size: $font-size;
+  line-height: $line-height;
+  border-radius: $border-radius;
+}

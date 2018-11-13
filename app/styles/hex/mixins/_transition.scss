@@ -1,0 +1,11 @@
+@mixin transition($transitions...) {
+  @if length($transitions) == 0 {
+    transition: $transition;
+  } @else {
+    transition: $transitions;
+  }
+
+  @media screen and (prefers-reduced-motion: reduce) {
+    transition: none;
+  }
+}

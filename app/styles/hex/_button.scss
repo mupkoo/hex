@@ -1,0 +1,130 @@
+.btn {
+  @include button-size(.375rem, 1rem, .875rem, 1.428571429, $border-radius-sm);
+  @include transition(
+    background-color .2s $ease-in,
+    border .2s $ease-in,
+    box-shadow .2s $ease-in,
+    color .2s $ease-in
+  );
+
+  display: inline-block;
+  border: .125rem solid transparent;
+  font-weight: 500;
+  text-align: center;
+  text-transform: uppercase;
+  white-space: nowrap;
+
+  vertical-align: middle;
+  user-select: none;
+
+  // Share hover and focus styles
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+
+  &:focus,
+  &.focus {
+    outline: 0;
+    box-shadow: 0 0 0 .125rem rgba($primary, .6);
+  }
+
+  // Disabled comes first so active can properly restyle
+  &.disabled,
+  &:disabled {
+    box-shadow: none;
+    cursor: not-allowed;
+    opacity: .65;
+  }
+
+  &:not(:disabled):not(.disabled) {
+    cursor: pointer;
+  }
+}
+
+// Future-proof disabling of clicks on `<a>` elements
+a.btn.disabled,
+fieldset:disabled a.btn {
+  pointer-events: none;
+}
+
+.btn {
+  @include button-variant($gray-200, $gray-200, rgba($primary, .6));
+}
+
+.btn-primary {
+  @include button-variant($primary, $primary);
+}
+
+.btn-success {
+  @include button-variant($success, $success);
+}
+
+.btn-danger {
+  @include button-variant($danger, $danger);
+}
+
+.btn-warning {
+  @include button-variant($warning, $warning);
+}
+
+.btn-subtle {
+  @include button-variant($white, $white, rgba($primary, .6), darken($gray-200, 7.5%), darken($gray-200, 7.5%), darken($gray-200, 10%), darken($gray-200, 7.5%));
+}
+
+// Make a button look and behave like a link
+.btn-link {
+  background-color: transparent;
+  border-color: transparent;
+  color: $link-color;
+  font-weight: 400;
+  text-transform: none;
+
+  &:hover {
+    color: $link-hover-color;
+    text-decoration: $link-hover-text-decoration;
+    background-color: transparent;
+    border-color: transparent;
+  }
+
+  &:focus,
+  &.focus {
+    text-decoration: $link-hover-text-decoration;
+    border-color: transparent;
+  }
+
+  &:disabled,
+  &.disabled {
+    color: $gray-600;
+    pointer-events: none;
+  }
+
+  // No need for an active state here
+}
+
+.btn-sm {
+  @include button-size(.25rem, .75rem, .75rem, 1.428571429, $border-radius-sm);
+}
+
+.btn-lg {
+  @include button-size(.5rem, 1.5rem, 1.125rem, 1.428571429, $border-radius);
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+
+  // Vertically space out multiple block buttons
+  + .btn-block {
+    margin-top: .5rem;
+  }
+}
+
+// Specificity overrides
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  &.btn-block {
+    width: 100%;
+  }
+}
