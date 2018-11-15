@@ -1,6 +1,7 @@
 {{#docs-viewer as |viewer|}}
-  {{#viewer.nav as |nav|}}
+  {{#viewer.nav root='sandbox' as |nav|}}
     {{ nav.section "Sandbox" }}
+    {{ nav.item "Welcome" "sandbox.index" }}
     {{ nav.item "Button" "sandbox.button" }}
   {{/viewer.nav}}
 
