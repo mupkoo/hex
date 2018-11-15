@@ -2,10 +2,10 @@
   $background,
   $border,
   $focus: rgba($border, .6),
-  $hover-background: darken($background, 6%),
-  $hover-border: darken($border, 6%),
-  $active-background: darken($background, 10%),
-  $active-border: darken($border, 10%)
+  $hover-background: lighten($background, 6%),
+  $hover-border: lighten($border, 6%),
+  $active-background: darken($background, 6%),
+  $active-border: darken($border, 6%)
 ) {
   color: color-yiq($background);
   background-color: $background;

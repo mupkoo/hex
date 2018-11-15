@@ -49,7 +49,27 @@ fieldset:disabled a.btn {
 }
 
 .btn {
-  @include button-variant($gray-200, $gray-200, rgba($primary, .6));
+  @include button-variant(
+    $gray-200,
+    $gray-200,
+    rgba($primary, .6),
+    lighten($gray-200, 3%),
+    lighten($gray-200, 3%),
+    darken($gray-200, 6%),
+    darken($gray-200, 6%)
+  );
+}
+
+.btn-subtle {
+  @include button-variant(
+    $white,
+    $white,
+    rgba($primary, .6),
+    lighten($gray-200, 3%),
+    lighten($gray-200, 3%),
+    darken($gray-200, 6%),
+    darken($gray-200, 6%)
+  );
 }
 
 .btn-primary {
@@ -66,10 +86,6 @@ fieldset:disabled a.btn {
 
 .btn-warning {
   @include button-variant($warning, $warning);
-}
-
-.btn-subtle {
-  @include button-variant($white, $white, rgba($primary, .6), darken($gray-200, 7.5%), darken($gray-200, 7.5%), darken($gray-200, 10%), darken($gray-200, 7.5%));
 }
 
 // Make a button look and behave like a link
