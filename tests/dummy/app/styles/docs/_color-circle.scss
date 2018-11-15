@@ -1,0 +1,67 @@
+$colors: (
+  "white": $white,
+  "gray-100": $gray-100,
+  "gray-200": $gray-200,
+  "gray-300": $gray-300,
+  "gray-400": $gray-400,
+  "gray-500": $gray-500,
+  "gray-600": $gray-600,
+  "gray-700": $gray-700,
+  "gray-800": $gray-800,
+  "gray-900": $gray-900,
+  "black": $black,
+
+  "blue": $blue,
+  "indigo": $indigo,
+  "purple": $purple,
+  "pink": $pink,
+  "red": $red,
+  "orange": $orange,
+  "yellow": $yellow,
+  "green": $green,
+  "teal": $teal,
+  "cyan": $cyan,
+
+  "primary": $primary,
+  "success": $success,
+  "info": $info,
+  "warning": $warning,
+  "danger": $danger,
+  "light": $light,
+  "dark": $dark
+);
+
+.docs-color-circle {
+  flex: 0;
+  margin: 0 .25rem .25rem;
+  text-align: center;
+
+  &:before,
+  &:after {
+    text-align: center;
+    font-size: .75rem;
+  }
+
+  &:before {
+    display: inline-block;
+    width: 4rem;
+    height: 4rem;
+    padding: 1.5rem 0;
+    border-radius: 50%;
+  }
+}
+
+@each $color, $value in $colors {
+  .docs-color-circle-#{$color} {
+
+    &:before {
+      background-color: $value;
+      content: "#{$value}";
+      color: color-yiq($value);
+    }
+
+    &:after {
+      content: "$#{$color}";
+    }
+  }
+}
