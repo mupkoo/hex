@@ -84,7 +84,9 @@ body {
 
 hr {
   box-sizing: content-box; // 1
-  height: 0; // 1
+  height: 1px; // 1
+  background: $gray-200;
+  margin: 1rem 0 1.5rem;
   overflow: visible; // 2
 }
 

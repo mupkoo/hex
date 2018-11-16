@@ -39,6 +39,8 @@ Router.map(function () {
 
   this.route('sandbox', function () {
     this.route('button');
+    this.route('input');
+    this.route('fields');
   });
 
   this.route('not-found', { path: '/*path' });

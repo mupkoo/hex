@@ -1,7 +1,7 @@
 @mixin button-variant(
   $background,
   $border,
-  $focus: rgba($border, .6),
+  $focus: rgba($border, $focus-shadow-opacity),
   $hover-background: lighten($background, 6%),
   $hover-border: lighten($border, 6%),
   $active-background: darken($background, 6%),
@@ -19,7 +19,7 @@
 
   &:focus,
   &.focus {
-    box-shadow: 0 0 0 .125rem $focus;
+    box-shadow: 0 0 0 $focus-shadow-width $focus;
   }
 
   // Disabled comes first so active can properly restyle
@@ -37,7 +37,7 @@
     border-color: $active-border;
 
     &:focus {
-      box-shadow: 0 0 0 .125rem $focus;
+      box-shadow: 0 0 0 $focus-shadow-width $focus;
     }
   }
 }

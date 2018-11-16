@@ -1,0 +1,127 @@
+.field {
+  margin-bottom: 1rem;
+}
+
+.field-label {
+  font-size: $font-size-sm;
+  margin-bottom: .25rem;
+}
+
+.field-control {
+  @include transition(
+    background-color $transition-duration $ease,
+    border $transition-duration $ease,
+    box-shadow $transition-duration $ease,
+    color $transition-duration $ease
+  );
+
+  display: block;
+  width: 100%;
+  height: 2.375rem;
+  padding: .375rem .75rem 7px; // center the text
+  font-size: $font-size-sm;
+  line-height: $input-line-height;
+  color: $text;
+  background-color: $gray-50;
+  background-clip: padding-box;
+  border: .125rem solid $gray-400;
+  border-radius: $border-radius;
+
+  // Unstyle the caret on `<select>`s in IE10+.
+  &::-ms-expand {
+    background-color: transparent;
+    border: 0;
+  }
+
+  &:focus,
+  &.focus {
+    color: $text;
+    background-color: $white;
+    border-color: $primary;
+    outline: 0;
+    box-shadow: $focus-shadow;
+
+    &.invalid {
+      box-shadow: 0 0 0 $focus-shadow-width rgba($danger, $focus-shadow-opacity);
+    }
+  }
+
+  &.invalid {
+    border-color: $danger;
+  }
+
+  &::placeholder {
+    color: $gray-400;
+    // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526.
+    opacity: 1;
+  }
+
+  &:disabled,
+  &[readonly] {
+    background-color: $gray-200;
+    // iOS fix for unreadable disabled content; see https://github.com/twbs/bootstrap/issues/11655.
+    opacity: 1;
+  }
+}
+
+.field-check {
+
+}
+
+select.field-control {
+  padding-right: 2rem;
+  background: $gray-50 url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMCAwaDI0djI0SDB6IiBmaWxsPSJub25lIi8+PHBhdGggZmlsbD0iIzQyNTI2ZSIgZD0iTTEyIDUuODNMMTUuMTcgOWwxLjQxLTEuNDFMMTIgMyA3LjQxIDcuNTkgOC44MyA5IDEyIDUuODN6bTAgMTIuMzRMOC44MyAxNWwtMS40MSAxLjQxTDEyIDIxbDQuNTktNC41OUwxNS4xNyAxNSAxMiAxOC4xN3oiLz48L3N2Zz4=) no-repeat right .5rem center;
+  background-size: 1rem 1rem;
+  vertical-align: middle;
+  appearance: none;
+
+  &:focus::-ms-value {
+    // Suppress the nested default white text on blue background highlight given to
+    // the selected option text when the (still closed) <select> receives focus
+    // in IE and (under certain conditions) Edge, as it looks bad and cannot be made to
+    // match the appearance of the native widget.
+    // See https://github.com/twbs/bootstrap/issues/19398.
+    color: $text;
+    background-color: $white;
+  }
+}
+
+.field-control-file,
+.field-control-range {
+  display: block;
+  width: 100%;
+}
+
+.field-control-sm {
+  height: 2rem;
+  padding: .25rem .5rem;
+  font-size: $font-size-xs;
+  line-height: 1.5;
+  border-radius: $border-radius-sm;
+}
+
+.field-control-lg {
+  height: 3rem;
+  padding: .675rem 1rem;
+  font-size: $font-size;
+  line-height: 1.5;
+  border-radius: $border-radius-lg;
+}
+
+select.field-control {
+  &[size],
+  &[multiple] {
+    height: auto;
+  }
+}
+
+textarea.field-control {
+  height: auto;
+}
+
+.field-hint {
+  display: block;
+  margin-top: .25rem;
+  color: $text-muted;
+  font-size: $font-size-xs;
+}
