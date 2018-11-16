@@ -58,7 +58,7 @@ $font-size-xs:               ($font-size * .75) !default;
 
 $font-weight:                400 !default;
 $line-height:                1.5 !default;
-$input-line-height:          $line-height !default;
+$input-line-height:          1.25rem/$font-size-sm !default;
 
 // Links
 $link-color:                 $primary !default;
