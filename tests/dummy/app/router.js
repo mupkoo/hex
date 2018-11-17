@@ -38,6 +38,7 @@ Router.map(function () {
   });
 
   this.route('sandbox', function () {
+    this.route('alert');
     this.route('button');
     this.route('input');
     this.route('fields');
