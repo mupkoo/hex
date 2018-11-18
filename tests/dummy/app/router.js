@@ -42,8 +42,9 @@ Router.map(function () {
     this.route('button');
     this.route('button-circle');
     this.route('card');
-    this.route('input');
     this.route('fields');
+    this.route('input');
+    this.route('spinner');
   });
 
   this.route('not-found', { path: '/*path' });
