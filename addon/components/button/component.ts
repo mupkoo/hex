@@ -1,7 +1,6 @@
 import Component, { tracked } from 'sparkles-component';
 import objStr from 'hex/-private/obj-str';
-
-export type BooleanArg = boolean | '';
+import { BooleanArg } from 'hex/-private/types';
 
 export interface ButtonArgs {
   primary?: BooleanArg;
@@ -17,9 +16,11 @@ export interface ButtonArgs {
 
 /**
   A button component
+
   ```hbs
   <Button @primary>Save</Button>
   ```
+
   @class Button
   @public
 */
