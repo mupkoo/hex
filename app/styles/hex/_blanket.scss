@@ -1,0 +1,22 @@
+.blanket {
+  @include transition(
+    opacity $transition-duration $ease
+  );
+
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  z-index: 1000;
+}
+
+.blanket-tinted {
+  background-color: rgba($gray-900, .6);
+  opacity: 1;
+}
+
+.blanket-click-through {
+  pointer-events: none;
+}
