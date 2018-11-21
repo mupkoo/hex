@@ -1,0 +1,73 @@
+.dropdown {
+
+}
+
+.dropdown-content {
+  min-width: 12rem;
+  margin: .25rem 0;
+  padding: .5rem 0;
+  background-color: $white;
+  box-shadow: 0 0 0 1px $gray-100, $box-shadow-sm;
+  border-radius: $border-radius-sm;
+
+  &.ember-basic-dropdown-content--above {
+    margin-top: -.25rem;
+  }
+
+  hr {
+    margin: .5rem 0;
+  }
+}
+
+.dropdown-item {
+  @include button-reset;
+  @include transition(background-color $transition-duration $ease);
+
+  display: block;
+  width: 100%;
+  padding: .375rem 1.5rem;
+  border: 0;
+  background-color: transparent;
+  color: $text;
+  font-size: $font-size;
+  text-align: left;
+  white-space: nowrap;
+
+  &:hover {
+    background-color: $gray-100;
+  }
+
+  &:active,
+  &.active {
+    background-color: $gray-300;
+  }
+}
+
+.ember-basic-dropdown-content--below {
+  transform-origin: 0 0;
+
+  &.ember-basic-dropdown--transitioning-in { animation: drop-fade-below $transition-duration $ease-in; }
+  &.ember-basic-dropdown--transitioning-out { animation: drop-fade-below $transition-duration reverse $ease-out; }
+}
+
+.ember-basic-dropdown-content--above {
+  transform-origin: 100% 100%;
+
+  &.ember-basic-dropdown--transitioning-in { animation: drop-fade-above $transition-duration $ease-in; }
+  &.ember-basic-dropdown--transitioning-out { animation: drop-fade-above $transition-duration reverse $ease-out; }
+}
+
+.ember-basic-dropdown-content--in-place {
+  &.ember-basic-dropdown--transitioning-in { animation: drop-fade-below $transition-duration $ease-in; }
+  &.ember-basic-dropdown--transitioning-out { animation: drop-fade-below $transition-duration reverse $ease-out; }
+}
+
+@keyframes drop-fade-below {
+  0%   { opacity: 0; transform: scale(1, .95) translateY(-.5rem); }
+  100% { opacity: 1; transform: scale(1, 1) translateY(0); }
+}
+
+@keyframes drop-fade-above {
+  0%   { opacity: 0; transform: scale(1, .95) translateY(.5rem); }
+  100% { opacity: 1; transform: scale(1, 1) translateY(0); }
+}

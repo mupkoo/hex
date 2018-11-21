@@ -48,3 +48,16 @@
   line-height: $line-height;
   border-radius: $border-radius;
 }
+
+@mixin button-reset {
+  color: $text;
+  border: 0;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+
+  &:focus,
+  &:active {
+    outline: none;
+  }
+}

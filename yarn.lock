@@ -4027,6 +4027,15 @@ ember-assign-polyfill@~2.4.0:
     ember-cli-babel "^6.6.0"
     ember-cli-version-checker "^2.0.0"
 
+ember-basic-dropdown@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/ember-basic-dropdown/-/ember-basic-dropdown-1.0.4.tgz#9b9b6b56a049a53675db9fc9498f1380d39c9a17"
+  integrity sha512-GZW+fQOczqB3y/SxxuHH6tmVACtwARtLqr4dLtn4YN5NzdVwUN5y5IOaac0n/vCxdn+X20OgLAnWeaRkeF//lA==
+  dependencies:
+    ember-cli-babel "^7.1.0"
+    ember-cli-htmlbars "^3.0.0"
+    ember-maybe-in-element "^0.2.0"
+
 ember-cli-addon-docs-esdoc@^0.2.1:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/ember-cli-addon-docs-esdoc/-/ember-cli-addon-docs-esdoc-0.2.1.tgz#fcb2f1792f1bd4d6a5df8205f7b6e555abbcd1b9"
@@ -4855,6 +4864,13 @@ ember-maybe-import-regenerator@^0.1.5, ember-maybe-import-regenerator@^0.1.6:
     broccoli-merge-trees "^1.0.0"
     ember-cli-babel "^6.0.0-beta.4"
     regenerator-runtime "^0.9.5"
+
+ember-maybe-in-element@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/ember-maybe-in-element/-/ember-maybe-in-element-0.2.0.tgz#9ac51cbbd9d83d6230ad996c11e33f0eca3032e0"
+  integrity sha512-R5e6N8yDbfNbA/3lMZsFs2KEzv/jt80TsATiKMCqdqKuSG82KrD25cRdU5VkaE8dTQbziyBeuJs90bBiqOnakQ==
+  dependencies:
+    ember-cli-babel "^7.1.0"
 
 ember-modal-dialog@2.4.3:
   version "2.4.3"
