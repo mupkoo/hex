@@ -62,10 +62,10 @@ fieldset:disabled a.btn {
     $gray-200,
     $gray-200,
     rgba($primary, $focus-shadow-opacity),
-    lighten($gray-200, 3%),
-    lighten($gray-200, 3%),
-    darken($gray-200, 6%),
-    darken($gray-200, 6%)
+    $gray-100,
+    $gray-100,
+    $gray-300,
+    $gray-300
   );
 }
 
@@ -74,10 +74,10 @@ fieldset:disabled a.btn {
     $white,
     $white,
     rgba($primary, $focus-shadow-opacity),
-    lighten($gray-200, 3%),
-    lighten($gray-200, 3%),
-    darken($gray-200, 6%),
-    darken($gray-200, 6%)
+    $gray-100,
+    $gray-100,
+    $gray-300,
+    $gray-300
   );
 }
 
