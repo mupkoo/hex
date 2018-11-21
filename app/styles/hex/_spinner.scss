@@ -1,5 +1,9 @@
 .spinner {
   animation: spinner-rotate 2s linear infinite;
+
+  &.inverted .spinner-path {
+    stroke: $gray-50;
+  }
 }
 
 .spinner-path {
