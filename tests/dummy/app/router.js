@@ -44,6 +44,7 @@ Router.map(function () {
     this.route('card');
     this.route('fields');
     this.route('input');
+    this.route('modal');
     this.route('spinner');
   });
 

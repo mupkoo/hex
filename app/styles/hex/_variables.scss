@@ -66,6 +66,11 @@ $link-text-decoration:       none !default;
 $link-hover-color:           darken($primary, 15%) !default;
 $link-hover-text-decoration: underline !default;
 
+// Modal
+$modal-size:                 40rem !default;
+$modal-size-sm:              32rem !default;
+$modal-size-lg:              48rem !default;
+
 // Customize the light and dark text colors for use in our YIQ color contrast function.
 $yiq-contrasted-threshold:   150 !default;
 $yiq-text-dark:              $gray-700 !default;

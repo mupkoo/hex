@@ -1,0 +1,66 @@
+.has-modal {
+  overflow: hidden;
+}
+
+.modal-blanket {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.modal {
+  position: relative;
+  width: $modal-size;
+  max-width: 100%;
+  margin: 3rem auto;
+  background: $body-bg;
+  box-shadow: $box-shadow-lg;
+  border-radius: $border-radius-lg;
+}
+
+.modal-sm {
+  width: $modal-size-sm;
+}
+
+.modal-lg {
+  width: $modal-size-lg;
+}
+
+.modal-header {
+  padding: 1.5rem 4.5rem 1.5rem 1.5rem;
+  border-bottom: 1px solid $gray-100;
+}
+
+.modal-title {
+  margin: 0;
+  font-size: $font-size-lg;
+  line-height: 1.2;
+}
+
+.modal-close-btn {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+}
+
+.modal-body {
+  padding: 1.5rem;
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.modal-footer {
+  display: flex;
+  flex-direction: row-reverse;
+  padding: 1.5rem;
+  border-top: 1px solid $gray-100;
+
+  .btn:not(:first-child) {
+    margin-right: .25rem;
+  }
+
+  .btn:not(:last-child) {
+    margin-left: .25rem;
+  }
+}

@@ -2,6 +2,7 @@
   position: relative;
   border-radius: $border-radius-lg;
   background-clip: border-box;
+  background-color: $white;
   box-shadow: 0 0 0 1px $gray-100, $box-shadow;
 }
 
@@ -25,9 +26,14 @@
 }
 
 .card-actions {
+  display: flex;
   padding: 0 1.5rem 1.5rem;
 
-  .btn + .btn {
-    margin-left: .5rem;
+  .btn:not(:first-child) {
+    margin-left: .25rem;
+  }
+
+  .btn:not(:last-child) {
+    margin-right: .25rem;
   }
 }
