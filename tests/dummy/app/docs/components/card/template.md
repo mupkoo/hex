@@ -3,7 +3,7 @@
 A component for displaying content in a separate section.
 
 {{#docs-demo as |demo|}}
-  {{#demo.example name='card-example.hbs'}}
+  {{#demo.example name="card-example.hbs"}}
     <Card>
       <CardBody as |cb|>
         <h3 class="card-title">Technolojesus</h3>
@@ -17,5 +17,5 @@ A component for displaying content in a separate section.
     </Card>
   {{/demo.example}}
 
-  {{demo.snippet 'card-example.hbs'}}
+  {{demo.snippet "card-example.hbs"}}
 {{/docs-demo}}
