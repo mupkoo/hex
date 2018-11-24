@@ -1,9 +1,14 @@
 .docs-debug {
   margin: 1rem 0;
-  padding: .5rem;
+  padding: .5rem .75rem;
   border-width: 1px;
   border-style: dashed;
   border-radius: $border-radius;
   background-color: $gray-50;
+  color: $text-muted;
   font-size: .875rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 }

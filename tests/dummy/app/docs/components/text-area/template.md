@@ -4,7 +4,7 @@ HTML `<textarea>` wrapper.
 
 {{#docs-demo as |demo|}}
   {{#demo.example name="text-area-example.hbs"}}
-    <TextArea 
+    <TextArea
       @id="text-area-id"
       @value={{this.value}}
       oninput={{action (mut this.value) value="target.value"}}
@@ -13,8 +13,10 @@ HTML `<textarea>` wrapper.
       rows="5"
       class="custom-class" />
 
-    <pre class="docs-debug">Debug: {{this.currentEvent}}</pre>
-    <pre class="docs-debug">Current value: {{this.value}}</pre>
+    <div class="docs-debug">
+      Debug: {{this.currentEvent}}<br>
+      Current value: {{this.value}}
+    </div>
   {{/demo.example}}
 
   {{demo.snippet "text-area-example.hbs"}}
