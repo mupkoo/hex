@@ -8,9 +8,9 @@
     "framework",
     "ember"
   ],
-  "repository": "",
+  "repository": "https://github.com/mupkoo/hex",
   "license": "MIT",
-  "author": "",
+  "author": "Mirko Akov",
   "directories": {
     "doc": "doc",
     "test": "tests"
