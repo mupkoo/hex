@@ -3,16 +3,16 @@
 {{#each buttons key="@index" as |variant|}}
   <div class="docs-flex docs-w-full docs-mb-4">
     <div class="docs-w-1/4">
-      <button type="button" class="btn btn-{{variant}}">{{variant}}</button>
+      <button type="button" class="btn btn-{{variant}}">{{capitalize variant}}</button>
     </div>
     <div class="docs-w-1/4">
-      <button type="button" class="btn btn-{{variant}} focus">{{variant}}</button>
+      <button type="button" class="btn btn-{{variant}} focus">{{capitalize variant}}</button>
     </div>
     <div class="docs-w-1/4">
-      <button type="button" class="btn btn-{{variant}} active">{{variant}}</button>
+      <button type="button" class="btn btn-{{variant}} active">{{capitalize variant}}</button>
     </div>
     <div class="docs-w-1/4">
-      <button type="button" class="btn btn-{{variant}}" disabled>{{variant}}</button>
+      <button type="button" class="btn btn-{{variant}}" disabled>{{capitalize variant}}</button>
     </div>
   </div>
 {{/each}}
