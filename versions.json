@@ -8,7 +8,7 @@
   "deploy-new": {
     "path": "versions/deploy-new",
     "name": "deploy-new",
-    "sha": "90f0b53f7b9dbdabecf57f09a6e6917c2325b741",
+    "sha": "20a7fbb8d26115b22e4adc70d8d879638307e793",
     "tag": null
   },
   "master": {
