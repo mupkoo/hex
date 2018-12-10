@@ -15,7 +15,6 @@ Router.map(function () {
       this.route('blanket');
       this.route('button');
       this.route('card');
-      this.route('circle-button');
       this.route('dropdown');
       this.route('empty-state');
       this.route('modal');
