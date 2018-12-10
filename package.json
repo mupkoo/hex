@@ -1,7 +1,7 @@
 {
   "name": "hex",
   "version": "0.0.0",
-  "description": "Modern UI framework for Ember.JS",
+  "description": "Modern UI framework for Ember.js",
   "keywords": [
     "ember-addon",
     "ui",
