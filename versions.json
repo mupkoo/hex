@@ -4,5 +4,11 @@
     "name": "deploy",
     "sha": "5d2aa87ada637a14bd2177559e820ef25a41e40d",
     "tag": null
+  },
+  "deploy-new": {
+    "path": "versions/deploy-new",
+    "name": "deploy-new",
+    "sha": "5d2aa87ada637a14bd2177559e820ef25a41e40d",
+    "tag": null
   }
 }
