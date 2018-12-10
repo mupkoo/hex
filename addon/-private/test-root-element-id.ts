@@ -2,6 +2,8 @@ import { DEBUG } from '@glimmer/env';
 // @ts-ignore
 import requirejs from 'require';
 
+declare var FastBoot: any;
+
 /**
   Returns the testing container ID if the current environment is "test"
 
