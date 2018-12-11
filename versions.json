@@ -1,16 +1,4 @@
 {
-  "deploy": {
-    "path": "versions/deploy",
-    "name": "deploy",
-    "sha": "2c52fe3dd3f62162cc6f87befbf8b96c1b531518",
-    "tag": null
-  },
-  "deploy-new": {
-    "path": "versions/deploy-new",
-    "name": "deploy-new",
-    "sha": "20a7fbb8d26115b22e4adc70d8d879638307e793",
-    "tag": null
-  },
   "master": {
     "path": "versions/master",
     "name": "master",
