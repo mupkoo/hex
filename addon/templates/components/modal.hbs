@@ -1,0 +1,14 @@
+{{#maybe-in-element this.destinationElement this._renderInPlace}}
+  <Blanket @isTinted class="modal-blanket" onclick={{action this._handleBlanketClick}} test-modal-blanket>
+    <div class="modal {{this._classNames}}" onclick={{action this._stopModalBodyPropagation}} role="button" ...attributes>
+      {{yield (hash
+        header=(component "Modal/Header" onClose=(action this._close))
+        body=(component "Modal/Body")
+        footer=(component "Modal/Footer")
+        actions=(hash
+          close=(action this._close)
+        )
+      )}}
+    </div>
+  </Blanket>
+{{/maybe-in-element}}
