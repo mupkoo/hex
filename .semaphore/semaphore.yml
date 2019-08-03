@@ -1,6 +1,5 @@
 version: v1.0
 name: Hex
-
 agent:
   machine:
     type: e1-standard-2
@@ -28,16 +27,6 @@ blocks:
           commands:
             - yarn test -r dot
 
-  - name: Deploy
-    task:
-      secrets:
-        - name: github
-      prologue:
-        commands:
-          - chmod 0600 ~/.keys/*
-          - checkout
-          - cache restore node-modules-$SEMAPHORE_GIT_BRANCH-$(checksum yarn.lock),node-modules-$SEMAPHORE_GIT_BRANCH,node-modules-master
-      jobs:
-        - name: GitHub pages
-          commands:
-            - yarn deploy
+promotions:
+  - name: Deploy to GitHub
+    pipeline_file: deploy-github.yml
