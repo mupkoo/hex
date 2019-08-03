@@ -17,7 +17,7 @@ blocks:
             - yarn install
             - cache store node-modules-$SEMAPHORE_GIT_BRANCH-$(checksum yarn.lock) node_modules
 
-  - name: Tests
+  - name: Test
     task:
       prologue:
         commands:
@@ -27,3 +27,14 @@ blocks:
         - name: Everything
           commands:
             - yarn test -r dot
+
+  - name: Deploy
+    task:
+      prologue:
+        commands:
+          - checkout
+          - cache restore node-modules-$SEMAPHORE_GIT_BRANCH-$(checksum yarn.lock),node-modules-$SEMAPHORE_GIT_BRANCH,node-modules-master
+      jobs:
+        - name: GitHub pages
+          commands:
+            - yarn deploy
