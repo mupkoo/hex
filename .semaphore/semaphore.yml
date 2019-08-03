@@ -7,10 +7,10 @@ agent:
     os_image: ubuntu1804
 
 blocks:
-  - name: Install dependencies
+  - name: Setup
     task:
       jobs:
-        - name: yarn install and cache
+        - name: Install deps
           commands:
             - checkout
             - cache restore node-modules-$SEMAPHORE_GIT_BRANCH-$(checksum yarn.lock),node-modules-$SEMAPHORE_GIT_BRANCH,node-modules-master
@@ -30,6 +30,8 @@ blocks:
 
   - name: Deploy
     task:
+      secrets:
+        - name: github
       prologue:
         commands:
           - checkout
