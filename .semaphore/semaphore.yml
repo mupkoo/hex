@@ -34,6 +34,7 @@ blocks:
         - name: github
       prologue:
         commands:
+          - chmod 0600 ~/.keys/*
           - checkout
           - cache restore node-modules-$SEMAPHORE_GIT_BRANCH-$(checksum yarn.lock),node-modules-$SEMAPHORE_GIT_BRANCH,node-modules-master
       jobs:
