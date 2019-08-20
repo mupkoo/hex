@@ -16,5 +16,11 @@
     "name": "Latest",
     "sha": "20a7fbb8d26115b22e4adc70d8d879638307e793",
     "tag": "v0.0.1"
+  },
+  "setup-semaphore": {
+    "path": "versions/setup-semaphore",
+    "name": "setup-semaphore",
+    "sha": "15233bab9b5d341022d2b99f6db74c702cdb5f01",
+    "tag": null
   }
 }
