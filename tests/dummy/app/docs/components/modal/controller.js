@@ -1,22 +1,23 @@
+// BEGIN-SNIPPET modal-example.js
 import Controller from '@ember/controller';
+import { action } from '@ember/object';
 
-export default Controller.extend({
-  isModalVisible: false,
-  isSmall: false,
-  isLarge: false,
+export default class ModalController extends Controller {
+  isModalVisible = false;
+  isSmall = false;
+  isLarge = false;
 
-  // BEGIN-SNIPPET modal-example.ts
-  showModal() {
+  @action showModal() {
     this.setProperties({ isModalVisible: true, isSmall: false, isLarge: false });
-  },
-
-  showSmallModal() {
-    this.setProperties({ isModalVisible: true, isSmall: true, isLarge: false });
-  },
-
-  showLargeModal() {
-    this.setProperties({ isModalVisible: true, isSmall: false, isLarge: true });
   }
 
-  // END-SNIPPET
-});
+  @action showSmallModal() {
+    this.setProperties({ isModalVisible: true, isSmall: true, isLarge: false });
+  }
+
+  @action showLargeModal() {
+    this.setProperties({ isModalVisible: true, isSmall: false, isLarge: true });
+  }
+}
+
+// END-SNIPPET

@@ -8,9 +8,10 @@ HTML `<input type="checkbox">` wrapper.
       @label="Shall we?"
       checked={{this.checked}}
       onchange={{action (mut this.checked) value="target.checked"}}
-      onfocus={{action (mut this.currentEvent) "'onfocus' called"}}
-      onblur={{action (mut this.currentEvent) "'onblur' called"}}
-      class="custom-class" />
+      {{on "focus" (fn (mut this.currentEvent) "'onfocus' called")}}
+      {{on "blur" (fn (mut this.currentEvent) "'onblur' called")}}
+      class="custom-class" 
+    />
 
     <div class="docs-debug">
       Current value: {{this.checked}}<br>

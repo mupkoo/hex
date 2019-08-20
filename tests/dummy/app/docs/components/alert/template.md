@@ -32,9 +32,9 @@ You can use the `@variant` property to define the style dynamically.
 
 {{#docs-demo as |demo|}}
   {{#demo.example name="alert-dynamic-variant.hbs"}}
-    <Button onclick={{action (mut this.variant) "info"}} @primary>Info</Button>
-    <Button onclick={{action (mut this.variant) "success"}} @success>Success</Button>
-    <Button onclick={{action (mut this.variant) "danger"}} @danger>Danger</Button>
+    <Button {{on "click" (fn (mut this.variant) "info")}} @primary>Info</Button>
+    <Button {{on "click" (fn (mut this.variant) "success")}} @success>Success</Button>
+    <Button {{on "click" (fn (mut this.variant) "danger")}} @danger>Danger</Button>
 
     <hr>
 

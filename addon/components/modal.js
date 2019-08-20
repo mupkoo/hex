@@ -1,5 +1,5 @@
 import Component from '@ember/component';
-import { computed } from '@ember/object';
+import { action, computed } from '@ember/object';
 import { getOwner } from '@ember/application';
 import booleanArgument from 'hex/-private/boolean-argument';
 import objStr from 'hex/-private/obj-str';
@@ -28,52 +28,53 @@ import layout from '../templates/components/modal';
   @class Modal
   @public
 */
-export default Component.extend({
-  layout,
-  tagName: '',
+export default class ModalComponent extends Component {
+  layout = layout;
+  tagName = '';
 
-  _preventBlanketClose: booleanArgument('preventBlanketClose'),
-  _preventClose: booleanArgument('preventClose'),
-  _renderInPlace: booleanArgument('renderInPlace'),
+  @booleanArgument('preventBlanketClose') _preventBlanketClose;
+  @booleanArgument('preventClose') _preventClose;
+  @booleanArgument('renderInPlace') _renderInPlace;
 
-  _classNames: computed('small', 'large', function () {
+  @computed('small', 'large')
+  get _classNames() {
     return objStr({
       'modal-sm': this.small,
       'modal-lg': this.large
     });
-  }),
+  }
 
-  destinationElement: computed(function () {
+  get destinationElement() {
     return document.getElementById(this._getDestinationElementId());
-  }),
+  }
 
   _getDestinationElementId() {
     let config = getOwner(this).resolveRegistration('config:environment');
     return testRootElementId(config) || 'hex-modal-parent';
-  },
+  }
 
   didInsertElement() {
     document.body.classList.add('has-modal');
-  },
+  }
 
   willDestroyElement() {
     document.body.classList.remove('has-modal');
-  },
+  }
 
-  _handleBlanketClick() {
+  @action _handleBlanketClick() {
     if (!this._preventBlanketClose) {
       this._close();
     }
-  },
+  }
 
-  _close() {
+  @action _close() {
     if (!this._preventClose) {
       this.onClose();
     }
-  },
+  }
 
-  _stopModalBodyPropagation(e) {
+  @action _stopModalBodyPropagation(e) {
     e.stopPropagation();
     return false;
   }
-});
+}

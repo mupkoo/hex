@@ -11,7 +11,7 @@ import layout from '../templates/components/input';
   @class Input
   @public
 */
-export default Component.extend({
-  layout,
-  tagName: ''
-});
+export default class InputComponent extends Component {
+  layout = layout;
+  tagName = '';
+}

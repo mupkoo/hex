@@ -5,14 +5,14 @@ A dropdown component, based on [ember-basic-dropdown](https://github.com/ciberno
 {{#docs-demo as |demo|}}
   {{#demo.example name="dropdown-example.hbs"}}
     <Dropdown as |d|>
-      <d.trigger>Toggle</d.trigger>
+      <d.Trigger>Toggle</d.Trigger>
 
-      <d.content>
+      <d.Content>
         <a href="#" class="dropdown-item">One</a>
         <button type="button" class="dropdown-item">Three</button>
         <hr>
         <div class="dropdown-item">Two</div>
-      </d.content>
+      </d.Content>
     </Dropdown>
   {{/demo.example}}
 

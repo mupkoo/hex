@@ -2,6 +2,7 @@
 
 module.exports = {
   root: true,
+  parser: 'babel-eslint',
   parserOptions: {
     ecmaVersion: 2018,
     sourceType: 'module'
@@ -72,6 +73,7 @@ module.exports = {
         'app/**',
         'tests/dummy/app/**'
       ],
+      parser: 'espree',
       parserOptions: {
         sourceType: 'script'
       },

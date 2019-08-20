@@ -70,6 +70,7 @@ select.field-control {
   background-size: 1rem 1rem;
   vertical-align: middle;
   appearance: none;
+  -webkit-appearance: none;
 
   &:focus::-ms-value {
     // Suppress the nested default white text on blue background highlight given to

@@ -7,28 +7,28 @@ import layout from '../templates/components/dropdown';
 
   ```hbs
   <Dropdown as |d|>
-    <d.trigger>
+    <d.Trigger>
       Open
-    </d.trigger>
+    </d.Trigger>
 
-    <d.content>
+    <d.Content>
       <d.button>
         {{svg-jar "ok"}} Save
       </d.button>
-    </d.content>
+    </d.Content>
   </Dropdown>
   ```
 
   @class Dropdown
   @public
 */
-export default Component.extend({
-  layout,
-  tagName: '',
+export default class ModalBodyComponent extends Component {
+  layout = layout;
+  tagName = '';
 
-  horizontalPosition: 'auto-right',
-  verticalPosition: 'auto',
-  _matchTriggerWidth: booleanArgument('matchTriggerWidth'),
-  _renderInPlace: booleanArgument('renderInPlace'),
-  _disabled: booleanArgument('disabled')
-});
+  horizontalPosition = 'auto-right';
+  verticalPosition = 'auto';
+  @booleanArgument('matchTriggerWidth') _matchTriggerWidth;
+  @booleanArgument('renderInPlace') _renderInPlace;
+  @booleanArgument('disabled') _disabled;
+}

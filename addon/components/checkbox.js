@@ -9,7 +9,7 @@ import layout from '../templates/components/checkbox';
   @class Checkbox
   @public
 */
-export default Component.extend({
-  layout,
-  tagName: ''
-});
+export default class CheckboxComponent extends Component {
+  layout = layout;
+  tagName = '';
+}
