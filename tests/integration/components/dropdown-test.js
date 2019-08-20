@@ -10,7 +10,7 @@ module('Integration: Dropdown', function (hooks) {
   test('it renders decorated dropdown trigger', async function (assert) {
     await render(hbs`
       <Dropdown as |d|>
-        <d.trigger>Awesome</d.trigger>
+        <d.Trigger>Awesome</d.Trigger>
       </Dropdown>
     `);
 
@@ -24,8 +24,8 @@ module('Integration: Dropdown', function (hooks) {
   test('it renders decorated dropdown content', async function (assert) {
     await render(hbs`
       <Dropdown as |d|>
-        <d.trigger>Awesome</d.trigger>
-        <d.content>Content</d.content>
+        <d.Trigger>Awesome</d.Trigger>
+        <d.Content>Content</d.Content>
       </Dropdown>
     `);
 
@@ -46,8 +46,8 @@ module('Integration: Dropdown', function (hooks) {
           @renderInPlace
           @disabled={{this.disabled}}
         as |d|>
-          <d.trigger>Awesome</d.trigger>
-          <d.content>Content</d.content>
+          <d.Trigger>Awesome</d.Trigger>
+          <d.Content>Content</d.Content>
         </Dropdown>
       </div>
     `);

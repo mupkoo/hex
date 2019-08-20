@@ -11,7 +11,7 @@ import layout from '../templates/components/label';
   @class Label
   @public
 */
-export default Component.extend({
-  layout,
-  tagName: ''
-});
+export default class LabelComponent extends Component {
+  layout = layout;
+  tagName = '';
+}

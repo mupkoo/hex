@@ -1,14 +1,14 @@
 import Controller from '@ember/controller';
 
-export default Controller.extend({
-  canClickThrough: true,
-  showBlanket: false,
+export default class BlanketController extends Controller {
+  canClickThrough = true;
+  showBlanket = false;
 
   // BEGIN-SNIPPET blanket-example.ts
   toggleBlanket() {
-    this.toggleProperty('canClickThrough');
-    this.toggleProperty('showBlanket');
+    this.set('canClickThrough', !this.canClickThrough);
+    this.set('showBlanket', !this.showBlanket);
   }
 
   // END-SNIPPET
-});
+}

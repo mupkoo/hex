@@ -18,22 +18,24 @@ export const ICON_MAP = {
   @class Alert
   @public
 */
-export default Component.extend({
-  layout,
-  tagName: '',
+export default class AlertComponent extends Component {
+  layout = layout;
+  tagName = '';
 
-  variant: computed('success', 'danger', 'info', function () {
+  @computed('success', 'danger', 'info')
+  get variant() {
     return this._checkFlag('success') ||
       this._checkFlag('danger') ||
       this._checkFlag('info') ||
       'info';
-  }),
+  }
 
-  _iconPath: computed('variant', function () {
+  @computed('variant')
+  get _iconPath() {
     return ICON_MAP[this.variant];
-  }),
+  }
 
   _checkFlag(key) {
     return this[key] || this[key] === '' ? key : false;
   }
-});
+}

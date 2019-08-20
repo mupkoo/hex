@@ -8,10 +8,11 @@ HTML `<textarea>` wrapper.
       @id="text-area-id"
       @value={{this.value}}
       oninput={{action (mut this.value) value="target.value"}}
-      onfocus={{action (mut this.currentEvent) "'onfocus' called"}}
-      onblur={{action (mut this.currentEvent) "'onblur' called"}}
+      {{on "focus" (fn (mut this.currentEvent) "'onfocus' called")}}
+      {{on "blur" (fn (mut this.currentEvent) "'onblur' called")}}
       rows="5"
-      class="custom-class" />
+      class="custom-class" 
+    />
 
     <div class="docs-debug">
       Debug: {{this.currentEvent}}<br>

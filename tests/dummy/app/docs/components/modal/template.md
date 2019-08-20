@@ -4,15 +4,15 @@ A component that displays content in a layer blocking the interaction with the p
 
 {{#docs-demo as |demo|}}
   {{#demo.example name="modal-example.hbs"}}
-    <Button onclick={{action this.showModal}}>
+    <Button {{on "click" this.showModal}}>
       Show Modal
     </Button>
 
-    <Button onclick={{action this.showSmallModal}}>
+    <Button {{on "click" this.showSmallModal}}>
       Show Small Modal
     </Button>
 
-    <Button onclick={{action this.showLargeModal}}>
+    <Button {{on "click" this.showLargeModal}}>
       Show Large Modal
     </Button>
 
@@ -20,7 +20,7 @@ A component that displays content in a layer blocking the interaction with the p
       <Modal 
         @small={{this.isSmall}} 
         @large={{this.isLarge}} 
-        @onClose={{action (mut this.isModalVisible) false}}
+        @onClose={{fn (mut this.isModalVisible) false}}
       as |m|>
         <m.header>Last Day of Magic</m.header>
 
@@ -32,12 +32,12 @@ A component that displays content in a layer blocking the interaction with the p
 
         <m.footer>
           <Button @primary>Save</Button>
-          <Button onclick={{action m.actions.close}}>Cancel</Button>
+          <Button {{on "click" m.actions.close}}>Cancel</Button>
         </m.footer>
       </Modal>
     {{/if}}
   {{/demo.example}}
 
   {{demo.snippet "modal-example.hbs"}}
-  {{demo.snippet "modal-example.ts"}}
+  {{demo.snippet "modal-example.js"}}
 {{/docs-demo}}
