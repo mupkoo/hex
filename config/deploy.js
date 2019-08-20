@@ -26,6 +26,16 @@ module.exports = function (deployTarget) {
     // configure other plugins for production deploy target here
   }
 
+  if (process.env.DEPLOY_KEY_PATH) {
+    ENV['git-ci'] = {
+      deployKeyPath: process.env.DEPLOY_KEY_PATH
+    };
+
+    ENV['git'] = {
+      repo: 'git@github.com:mupkoo/hex.git'
+    };
+  }
+
   // Note: if you need to build some configuration asynchronously, you can return
   // a promise that resolves with the ENV object instead of returning the
   // ENV object synchronously.
