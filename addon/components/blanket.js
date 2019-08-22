@@ -13,14 +13,15 @@ import layout from '../templates/components/blanket';
   @class Blanket
   @public
 */
-export default Component.extend({
-  layout,
-  tagName: '',
+export default class BlanketComponent extends Component {
+  layout = layout;
+  tagName = '';
 
-  _classNames: computed('isTinted', 'canClickThrough', function () {
+  @computed('isTinted', 'canClickThrough')
+  get _classNames() {
     return objStr({
       'blanket-tinted': this.isTinted,
       'blanket-click-through': this.canClickThrough
     });
-  })
-});
+  }
+}

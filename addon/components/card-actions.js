@@ -14,7 +14,7 @@ import layout from '../templates/components/card-actions';
   @class CardActions
   @public
 */
-export default Component.extend({
-  layout,
-  tagName: ''
-});
+export default class CardActionsComponent extends Component {
+  layout = layout;
+  tagName = '';
+}

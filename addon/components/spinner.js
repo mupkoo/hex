@@ -11,15 +11,16 @@ import layout from '../templates/components/spinner';
   @class Spinner
   @public
 */
-export default Component.extend({
-  layout,
-  tagName: '',
+export default class SpinnerComponent extends Component {
+  layout = layout;
+  tagName = '';
 
-  size: 24,
+  size = 24;
 
-  _classNames: computed('inverted', function () {
+  @computed('inverted')
+  get _classNames() {
     return objStr({
       inverted: this.inverted
     });
-  })
-});
+  }
+}

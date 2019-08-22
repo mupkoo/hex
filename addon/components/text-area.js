@@ -5,12 +5,12 @@ import layout from '../templates/components/text-area';
   HTML <textarea> wrapper
 
   ```hbs
-  <TextArea>Most awesome card</TextArea>
+  <TextArea @value="Most awesome" />
   ```
 
   @class TextArea
   @public
 */
-export default Component.extend({
-  layout
-});
+export default class TextAreaComponent extends Component {
+  layout = layout;
+}

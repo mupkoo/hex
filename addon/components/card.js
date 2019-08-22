@@ -9,7 +9,7 @@ import layout from '../templates/components/card';
   @class Card
   @public
 */
-export default Component.extend({
-  layout,
-  tagName: ''
-});
+export default class CardComponent extends Component {
+  layout = layout;
+  tagName = '';
+}
