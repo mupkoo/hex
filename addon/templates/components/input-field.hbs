@@ -1,0 +1,13 @@
+<div class="field">
+  {{#if @label}}
+    <label class="field-label" for={{this.uuid}}>{{@label}}</label>
+  {{/if}}
+
+  <input
+    id={{this.uuid}}
+    class="field-control"
+    value={{@value}}
+    {{ on "input" this.handleInputEvent }}
+    ...attributes
+  >
+</div>
