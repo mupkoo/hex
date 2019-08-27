@@ -1,0 +1,18 @@
+<div class="field">
+  {{#if @label}}
+    <label class="field-label" for={{this.uuid}}>{{@label}}</label>
+  {{/if}}
+
+  <select
+    id={{this.uuid}}
+    class="field-control"
+    {{on "change" this.handleChange}}
+    ...attributes
+  >
+    {{#each this._options key="value" as |opt|}}
+      <option value={{opt.value}} selected={{opt.selected}}>
+        {{opt.label}}
+      </option>
+    {{/each}}
+  </select>
+</div>
