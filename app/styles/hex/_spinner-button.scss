@@ -1,0 +1,31 @@
+.spinner-btn {
+  position: relative;
+
+  .spinner-path {
+    stroke: rgba($primary, .6);
+  }
+
+  &.btn-primary,
+  &.btn-success,
+  &.btn-danger,
+  &.btn-warning {
+    .spinner-path {
+      stroke: rgba($white, .6);
+    }
+  }
+}
+
+.spinner-btn-spinner {
+  position: absolute;
+  top: calc(50% - .75rem);
+  left: calc(50% - .75rem);
+}
+
+.spinner-btn-label {
+  transition: opacity .2s ease-in-out;
+  opacity: 1;
+
+  &.-is-loading {
+    opacity: 0;
+  }
+}

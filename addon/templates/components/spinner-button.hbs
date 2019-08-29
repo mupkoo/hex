@@ -1,0 +1,14 @@
+<button
+  type="button"
+  class="btn spinner-btn {{this._classNames}}"
+  disabled={{this.isDisabled}}
+  ...attributes
+>
+  {{#if @isLoading}}
+    <Spinner class="spinner-btn-spinner" data-test-spinner />
+  {{/if}}
+
+  <span class="spinner-btn-label {{if @isLoading "-is-loading"}}">
+    {{yield}}
+  </span>
+</button>
