@@ -21,13 +21,10 @@ Router.map(function () {
       this.route('spinner');
 
       this.route('checkbox');
-      this.route('power-select');
-      this.route('field');
-      this.route('form');
-      this.route('input');
-      this.route('label');
-      this.route('select');
-      this.route('text-area');
+      this.route('input-field');
+      this.route('select-field');
+      this.route('text-area-field');
+      this.route('spinner-button');
     });
 
     this.route('services', function () {

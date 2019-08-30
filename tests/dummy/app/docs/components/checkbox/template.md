@@ -6,8 +6,7 @@ HTML `<input type="checkbox">` wrapper.
   {{#demo.example name="checkbox-example.hbs"}}
     <Checkbox
       @label="Shall we?"
-      checked={{this.checked}}
-      onchange={{action (mut this.checked) value="target.checked"}}
+      @checked={{this.checked}}
       {{on "focus" (fn (mut this.currentEvent) "'onfocus' called")}}
       {{on "blur" (fn (mut this.currentEvent) "'onblur' called")}}
       class="custom-class" 

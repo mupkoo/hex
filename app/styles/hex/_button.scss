@@ -1,5 +1,5 @@
 .btn {
-  @include button-size(.375rem, 1rem, .875rem, 1.428571429, $border-radius-sm);
+  @include button-size(.375rem, 1rem, .875rem, 1.6, $border-radius-sm);
   @include transition(
     background-color $transition-duration $ease,
     border $transition-duration $ease,
