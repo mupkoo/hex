@@ -18,11 +18,11 @@
 export default function objStr(obj) {
   let classNames = '';
 
-  for (let key in obj) {
+  Object.keys(obj).forEach((key) => {
     if (obj[key] || obj[key] === '') {
       classNames += ' ' + key;
     }
-  }
+  });
 
   return classNames.trim();
 }

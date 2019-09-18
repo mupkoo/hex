@@ -27,6 +27,14 @@ blocks:
           commands:
             - yarn test -r dot
 
+        - name: ESLint
+          commands:
+            - yarn lint:js
+
+        - name: Template Lint
+          commands:
+            - yarn lint:hbs
+
 promotions:
   - name: Deploy to GitHub
     pipeline_file: deploy-github.yml
