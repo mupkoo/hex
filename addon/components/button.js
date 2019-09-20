@@ -17,6 +17,10 @@ export default class ButtonComponent extends Component {
   layout = layout;
   tagName = '';
 
+  // Looks like you cannot overwrite the `type` attribute via `...attributes`
+  // https://github.com/emberjs/ember.js/issues/18232
+  type = 'button';
+
   @computed(
     'primary', 'success', 'danger', 'warning', 'subtle',
     'link', 'small', 'large', 'circle', 'block'

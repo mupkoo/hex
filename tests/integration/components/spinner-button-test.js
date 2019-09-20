@@ -7,10 +7,11 @@ module('Integration: SpinnerButton', function (hooks) {
   setupRenderingTest(hooks);
 
   test('it renders a button', async function (assert) {
-    await render(hbs`<SpinnerButton @primary disabled={{true}}>Save</SpinnerButton>`);
+    await render(hbs`<SpinnerButton @primary @type="submit" disabled={{true}}>Save</SpinnerButton>`);
 
     assert.dom('button').hasText('Save');
     assert.dom('button').hasClass('btn-primary');
+    assert.dom('button').hasAttribute('type', 'submit');
     assert.dom('button').isDisabled();
   });
 
