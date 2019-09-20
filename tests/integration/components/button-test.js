@@ -20,6 +20,12 @@ module('Integration: Button', function (hooks) {
   //   assert.dom('button').hasAttribute('type', 'submit');
   // });
 
+  test('it overwrites the default type, if one is given', async function (assert) {
+    await render(hbs`<Button @type="submit">Sweet</Button>`);
+
+    assert.dom('button').hasAttribute('type', 'submit');
+  });
+
   test('it adds "btn-primary" class if @primary is set', async function (assert) {
     await render(hbs`<Button @primary>Awesome</Button>`);
 
@@ -126,5 +132,17 @@ module('Integration: Button', function (hooks) {
     await render(hbs`<Button @circle={{true}}>Awesome</Button>`);
 
     assert.dom('button').hasClass('btn-circle');
+  });
+
+  test('it adds "btn-block" class if @block is set', async function (assert) {
+    await render(hbs`<Button @block>Awesome</Button>`);
+
+    assert.dom('button').hasClass('btn-block');
+  });
+
+  test('it adds "btn-block" class if @block is true', async function (assert) {
+    await render(hbs`<Button @block={{true}}>Awesome</Button>`);
+
+    assert.dom('button').hasClass('btn-block');
   });
 });
