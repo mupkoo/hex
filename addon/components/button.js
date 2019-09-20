@@ -19,7 +19,7 @@ export default class ButtonComponent extends Component {
 
   @computed(
     'primary', 'success', 'danger', 'warning', 'subtle',
-    'link', 'small', 'large', 'circle'
+    'link', 'small', 'large', 'circle', 'block'
   )
   get _classNames() {
     return objStr({
@@ -31,7 +31,8 @@ export default class ButtonComponent extends Component {
       'btn-link': this.link,
       'btn-sm': this.small,
       'btn-lg': this.large,
-      'btn-circle': this.circle
+      'btn-circle': this.circle,
+      'btn-block': this.block
     });
   }
 }

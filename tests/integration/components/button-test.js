@@ -127,4 +127,16 @@ module('Integration: Button', function (hooks) {
 
     assert.dom('button').hasClass('btn-circle');
   });
+
+  test('it adds "btn-block" class if @block is set', async function (assert) {
+    await render(hbs`<Button @block>Awesome</Button>`);
+
+    assert.dom('button').hasClass('btn-block');
+  });
+
+  test('it adds "btn-block" class if @block is true', async function (assert) {
+    await render(hbs`<Button @block={{true}}>Awesome</Button>`);
+
+    assert.dom('button').hasClass('btn-block');
+  });
 });
