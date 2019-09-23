@@ -1,0 +1,12 @@
+<Alert
+  @variant={{@message.type}}
+  {{on "click" @onDismiss}}
+  {{on "mouseenter" this.stopTimer}}
+  {{on "mouseleave" this.startTimer}}
+  {{did-insert this.startTimer}}
+  {{will-destroy this.stopTimer}}
+  class="notify-message"
+  ...attributes
+>
+  {{@message.text}}
+</Alert>
