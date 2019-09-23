@@ -1,0 +1,9 @@
+<div class="notify" ...attributes>
+  {{#each notify.messages key="id" as |message|}}
+    <NotifyMessage
+      @message={{message}}
+      @onDismiss={{fn this.removeMessage message}}
+      data-test-notify-message={{message.type}}
+    />
+  {{/each}}
+</div>

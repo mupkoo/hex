@@ -26,7 +26,7 @@ module.exports = {
     'comma-spacing': [2, { after: true, before: false }],
     'comma-style': [2, 'last'],
     'consistent-this': [2, '_this'],
-    curly: [2, 'all'],
+    curly: ['error', 'multi-line'],
     'dot-notation': 2,
     'eol-last': 2,
     indent: [2, 2, { SwitchCase: 1 }],
