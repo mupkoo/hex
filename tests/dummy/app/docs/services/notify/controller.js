@@ -11,11 +11,11 @@ export default class NotifyController extends Controller {
   }
 
   @action showSuccessMessage() {
-    this.notify.success('This is an success message');
+    this.notify.success('Record saved successfully.');
   }
 
   @action showDangerMessage() {
-    this.notify.danger('This is an danger message');
+    this.notify.danger('Something went wrong. Please, try again later.');
   }
 }
 
