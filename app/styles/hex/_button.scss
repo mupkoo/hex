@@ -7,7 +7,8 @@
     color $transition-duration $ease
   );
 
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   border: .125rem solid transparent;
   font-weight: 500;
   text-align: center;
@@ -39,14 +40,23 @@
   &:not(:disabled):not(.disabled) {
     cursor: pointer;
   }
+
+  svg {
+    margin: 0 .25rem 0 -.25rem;
+  }
+
+  .-right {
+    margin: 0 -.25rem 0 .25rem;
+  }
 }
 
 .btn-circle {
   @include button-size(.5rem, .5rem, .75rem, 1.428571429, 50%);
 
   svg {
-    width: 1.25rem;
-    height: 1.25rem;
+    width: 1.125rem;
+    height: 1.125rem;
+    margin: 0;
   }
 }
 
