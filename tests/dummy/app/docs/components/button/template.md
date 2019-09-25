@@ -53,3 +53,23 @@ You can increase the size of the `<Button />` component by passing `@large` attr
 
   {{demo.snippet 'large-buttons.hbs'}}
 {{/docs-demo}}
+
+## Icons
+
+The button components should work well with SVG icons. The default behavior is for the icon to be before the text, but if you need to add it after it, you can set `-right` modifier class to it.
+
+{{#docs-demo as |demo|}}
+  {{#demo.example name='buttons-with-icons.hbs'}}
+    <Button>{{svg-jar "edit"}} Edit</Button>
+    <Button @primary>{{svg-jar "close"}} Close</Button>
+    <Button @subtle>Trash {{svg-jar "trash" class="-right"}}</Button>
+
+    <hr>
+    
+    <Button @primary>{{svg-jar "close"}} Close</Button>
+    <Button @primary @large>{{svg-jar "close"}} Close</Button>
+    <Button @primary @small>{{svg-jar "close"}} Close</Button>
+  {{/demo.example}}
+
+  {{demo.snippet 'buttons-with-icons.hbs'}}
+{{/docs-demo}}

@@ -11,10 +11,18 @@
   background-color: $background;
   border-color: $border;
 
+  svg {
+    fill: color-yiq($background);
+  }
+
   &:hover {
     color: color-yiq($hover-background);
     background-color: $hover-background;
     border-color: $hover-border;
+
+    svg {
+      fill: color-yiq($hover-background);
+    }
   }
 
   &:focus,
@@ -28,6 +36,10 @@
     color: color-yiq($background);
     background-color: $background;
     border-color: $border;
+
+    svg {
+      fill: color-yiq($background);
+    }
   }
 
   &:not(:disabled):not(.disabled):active,
@@ -35,6 +47,10 @@
     color: color-yiq($active-background);
     background-color: $active-background;
     border-color: $active-border;
+
+    svg {
+      fill: color-yiq($active-background);
+    }
 
     &:focus {
       box-shadow: 0 0 0 $focus-shadow-width $focus;
@@ -47,6 +63,11 @@
   font-size: $font-size;
   line-height: $line-height;
   border-radius: $border-radius;
+
+  svg {
+    height: (1.125 / .875) * $font-size;
+    width: (1.125 / .875) * $font-size;
+  }
 }
 
 @mixin button-reset {
