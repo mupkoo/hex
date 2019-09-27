@@ -1,4 +1,8 @@
 @function color-yiq($color) {
+  @if ($color == transparent) {
+    @return $yiq-text-dark;
+  }
+
   $r: red($color);
   $g: green($color);
   $b: blue($color);
