@@ -22,6 +22,7 @@ Router.map(function () {
 
       this.route('checkbox');
       this.route('input-field');
+      this.route('search-field');
       this.route('select-field');
       this.route('text-area-field');
       this.route('spinner-button');
