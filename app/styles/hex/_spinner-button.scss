@@ -1,6 +1,15 @@
 .spinner-btn {
   position: relative;
 
+  .spinner {
+    position: absolute;
+    top: calc(50% - .75rem);
+    left: calc(50% - .75rem);
+    width: 1.5rem;
+    height: 1.5rem;
+    margin: 0;
+  }
+
   .spinner-path {
     stroke: rgba($primary, .6);
   }
@@ -13,12 +22,6 @@
       stroke: rgba($white, .6);
     }
   }
-}
-
-.spinner-btn-spinner {
-  position: absolute;
-  top: calc(50% - .75rem);
-  left: calc(50% - .75rem);
 }
 
 .spinner-btn-label {
