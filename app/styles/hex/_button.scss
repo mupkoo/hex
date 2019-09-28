@@ -80,8 +80,8 @@ fieldset:disabled a.btn {
 
 .btn-subtle {
   @include button-variant(
-    $white,
-    $white,
+    transparent,
+    transparent,
     rgba($primary, $focus-shadow-opacity),
     $gray-100,
     $gray-100,
