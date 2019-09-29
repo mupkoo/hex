@@ -1,0 +1,27 @@
+@mixin badge-variant(
+  $background,
+  $focus: rgba($background, $focus-shadow-opacity),
+  $hover-background: lighten($background, 6%),
+  $hover-border: lighten($background, 6%),
+  $active-background: darken($background, 6%),
+  $active-border: darken($background, 6%)
+) {
+  color: color-yiq($background);
+  background-color: $background;
+
+  @at-root {
+    a#{&} {
+      &:hover {
+        color: color-yiq($hover-background);
+        background-color: $hover-background;
+        border-color: $hover-border;
+      }
+
+      &:focus,
+      &.focus {
+        outline: none;
+        box-shadow: 0 0 0 $focus-shadow-width $focus;
+      }
+    }
+  }
+}

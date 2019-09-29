@@ -12,6 +12,7 @@ Router.map(function () {
 
     this.route('components', function () {
       this.route('alert');
+      this.route('badge');
       this.route('blanket');
       this.route('button');
       this.route('card');
