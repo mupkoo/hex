@@ -12,9 +12,9 @@
       ...attributes
     >
       {{yield (hash
-        header=(component "modal/header" onClose=this._close)
-        body=(component "modal/body")
-        footer=(component "modal/footer")
+        Header=(component "modal-header" onClose=this._close)
+        Body=(component "modal-body")
+        Footer=(component "modal-footer")
         actions=(hash close=this._close)
       )}}
     </div>
