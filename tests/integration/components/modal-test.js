@@ -9,9 +9,9 @@ module('Integration: Modal', function (hooks) {
   test('it yields contextual modal components', async function (assert) {
     await render(hbs`
       <Modal as |m|>
-        <m.header>Header content</m.header>
-        <m.body>Body content</m.body>
-        <m.footer>Footer content</m.footer>
+        <m.Header>Header content</m.Header>
+        <m.Body>Body content</m.Body>
+        <m.Footer>Footer content</m.Footer>
       </Modal>
     `);
 
@@ -78,7 +78,7 @@ module('Integration: Modal', function (hooks) {
 
     await render(hbs`
       <Modal @onClose={{action (mut this.closeCalled) true}} as |m|>
-        <m.header>Sweet</m.header>
+        <m.Header>Sweet</m.Header>
       </Modal>
     `);
 
@@ -92,7 +92,7 @@ module('Integration: Modal', function (hooks) {
 
     await render(hbs`
       <Modal @preventClose @onClose={{action (mut this.closeCalled) true}} as |m|>
-        <m.header>Sweet</m.header>
+        <m.Header>Sweet</m.Header>
       </Modal>
     `);
 
@@ -106,7 +106,7 @@ module('Integration: Modal', function (hooks) {
 
     await render(hbs`
       <Modal @preventClose={{true}} @onClose={{action (mut this.closeCalled) true}} as |m|>
-        <m.header>Sweet</m.header>
+        <m.Header>Sweet</m.Header>
       </Modal>
     `);
 
@@ -175,9 +175,9 @@ module('Integration: Modal', function (hooks) {
   test('it passes all the additional attributes to the contextual modal components', async function (assert) {
     await render(hbs`
       <Modal as |m|>
-        <m.header data-test-header-id="header">Header content</m.header>
-        <m.body data-test-body-id="body">Body content</m.body>
-        <m.footer data-test-footer-id="footer">Footer content</m.footer>
+        <m.Header data-test-header-id="header">Header content</m.Header>
+        <m.Body data-test-body-id="body">Body content</m.Body>
+        <m.Footer data-test-footer-id="footer">Footer content</m.Footer>
       </Modal>
     `);
 
