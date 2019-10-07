@@ -62,6 +62,8 @@ export default class ModalComponent extends Component {
   }
 
   @action _handleBlanketClick() {
+    if (this.isDestroyed || this.isDestroying) return;
+
     if (!this._preventBlanketClose) {
       this._close();
     }
