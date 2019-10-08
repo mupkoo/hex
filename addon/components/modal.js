@@ -11,17 +11,17 @@ import layout from '../templates/components/modal';
 
   ```hbs
   <Modal @size="sm" @onClose={{action this.closeModal}} as |m|>
-    <m.header>
+    <m.Header>
       Create Record
-    </m.header>
+    </m.Header>
 
-    <m.body>
+    <m.Body>
       Awesome
-    </m.body>
+    </m.Body>
 
-    <m.footer>
+    <m.Footer>
       <Button @primary type="submit">Save</Button>
-    </m.footer>
+    </m.Footer>
   </Modal>
   ```
 
@@ -62,6 +62,8 @@ export default class ModalComponent extends Component {
   }
 
   @action _handleBlanketClick() {
+    if (this.isDestroyed || this.isDestroying) return;
+
     if (!this._preventBlanketClose) {
       this._close();
     }
