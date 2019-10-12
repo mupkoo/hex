@@ -1,7 +1,7 @@
 import Component from '@ember/component';
 import { action } from '@ember/object';
 import layout from '../templates/components/text-area-field';
-import uuid from '../-private/uuid';
+import guid from '../-private/guid';
 
 /**
   A handle helper for creating a field that renders
@@ -19,7 +19,7 @@ export default class TextAreaFieldComponent extends Component {
   tagName = '';
 
   get uuid() {
-    return 'hex-' + uuid();
+    return 'hex-' + guid();
   }
 
   @action handleInputEvent(e) {

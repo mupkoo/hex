@@ -1,6 +1,6 @@
 import Ember from 'ember';
 import Service from '@ember/service';
-import uuid from 'hex/-private/uuid';
+import guid from 'hex/-private/guid';
 
 export default class NotifyService extends Service {
   messages = [];
@@ -17,7 +17,7 @@ export default class NotifyService extends Service {
   */
   show(text, options = {}) {
     let { type = 'info', isSticky = Ember.testing, closeAfter = 2500 } = options;
-    let message = { id: uuid(), text, type, isSticky, closeAfter };
+    let message = { id: guid(), text, type, isSticky, closeAfter };
 
     this.set('messages', [...this.messages, message]);
   }
