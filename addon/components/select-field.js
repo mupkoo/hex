@@ -2,7 +2,6 @@ import Component from '@ember/component';
 import { action, computed } from '@ember/object';
 import { assert } from '@ember/debug';
 import layout from '../templates/components/select-field';
-import uuid from '../-private/uuid';
 
 /**
   A handle helper for creating a field that renders
@@ -22,10 +21,6 @@ export default class SelectFieldComponent extends Component {
   init() {
     super.init();
     assert('Must provide @options for the SelectField to work', this.options);
-  }
-
-  get uuid() {
-    return 'hex-' + uuid();
   }
 
   @computed('options.[]', 'selected')

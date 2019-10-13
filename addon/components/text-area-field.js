@@ -1,7 +1,6 @@
 import Component from '@ember/component';
 import { action } from '@ember/object';
 import layout from '../templates/components/text-area-field';
-import uuid from '../-private/uuid';
 
 /**
   A handle helper for creating a field that renders
@@ -17,10 +16,6 @@ import uuid from '../-private/uuid';
 export default class TextAreaFieldComponent extends Component {
   layout = layout;
   tagName = '';
-
-  get uuid() {
-    return 'hex-' + uuid();
-  }
 
   @action handleInputEvent(e) {
     let value = e.target.value;
