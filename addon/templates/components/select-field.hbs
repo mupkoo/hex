@@ -1,10 +1,6 @@
-<div class="field">
-  {{#if @label}}
-    <label class="field-label" for={{this.uuid}}>{{@label}}</label>
-  {{/if}}
-
+<Field @label={{@label}} @error={{@error}} as |id|>
   <select
-    id={{this.uuid}}
+    id={{id}}
     class="field-control"
     {{on "change" this.handleChange}}
     ...attributes
@@ -15,4 +11,4 @@
       </option>
     {{/each}}
   </select>
-</div>
+</Field>

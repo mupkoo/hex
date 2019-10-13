@@ -16,7 +16,7 @@ export default class CheckboxComponent extends Component {
   layout = layout;
   tagName = '';
 
-  get uuid() {
+  get guid() {
     return 'hex-' + guid();
   }
 
