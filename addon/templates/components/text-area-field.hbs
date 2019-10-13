@@ -1,13 +1,9 @@
-<div class="field">
-  {{#if @label}}
-    <label class="field-label" for={{this.uuid}}>{{@label}}</label>
-  {{/if}}
-
+<Field @label={{@label}} @error={{@error}} as |id|>
   <textarea
-    id={{this.uuid}}
+    id={{id}}
     class="field-control"
     value={{@value}}
-    {{ on "input" this.handleInputEvent }}
+    {{on "input" this.handleInputEvent}}
     ...attributes
   />
-</div>
+</Field>

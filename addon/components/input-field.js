@@ -1,7 +1,6 @@
 import Component from '@ember/component';
 import { action } from '@ember/object';
 import layout from '../templates/components/input-field';
-import guid from '../-private/guid';
 
 /**
   A handle helper for creating a field that renders
@@ -17,10 +16,6 @@ import guid from '../-private/guid';
 export default class InputFieldComponent extends Component {
   layout = layout;
   tagName = '';
-
-  get uuid() {
-    return 'hex-' + guid();
-  }
 
   @action handleInputEvent(e) {
     let value = e.target.value;
