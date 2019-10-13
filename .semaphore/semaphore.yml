@@ -12,16 +12,16 @@ blocks:
         - name: Install deps
           commands:
             - checkout
-            - cache restore node-modules-$SEMAPHORE_GIT_BRANCH-$(checksum yarn.lock),node-modules-$SEMAPHORE_GIT_BRANCH,node-modules-master
+            - cache restore
             - yarn install
-            - cache store node-modules-$SEMAPHORE_GIT_BRANCH-$(checksum yarn.lock) node_modules
+            - cache store
 
   - name: Test
     task:
       prologue:
         commands:
           - checkout
-          - cache restore node-modules-$SEMAPHORE_GIT_BRANCH-$(checksum yarn.lock),node-modules-$SEMAPHORE_GIT_BRANCH,node-modules-master
+          - cache restore
       jobs:
         - name: Everything
           commands:
