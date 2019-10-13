@@ -34,6 +34,13 @@ module('Integration: SelectField', function (hooks) {
     assert.dom('label').hasAttribute('for', id);
   });
 
+  test('it display an error message if there is an @error prop', async function (assert) {
+    await render(hbs`<SelectField @error="The field is required" @options={{this.options}} />`);
+
+    assert.dom('.field.invalid').exists();
+    assert.dom('.field-error').hasText('The field is required');
+  });
+
   test('it renders all the passed @options', async function (assert) {
     await render(hbs`<SelectField @options={{this.options}} />`);
 

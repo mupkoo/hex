@@ -1,7 +1,7 @@
 import Component from '@ember/component';
 import { action } from '@ember/object';
 import layout from '../templates/components/checkbox';
-import uuid from '../-private/uuid';
+import guid from '../-private/guid';
 
 /**
   HTML <input type="checkbox"> wrapper
@@ -16,8 +16,8 @@ export default class CheckboxComponent extends Component {
   layout = layout;
   tagName = '';
 
-  get uuid() {
-    return 'hex-' + uuid();
+  get guid() {
+    return 'hex-' + guid();
   }
 
   @action handleChangeEvent(e) {
