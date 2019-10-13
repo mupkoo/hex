@@ -27,6 +27,12 @@ module('Integration: TextAreaField', function (hooks) {
     assert.dom('label').hasAttribute('for', id);
   });
 
+  test('it display hint message if there is a @hint prop', async function (assert) {
+    await render(hbs`<TextAreaField @hint="The field is required" />`);
+
+    assert.dom('.field-hint').hasText('The field is required');
+  });
+
   test('it display an error message if there is an @error prop', async function (assert) {
     await render(hbs`<TextAreaField @error="The field is required" />`);
 
