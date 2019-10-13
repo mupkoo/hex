@@ -1,5 +1,20 @@
 .field {
-  margin-bottom: 1rem;
+  margin-bottom: 1.125rem;
+
+  &.invalid {
+    .field-label {
+      color: $danger;
+    }
+
+    .field-control {
+      border-color: $danger;
+
+      &:focus,
+      &.focus {
+        box-shadow: 0 0 0 $focus-shadow-width rgba($danger, $focus-shadow-opacity);
+      }
+    }
+  }
 }
 
 .field-label {
@@ -27,7 +42,7 @@
   border: .125rem solid $gray-400;
   border-radius: $border-radius;
 
-  // Unstyle the caret on `<select>`s in IE10+.
+  // Un-style the caret on `<select>`s in IE10+.
   &::-ms-expand {
     background-color: transparent;
     border: 0;
@@ -116,9 +131,18 @@ textarea.field-control {
   height: auto;
 }
 
-.field-hint {
+.field-hint,
+.field-error {
   display: block;
-  margin-top: .25rem;
-  color: $text-muted;
   font-size: $font-size-xs;
+}
+
+.field-hint {
+  margin: -0.25rem 0 0.25rem;
+  color: $text-muted;
+}
+
+.field-error {
+  margin-top: .25rem;
+  color: $danger;
 }

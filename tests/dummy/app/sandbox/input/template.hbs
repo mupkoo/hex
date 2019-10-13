@@ -2,8 +2,15 @@
 
 <div class="field">
   <label for="full-name" class="field-label">Full name</label>
-  <input type="text" class="field-control" id="full-name" aria-describedby="full-name-hint" placeholder="Enter your name">
   <small id="full-name-hint" class="field-hint">We'll never share your email with anyone else.</small>
+  <input type="text" class="field-control" id="full-name" aria-describedby="full-name-hint" placeholder="Enter your name">
+</div>
+
+<div class="field invalid">
+  <label for="full-name" class="field-label">Full name</label>
+  <small id="full-name-hint" class="field-hint">We'll never share your email with anyone else.</small>
+  <input type="text" class="field-control" id="full-name" aria-describedby="full-name-hint" placeholder="Enter your name">
+  <span class="field-error">Full name is required</span>
 </div>
 
 <hr>

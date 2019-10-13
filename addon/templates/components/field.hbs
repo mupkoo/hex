@@ -1,0 +1,15 @@
+<div class="field {{if @error "invalid"}}" ...attributes>
+  {{#if @label}}
+    <label class="field-label" for={{this.guid}}>{{@label}}</label>
+  {{/if}}
+
+  {{#if @hint}}
+    <span class="field-hint">{{@hint}}</span>
+  {{/if}}
+
+  {{yield this.guid}}
+
+  {{#if @error}}
+    <span class="field-error">{{@error}}</span>
+  {{/if}}
+</div>
