@@ -27,7 +27,13 @@ module('Integration: InputField', function (hooks) {
     assert.dom('label').hasAttribute('for', id);
   });
 
-  test('it display an error message if there is an @error prop', async function (assert) {
+  test('it displays hint message if there is a @hint prop', async function (assert) {
+    await render(hbs`<InputField @hint="The field is required" />`);
+
+    assert.dom('.field-hint').hasText('The field is required');
+  });
+
+  test('it displays an error message if there is an @error prop', async function (assert) {
     await render(hbs`<InputField @error="The field is required" />`);
 
     assert.dom('.field.invalid').exists();
