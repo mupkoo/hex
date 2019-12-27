@@ -1,5 +1,5 @@
-{{#docs-viewer as |viewer|}}
-  {{#viewer.nav as |nav|}}
+<DocsViewer as |viewer|>
+  <viewer.nav as |nav|>
     {{ nav.section "Introduction" }}
     {{ nav.item "Introduction" "docs.index" }}
     {{ nav.item "Colors" "docs.colors" }}
@@ -27,9 +27,9 @@
     {{ nav.section "Services" }}
     {{ nav.item "dialog" "docs.services.dialog" }}
     {{ nav.item "notify" "docs.services.notify" }}
-  {{/viewer.nav}}
+  </viewer.nav>
 
-  {{#viewer.main class="docs-w-full"}}
-    {{ outlet }}
-  {{/viewer.main}}
-{{/docs-viewer}}
+  <viewer.main class="docs-w-full">
+    {{outlet}}
+  </viewer.main>
+</DocsViewer>
