@@ -1,5 +1,5 @@
 <div class="notify" ...attributes>
-  {{#each notify.messages key="id" as |message|}}
+  {{#each this.notify.messages key="id" as |message|}}
     <NotifyMessage
       @message={{message}}
       @onDismiss={{fn this.removeMessage message}}

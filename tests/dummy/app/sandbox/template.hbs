@@ -1,18 +1,18 @@
-{{#docs-viewer as |viewer|}}
-  {{#viewer.nav root="sandbox" project=null as |nav|}}
-    {{ nav.section "Sandbox" }}
-    {{ nav.item "Welcome" "sandbox.index" }}
-    {{ nav.item "Alert" "sandbox.alert" }}
-    {{ nav.item "Button" "sandbox.button" }}
-    {{ nav.item "Button Circle" "sandbox.button-circle" }}
-    {{ nav.item "Card" "sandbox.card" }}
-    {{ nav.item "Fields" "sandbox.fields" }}
-    {{ nav.item "Input" "sandbox.input" }}
-    {{ nav.item "Modal" "sandbox.modal" }}
-    {{ nav.item "Spinner" "sandbox.spinner" }}
-  {{/viewer.nav}}
+<DocsViewer as |viewer|>
+  <viewer.nav root="sandbox" project={{null}} as |nav|>
+    {{nav.section "Sandbox"}}
+    {{nav.item "Welcome" "sandbox.index"}}
+    {{nav.item "Alert" "sandbox.alert"}}
+    {{nav.item "Button" "sandbox.button"}}
+    {{nav.item "Button Circle" "sandbox.button-circle"}}
+    {{nav.item "Card" "sandbox.card"}}
+    {{nav.item "Fields" "sandbox.fields"}}
+    {{nav.item "Input" "sandbox.input"}}
+    {{nav.item "Modal" "sandbox.modal"}}
+    {{nav.item "Spinner" "sandbox.spinner"}}
+  </viewer.nav>
 
-  {{#viewer.main class="docs-w-full"}}
-    {{ outlet }}
-  {{/viewer.main}}
-{{/docs-viewer}}
+  <viewer.main class="docs-w-full">
+    {{outlet}}
+  </viewer.main>
+</DocsViewer>
