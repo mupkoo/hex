@@ -5,7 +5,10 @@ module.exports = {
   parser: 'babel-eslint',
   parserOptions: {
     ecmaVersion: 2018,
-    sourceType: 'module'
+    sourceType: 'module',
+    ecmaFeatures: {
+      legacyDecorators: true
+    }
   },
   plugins: [
     'ember'
@@ -52,7 +55,8 @@ module.exports = {
     'space-infix-ops': 2,
     'space-unary-ops': [2, { words: false, nonwords: false }],
     'wrap-iife': 2,
-    yoda: [2, 'never']
+    yoda: [2, 'never'],
+    'ember/no-jquery': 'error'
   },
   overrides: [
 
