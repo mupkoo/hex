@@ -1,6 +1,5 @@
 import Component from '@glimmer/component';
 import { action } from '@ember/object';
-import { assert } from '@ember/debug';
 
 /**
   A handle helper for creating a field that renders
