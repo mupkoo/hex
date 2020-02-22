@@ -1,7 +1,5 @@
-import Component from '@ember/component';
-import { computed } from '@ember/object';
+import Component from '@glimmer/component';
 import objStr from 'hex/-private/obj-str';
-import layout from '../templates/components/blanket';
 
 /**
   A component that covers the underlying UI for a layered component.
@@ -14,14 +12,10 @@ import layout from '../templates/components/blanket';
   @public
 */
 export default class BlanketComponent extends Component {
-  layout = layout;
-  tagName = '';
-
-  @computed('isTinted', 'canClickThrough')
-  get _classNames() {
+  get classNames() {
     return objStr({
-      'blanket-tinted': this.isTinted,
-      'blanket-click-through': this.canClickThrough
+      'blanket-tinted': this.args.isTinted,
+      'blanket-click-through': this.args.canClickThrough
     });
   }
 }

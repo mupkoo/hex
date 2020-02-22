@@ -22,9 +22,12 @@ module('Integration: Modal', function (hooks) {
 
   test('it yields the close action', async function (assert) {
     this.closeCalled = false;
+
     await render(hbs`
-      <Modal @onClose={{action (mut this.closeCalled) true}} as |m|>
-        <Button id="inner-close" onclick={{action m.actions.close}}>Close</Button>
+      <Modal @onClose={{fn (mut this.closeCalled) true}} as |m|>
+        <Button id="inner-close" {{on "click" m.actions.close}}>
+          Close
+        </Button>
       </Modal>
     `);
 
@@ -36,7 +39,7 @@ module('Integration: Modal', function (hooks) {
   test('it triggers the passed @onClose action upon clicking the blanket', async function (assert) {
     this.closeCalled = false;
 
-    await render(hbs`<Modal @onClose={{action (mut this.closeCalled) true}} />`);
+    await render(hbs`<Modal @onClose={{fn (mut this.closeCalled) true}} />`);
 
     await click('[test-modal-blanket]');
 
@@ -56,7 +59,7 @@ module('Integration: Modal', function (hooks) {
   test('it does not trigger the passed @onClose action upon clicking the blanket if @preventBlanketClose is true', async function (assert) {
     this.closeCalled = false;
 
-    await render(hbs`<Modal @preventBlanketClose={{true}} @onClose={{action (mut this.closeCalled) true}} />`);
+    await render(hbs`<Modal @preventBlanketClose={{true}} @onClose={{fn (mut this.closeCalled) true}} />`);
 
     await click('[test-modal-blanket]');
 
@@ -91,7 +94,7 @@ module('Integration: Modal', function (hooks) {
     this.closeCalled = false;
 
     await render(hbs`
-      <Modal @preventClose @onClose={{action (mut this.closeCalled) true}} as |m|>
+      <Modal @preventClose @onClose={{fn (mut this.closeCalled) true}} as |m|>
         <m.Header>Sweet</m.Header>
       </Modal>
     `);
@@ -105,7 +108,7 @@ module('Integration: Modal', function (hooks) {
     this.closeCalled = false;
 
     await render(hbs`
-      <Modal @preventClose={{true}} @onClose={{action (mut this.closeCalled) true}} as |m|>
+      <Modal @preventClose @onClose={{fn (mut this.closeCalled) true}} as |m|>
         <m.Header>Sweet</m.Header>
       </Modal>
     `);

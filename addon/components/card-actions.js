@@ -1,5 +1,4 @@
-import Component from '@ember/component';
-import layout from '../templates/components/card-actions';
+import Component from '@glimmer/component';
 
 /**
   A component used as a footer for the Card component.
@@ -15,6 +14,4 @@ import layout from '../templates/components/card-actions';
   @public
 */
 export default class CardActionsComponent extends Component {
-  layout = layout;
-  tagName = '';
 }

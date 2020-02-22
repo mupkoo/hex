@@ -1,7 +1,5 @@
-import Component from '@ember/component';
-import { computed } from '@ember/object';
+import Component from '@glimmer/component';
 import objStr from 'hex/-private/obj-str';
-import layout from '../templates/components/badge';
 
 /**
   A badge component
@@ -14,22 +12,15 @@ import layout from '../templates/components/badge';
   @public
 */
 export default class BadgeComponent extends Component {
-  layout = layout;
-  tagName = '';
-
-  @computed(
-    'primary', 'success', 'danger', 'warning',
-    'info', 'light', 'dark'
-  )
-  get _classNames() {
+  get classNames() {
     return objStr({
-      'badge-primary': this.primary,
-      'badge-success': this.success,
-      'badge-danger': this.danger,
-      'badge-warning': this.warning,
-      'badge-info': this.info,
-      'badge-light': this.light,
-      'badge-dark': this.dark
+      'badge-primary': this.args.primary,
+      'badge-success': this.args.success,
+      'badge-danger': this.args.danger,
+      'badge-warning': this.args.warning,
+      'badge-info': this.args.info,
+      'badge-light': this.args.light,
+      'badge-dark': this.args.dark
     });
   }
 }

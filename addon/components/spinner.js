@@ -1,7 +1,5 @@
-import Component from '@ember/component';
-import { computed } from '@ember/object';
+import Component from '@glimmer/component';
 import objStr from 'hex/-private/obj-str';
-import layout from '../templates/components/spinner';
 
 /**
   A component that displays a spinning icon to show a loading state.
@@ -12,15 +10,13 @@ import layout from '../templates/components/spinner';
   @public
 */
 export default class SpinnerComponent extends Component {
-  layout = layout;
-  tagName = '';
-
-  size = 24;
-
-  @computed('inverted')
-  get _classNames() {
+  get classNames() {
     return objStr({
-      inverted: this.inverted
+      inverted: this.args.inverted
     });
+  }
+
+  get size() {
+    return this.args.size || 24;
   }
 }

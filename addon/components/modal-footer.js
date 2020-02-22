@@ -1,7 +1,4 @@
-import Component from '@ember/component';
-import layout from '../templates/components/modal-footer';
+import Component from '@glimmer/component';
 
 export default class ModalFooterComponent extends Component {
-  layout = layout;
-  tagName = '';
 }

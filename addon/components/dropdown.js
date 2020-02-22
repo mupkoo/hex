@@ -1,6 +1,5 @@
-import Component from '@ember/component';
+import Component from '@glimmer/component';
 import booleanArgument from 'hex/-private/boolean-argument';
-import layout from '../templates/components/dropdown';
 
 /**
   An alert component used to display some feedback message
@@ -23,12 +22,15 @@ import layout from '../templates/components/dropdown';
   @public
 */
 export default class ModalBodyComponent extends Component {
-  layout = layout;
-  tagName = '';
+  @booleanArgument('matchTriggerWidth') matchTriggerWidth;
+  @booleanArgument('renderInPlace') renderInPlace;
+  @booleanArgument('disabled') disabled;
 
-  horizontalPosition = 'auto-right';
-  verticalPosition = 'auto';
-  @booleanArgument('matchTriggerWidth') _matchTriggerWidth;
-  @booleanArgument('renderInPlace') _renderInPlace;
-  @booleanArgument('disabled') _disabled;
+  get horizontalPosition() {
+    return this.args.horizontalPosition || 'auto-right';
+  }
+
+  get verticalPosition() {
+    return this.args.verticalPosition || 'auto';
+  }
 }

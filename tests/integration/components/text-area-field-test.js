@@ -40,16 +40,6 @@ module('Integration: TextAreaField', function (hooks) {
     assert.dom('.field-error').hasText('The field is required');
   });
 
-  test('it mutates the passed @value', async function (assert) {
-    this.value = 'First';
-
-    await render(hbs`<TextAreaField @value={{this.value}} />`);
-
-    await fillIn('textarea', 'Awesome');
-
-    assert.equal(this.value, 'Awesome');
-  });
-
   test('it triggers the passed @onChange action on textarea', async function (assert) {
     this.onChange = (value) => assert.step(value);
 

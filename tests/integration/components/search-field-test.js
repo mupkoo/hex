@@ -12,16 +12,6 @@ module('Integration: SearchField', function (hooks) {
     assert.dom('input[type="search"]').hasValue('Looking for the force');
   });
 
-  test('it mutates the passed @value', async function (assert) {
-    this.value = 'First';
-
-    await render(hbs`<SearchField @value={{this.value}} />`);
-
-    await fillIn('input', 'Awesome');
-
-    assert.equal(this.value, 'Awesome');
-  });
-
   test('it triggers the passed @onChange action on input', async function (assert) {
     this.onChange = (value) => assert.step(value);
 
@@ -82,7 +72,7 @@ module('Integration: SearchField', function (hooks) {
   test('it clears the value on clicking the clear button', async function (assert) {
     this.value = 'The term';
 
-    await render(hbs`<SearchField @value={{this.value}} />`);
+    await render(hbs`<SearchField @value={{this.value}} @onChange={{fn (mut this.value)}} />`);
 
     await click('[data-test-clear-search]');
 

@@ -1,5 +1,4 @@
-import Component from '@ember/component';
-import layout from '../templates/components/card-body';
+import Component from '@glimmer/component';
 
 /**
   A body component for the card
@@ -12,6 +11,4 @@ import layout from '../templates/components/card-body';
   @public
 */
 export default class CardBodyComponent extends Component {
-  layout = layout;
-  tagName = '';
 }
