@@ -1,7 +1,6 @@
-import Component from '@ember/component';
-import { action, computed } from '@ember/object';
+import Component from '@glimmer/component';
+import { action } from '@ember/object';
 import { assert } from '@ember/debug';
-import layout from '../templates/components/select-field';
 
 /**
   A handle helper for creating a field that renders
@@ -15,30 +14,17 @@ import layout from '../templates/components/select-field';
   @public
 */
 export default class SelectFieldComponent extends Component {
-  layout = layout;
-  tagName = '';
-
-  init() {
-    super.init();
-    assert('Must provide @options for the SelectField to work', this.options);
-  }
-
-  @computed('options.[]', 'selected')
-  get _options() {
-    return this.options.map(([value, label]) => ({
+  get options() {
+    return this.args.options.map(([value, label]) => ({
       value,
       label,
-      selected: value === this.selected
+      selected: value === this.args.selected
     }));
   }
 
   @action handleChange(e) {
-    let value = e.target.value;
-
-    if (this.onChange) {
-      this.onChange(value);
-    } else {
-      this.set('selected', value);
+    if (this.args.onChange) {
+      this.args.onChange(e.target.value);
     }
   }
 }

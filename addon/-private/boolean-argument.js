@@ -8,7 +8,7 @@ import { computed } from '@ember/object';
   @return {ComputedProperty} computed property that returns true or false depending on the passed argumentName
 */
 export default function booleanArgument(argumentName) {
-  return computed(argumentName, function () {
-    return this[argumentName] || this[argumentName] === '';
+  return computed('args.' + argumentName, function () {
+    return this.args[argumentName] || this.args[argumentName] === '';
   });
 }

@@ -21,16 +21,6 @@ module('Integration: Checkbox', function (hooks) {
     assert.dom('label').hasAttribute('for', id);
   });
 
-  test('it mutates the passed @checked', async function (assert) {
-    this.checked = false;
-
-    await render(hbs`<Checkbox @checked={{this.checked}} />`);
-
-    await click('input');
-
-    assert.equal(this.checked, true);
-  });
-
   test('it triggers the passed @onChange action on input', async function (assert) {
     let checked;
     this.onChange = (value) => { checked = value; };

@@ -5,7 +5,7 @@
     {{on "change" this.handleChange}}
     ...attributes
   >
-    {{#each this._options key="value" as |opt|}}
+    {{#each this.options key="value" as |opt|}}
       <option value={{opt.value}} selected={{opt.selected}}>
         {{opt.label}}
       </option>

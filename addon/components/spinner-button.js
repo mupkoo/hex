@@ -1,6 +1,5 @@
 import Button from './button';
 import { or } from '@ember/object/computed';
-import layout from '../templates/components/spinner-button';
 
 /**
   A handy button component which can be used to display
@@ -16,7 +15,5 @@ import layout from '../templates/components/spinner-button';
   @public
 */
 export default class SpinnerButton extends Button {
-  layout = layout;
-
-  @or('isLoading', 'disabled') isDisabled;
+  @or('args.isLoading', 'disabled') isDisabled;
 }

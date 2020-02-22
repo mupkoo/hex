@@ -1,6 +1,5 @@
-import Component from '@ember/component';
+import Component from '@glimmer/component';
 import { action } from '@ember/object';
-import layout from '../templates/components/search-field';
 
 /**
   Styled search field component
@@ -13,9 +12,6 @@ import layout from '../templates/components/search-field';
   @public
 */
 export default class SearchFieldComponent extends Component {
-  layout = layout;
-  tagName = '';
-
   @action handleInputEvent(e) {
     this.setValue(e.target.value);
   }
@@ -25,10 +21,8 @@ export default class SearchFieldComponent extends Component {
   }
 
   setValue(value) {
-    if (this.onChange) {
-      this.onChange(value);
-    } else {
-      this.set('value', value);
+    if (this.args.onChange) {
+      this.args.onChange(value);
     }
   }
 }

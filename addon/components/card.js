@@ -1,5 +1,4 @@
-import Component from '@ember/component';
-import layout from '../templates/components/card';
+import Component from '@glimmer/component';
 
 /**
   A component for displaying content in a separate section.
@@ -10,6 +9,4 @@ import layout from '../templates/components/card';
   @public
 */
 export default class CardComponent extends Component {
-  layout = layout;
-  tagName = '';
 }

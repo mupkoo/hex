@@ -1,6 +1,5 @@
-import Component from '@ember/component';
+import Component from '@glimmer/component';
 import { action } from '@ember/object';
-import layout from '../templates/components/checkbox';
 import guid from '../-private/guid';
 
 /**
@@ -13,18 +12,13 @@ import guid from '../-private/guid';
   @public
 */
 export default class CheckboxComponent extends Component {
-  layout = layout;
-  tagName = '';
-
   get guid() {
     return 'hex-' + guid();
   }
 
   @action handleChangeEvent(e) {
-    if (this.onChange) {
-      this.onChange(e.target.checked);
-    } else {
-      this.set('checked', e.target.checked);
+    if (this.args.onChange) {
+      this.args.onChange(e.target.checked);
     }
   }
 }

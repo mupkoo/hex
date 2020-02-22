@@ -1,7 +1,5 @@
-import Component from '@ember/component';
-import { computed } from '@ember/object';
+import Component from '@glimmer/component';
 import objStr from 'hex/-private/obj-str';
-import layout from '../templates/components/button';
 
 /**
   A button component
@@ -14,29 +12,24 @@ import layout from '../templates/components/button';
   @public
 */
 export default class ButtonComponent extends Component {
-  layout = layout;
-  tagName = '';
+  get classNames() {
+    return objStr({
+      'btn-primary': this.args.primary,
+      'btn-success': this.args.success,
+      'btn-danger': this.args.danger,
+      'btn-warning': this.args.warning,
+      'btn-subtle': this.args.subtle,
+      'btn-link': this.args.link,
+      'btn-sm': this.args.small,
+      'btn-lg': this.args.large,
+      'btn-circle': this.args.circle,
+      'btn-block': this.args.block
+    });
+  }
 
   // Looks like you cannot overwrite the `type` attribute via `...attributes`
   // https://github.com/emberjs/ember.js/issues/18232
-  type = 'button';
-
-  @computed(
-    'primary', 'success', 'danger', 'warning', 'subtle',
-    'link', 'small', 'large', 'circle', 'block'
-  )
-  get _classNames() {
-    return objStr({
-      'btn-primary': this.primary,
-      'btn-success': this.success,
-      'btn-danger': this.danger,
-      'btn-warning': this.warning,
-      'btn-subtle': this.subtle,
-      'btn-link': this.link,
-      'btn-sm': this.small,
-      'btn-lg': this.large,
-      'btn-circle': this.circle,
-      'btn-block': this.block
-    });
+  get type() {
+    return this.args.type || 'button';
   }
 }
