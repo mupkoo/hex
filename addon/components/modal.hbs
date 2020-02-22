@@ -1,0 +1,24 @@
+{{#maybe-in-element this.destinationElement this.renderInPlace}}
+  <Blanket
+    class="modal-blanket"
+    @isTinted={{true}}
+    {{on "click" this.handleBlanketClick}}
+    {{did-insert this.addClassNameToBody}}
+    {{will-destroy this.removeClassNameFromBody}}
+    test-modal-blanket
+  >
+    <div
+      class="modal {{this.classNames}}"
+      {{on "click" this.stopModalBodyPropagation}}
+      role="button"
+      ...attributes
+    >
+      {{yield (hash
+        Header=(component "modal-header" onClose=this.close)
+        Body=(component "modal-body")
+        Footer=(component "modal-footer")
+        actions=(hash close=this.close)
+      )}}
+    </div>
+  </Blanket>
+{{/maybe-in-element}}

@@ -2,9 +2,9 @@
   @class="dropdown"
   @horizontalPosition={{this.horizontalPosition}}
   @verticalPosition={{this.verticalPosition}}
-  @matchTriggerWidth={{this._matchTriggerWidth}}
-  @renderInPlace={{this._renderInPlace}}
-  @disabled={{this._disabled}}
+  @matchTriggerWidth={{this.matchTriggerWidth}}
+  @renderInPlace={{this.renderInPlace}}
+  @disabled={{this.disabled}}
 as |d|>
   {{yield (hash
     Trigger=(component d.Trigger defaultClass=(concat "btn" (if d.isOpen " active") (if d.disabled " disabled")))

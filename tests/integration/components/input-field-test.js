@@ -40,16 +40,6 @@ module('Integration: InputField', function (hooks) {
     assert.dom('.field-error').hasText('The field is required');
   });
 
-  test('it mutates the passed @value', async function (assert) {
-    this.value = 'First';
-
-    await render(hbs`<InputField @value={{this.value}} />`);
-
-    await fillIn('input', 'Awesome');
-
-    assert.equal(this.value, 'Awesome');
-  });
-
   test('it triggers the passed @onChange action on input', async function (assert) {
     this.onChange = (value) => assert.step(value);
 

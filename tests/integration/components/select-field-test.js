@@ -66,16 +66,6 @@ module('Integration: SelectField', function (hooks) {
     assert.dom('option:checked').hasValue('sith');
   });
 
-  test('it mutates the passed @selected', async function (assert) {
-    this.selected = 'jedi';
-
-    await render(hbs`<SelectField @selected={{this.selected}} @options={{this.options}} />`);
-
-    await fillIn('select', 'sith');
-
-    assert.equal(this.selected, 'sith');
-  });
-
   test('it triggers the passed @onChange action on select', async function (assert) {
     this.onChange = (selected) => assert.step(selected);
 

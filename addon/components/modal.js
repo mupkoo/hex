@@ -1,10 +1,9 @@
-import Component from '@ember/component';
-import { action, computed } from '@ember/object';
+import Component from '@glimmer/component';
+import { action } from '@ember/object';
 import { getOwner } from '@ember/application';
 import booleanArgument from 'hex/-private/boolean-argument';
 import objStr from 'hex/-private/obj-str';
 import testRootElementId from 'hex/-private/test-root-element-id';
-import layout from '../templates/components/modal';
 
 /**
   A component that displays content in a layer blocking the interaction with the page.
@@ -29,18 +28,14 @@ import layout from '../templates/components/modal';
   @public
 */
 export default class ModalComponent extends Component {
-  layout = layout;
-  tagName = '';
+  @booleanArgument('preventBlanketClose') preventBlanketClose;
+  @booleanArgument('preventClose') preventClose;
+  @booleanArgument('renderInPlace') renderInPlace;
 
-  @booleanArgument('preventBlanketClose') _preventBlanketClose;
-  @booleanArgument('preventClose') _preventClose;
-  @booleanArgument('renderInPlace') _renderInPlace;
-
-  @computed('small', 'large')
-  get _classNames() {
+  get classNames() {
     return objStr({
-      'modal-sm': this.small,
-      'modal-lg': this.large
+      'modal-sm': this.args.small,
+      'modal-lg': this.args.large
     });
   }
 
@@ -53,29 +48,29 @@ export default class ModalComponent extends Component {
     return testRootElementId(config) || 'hex-modal-parent';
   }
 
-  didInsertElement() {
+  addClassNameToBody() {
     document.body.classList.add('has-modal');
   }
 
-  willDestroyElement() {
+  removeClassNameFromBody() {
     document.body.classList.remove('has-modal');
   }
 
-  @action _handleBlanketClick() {
+  @action handleBlanketClick() {
     if (this.isDestroyed || this.isDestroying) return;
 
-    if (!this._preventBlanketClose) {
-      this._close();
+    if (!this.preventBlanketClose) {
+      this.close();
     }
   }
 
-  @action _close() {
-    if (!this._preventClose) {
-      this.onClose();
+  @action close() {
+    if (!this.preventClose) {
+      this.args.onClose();
     }
   }
 
-  @action _stopModalBodyPropagation(e) {
+  @action stopModalBodyPropagation(e) {
     e.stopPropagation();
     return false;
   }
