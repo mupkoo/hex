@@ -5,7 +5,7 @@ node_js:
   # so that your addon works for all apps
   - "10"
 
-dist: trusty
+dist: xenial
 
 addons:
   chrome: stable
@@ -34,13 +34,15 @@ jobs:
       install:
         - yarn install --non-interactive
       script:
-        - yarn lint:hbs
-        - yarn lint:js
-        - yarn test -r dot
+        - yarn lint
+        - yarn test:ember
 
-    # - name: "Floating Dependencies"
+    # - stage: "Additional Tests"
+    #   name: "Floating Dependencies"
+    #   install:
+    #     - yarn install --no-lockfile --non-interactive
     #   script:
-    #     - yarn test -r dot
+    #     - yarn test:ember
 
     # # we recommend new addons test the current and previous LTS
     # # as well as latest stable release (bonus points to beta/canary)
