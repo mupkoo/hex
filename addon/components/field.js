@@ -1,5 +1,5 @@
 import Component from '@glimmer/component';
-import guid from '../-private/guid';
+import { guidFor } from '@ember/object/internals';
 
 /**
   Base field component
@@ -15,6 +15,6 @@ import guid from '../-private/guid';
 */
 export default class FieldComponent extends Component {
   get guid() {
-    return 'hex-' + guid();
+    return guidFor(this);
   }
 }
