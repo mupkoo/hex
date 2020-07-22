@@ -7,6 +7,7 @@ HTML `<input type="checkbox">` wrapper.
     <Checkbox
       @label="Shall we?"
       @checked={{this.checked}}
+      @onChange={{fn (mut this.checked)}}
       {{on "focus" (fn (mut this.currentEvent) "'onfocus' called")}}
       {{on "blur" (fn (mut this.currentEvent) "'onblur' called")}}
       class="custom-class" 
