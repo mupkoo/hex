@@ -1,6 +1,6 @@
 import Component from '@glimmer/component';
 import { action } from '@ember/object';
-import guid from '../-private/guid';
+import { guidFor } from '@ember/object/internals';
 
 /**
   HTML <input type="checkbox"> wrapper
@@ -13,7 +13,7 @@ import guid from '../-private/guid';
 */
 export default class CheckboxComponent extends Component {
   get guid() {
-    return 'hex-' + guid();
+    return guidFor(this);
   }
 
   @action handleChangeEvent(e) {
