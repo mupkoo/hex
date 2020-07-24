@@ -1,0 +1,47 @@
+.has-dialog {
+  overflow: hidden;
+}
+
+.dialog {
+  align-self: center;
+  width: 360px;
+  margin: 3rem auto;
+  box-shadow: $shadow-xl;
+  border-radius: $border-radius-lg;
+
+  background: $white;
+
+  overflow: hidden;
+}
+
+.dialog-header {
+  font-size: $font-size-lg;
+  font-weight: 600;
+  line-height: 1.2;
+  padding: 0.75rem 1.5rem;
+  border-bottom: 1px solid $gray-100;
+}
+
+
+.dialog-content {
+  padding: 1.5rem;
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.dialog-footer {
+  display: flex;
+  flex-direction: row-reverse;
+  padding: 0.75rem 1.5rem;
+  border-top: 1px solid $gray-100;
+
+  .btn:not(:first-child) {
+    margin-right: .25rem;
+  }
+
+  .btn:not(:last-child) {
+    margin-left: .25rem;
+  }
+}
