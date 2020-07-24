@@ -61,7 +61,19 @@ $font-size-xs:               ($font-size * .75) !default;
 
 $font-weight:                400 !default;
 $line-height:                1.5 !default;
-$input-line-height:          1.25rem/$font-size-sm !default;
+
+// Fields
+$input-color:                $text !default;
+$input-font-size:            $font-size-sm !default;
+$input-line-height:          1.25rem/$input-font-size !default;
+$input-background-color:     $gray-50 !default;
+$input-border-color:         $gray-400 !default;
+$input-border-radius:        $border-radius !default;
+$input-border-radius-sm:     $border-radius-sm !default;
+$input-border-radius-lg:     $border-radius-lg !default;
+$input-border-width:         .125rem !default;
+$input-focus-shadow:         $focus-shadow !default;
+$input-focus-shadow-invalid: 0 0 0 $focus-shadow-width rgba($danger, $focus-shadow-opacity) !default;
 
 // Links
 $link-color:                 $primary !default;
