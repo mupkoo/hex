@@ -24,7 +24,7 @@ export default class DialogService extends Service {
 
   onCancel() {
     // Catch the error if no catch was implemented
-    this._deferred.promise.catch(() => { });
+    this._deferred.promise.catch(() => {});
 
     this._deferred.reject();
     this._deferred = null;

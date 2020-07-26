@@ -1,5 +1,5 @@
-import Component from '@ember/component';
-import { scheduleOnce, run } from '@ember/runloop';
+import Component from '@glimmer/component';
+import { run } from '@ember/runloop';
 import { action, computed } from '@ember/object';
 import { readOnly } from '@ember/object/computed';
 import { inject as service } from '@ember/service';
@@ -11,22 +11,12 @@ export default class DialogComponent extends Component {
 
   @computed('message')
   get hasMessage() {
-    let hasMessage = !isEmpty(this.message);
-    let callback = hasMessage
-      ? this._attachDocumentEventHandler
-      : this._detachDocumentEventHandler;
-    scheduleOnce('afterRender', this, callback);
-
-    return hasMessage;
+    return !isEmpty(this.message);
   }
 
   @computed('message.cancelLabel')
   get displayCancelButton() {
     return this.message.cancelLabel !== false;
-  }
-
-  willDestroyElement() {
-    this._detachDocumentEventHandler();
   }
 
   @action confirm() {
@@ -37,31 +27,28 @@ export default class DialogComponent extends Component {
     this.dialog.onCancel();
   }
 
-  addClassNameToBody() {
+  @action onDialogMount() {
     document.body.classList.add('has-dialog');
+    this._attachDocumentEventHandler();
   }
 
-  removeClassNameFromBody() {
+  @action onDialogDismount() {
     document.body.classList.remove('has-dialog');
-  }
-
-  _detachDocumentEventHandler() {
-    document.removeEventListener('keydown', this._keyDownHandler);
+    this._detachDocumentEventHandler();
   }
 
   _attachDocumentEventHandler() {
     this._keyDownHandler = (e) => {
       e.preventDefault();
 
-      if (e.keyCode === 27) {
-        run(() => this.send('cancel'));
-      }
-
-      if (e.keyCode === 13) {
-        run(() => this.send('confirm'));
-      }
+      if (e.keyCode === 27) run(this.cancel);
+      if (e.keyCode === 13) run(this.confirm);
     };
 
     document.addEventListener('keydown', this._keyDownHandler);
+  }
+
+  _detachDocumentEventHandler() {
+    document.removeEventListener('keydown', this._keyDownHandler);
   }
 }
