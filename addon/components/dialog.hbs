@@ -1,4 +1,4 @@
-{{#if hasMessage}}
+{{#if this.hasMessage}}
   <Blanket
     class="modal-blanket"
     @isTinted={{true}}
@@ -7,22 +7,22 @@
     test-modal-blanket
   >
     <div id="dialog" class="dialog">
-      {{#if message.title}}
-        <header class="dialog-header">{{ message.title }}</header>
+      {{#if this.message.title}}
+        <header class="dialog-header">{{this.message.title}}</header>
       {{/if}}
 
       <section class="dialog-content">
-        {{{ message.message }}}
+        {{{this.message.message}}}
       </section>
 
       <footer class="dialog-footer">
         <Button @primary onclick={{ action "confirm" }} data-autoid="confirm-dialog">
-          {{ message.confirmLabel }}
+          {{this.message.confirmLabel}}
         </Button>
 
         {{#if displayCancelButton}}
           <Button onclick={{ action "cancel" }} data-autoid="cancel-dialog">
-            {{ message.cancelLabel }}
+            {{this.message.cancelLabel}}
           </Button>
         {{/if}}
       </footer>
