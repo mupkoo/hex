@@ -1,17 +1,20 @@
 import Service from '@ember/service';
-import { defer } from 'rsvp';
 
 export default class DialogService extends Service {
-  message = null
-  _deferred = null
+  message = null;
+  _promise = null;
 
   confirm(options) {
-    if (this.message === null) {
-      this._deferred = defer();
-      this.set('message', createMessage(options));
-    }
+    if (this.message) return this._promise;
 
-    return this._deferred.promise;
+    this.set('message', createMessage(options));
+
+    this._promise = new Promise((resolve, reject) => {
+      this._resolve = resolve;
+      this._reject = reject;
+    });
+
+    return this._promise;
   }
 
   confirmDelete() {
@@ -24,16 +27,14 @@ export default class DialogService extends Service {
 
   onCancel() {
     // Catch the error if no catch was implemented
-    this._deferred.promise.catch(() => {});
+    this._promise.catch(() => {});
 
-    this._deferred.reject();
-    this._deferred = null;
+    this._reject();
     this.set('message', null);
   }
 
   onConfirm() {
-    this._deferred.resolve();
-    this._deferred = null;
+    this._resolve();
     this.set('message', null);
   }
 }
