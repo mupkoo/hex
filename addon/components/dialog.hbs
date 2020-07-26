@@ -6,7 +6,7 @@
     {{will-destroy this.onDialogDismount}}
     test-modal-blanket
   >
-    <div id="dialog" class="dialog">
+    <div id="dialog" class="dialog" data-test-dialog>
       {{#if this.message.title}}
         <header class="dialog-header">{{this.message.title}}</header>
       {{/if}}
