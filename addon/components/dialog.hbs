@@ -16,12 +16,12 @@
       </section>
 
       <footer class="dialog-footer">
-        <Button @primary onclick={{ action "confirm" }} data-autoid="confirm-dialog">
+        <Button @primary onclick={{ action "confirm" }} data-test-confirm-dialog>
           {{this.message.confirmLabel}}
         </Button>
 
         {{#if displayCancelButton}}
-          <Button onclick={{ action "cancel" }} data-autoid="cancel-dialog">
+          <Button onclick={{ action "cancel" }} data-test-cancel-dialog>
             {{this.message.cancelLabel}}
           </Button>
         {{/if}}

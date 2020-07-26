@@ -63,8 +63,8 @@ module('Integration: Dialog', function (hooks) {
 
     assert.dom('.dialog-header').hasText('Dummy title');
     assert.dom('.dialog-content').hasText('Dummy content');
-    assert.dom('[data-autoid="cancel-dialog"]').hasText('Dummy cancel');
-    assert.dom('[data-autoid="confirm-dialog"]').hasText('Dummy confirm');
+    assert.dom('[data-test-cancel-dialog]').hasText('Dummy cancel');
+    assert.dom('[data-test-confirm-dialog]').hasText('Dummy confirm');
   });
 
   test('renders the passed HTML to the body', async function (assert) {
@@ -95,7 +95,7 @@ module('Integration: Dialog', function (hooks) {
       <Dialog @parentElement="dummy-dialog" />
     `);
 
-    await click('[data-autoid="cancel-dialog"]');
+    await click('[data-test-cancel-dialog]');
 
     assert.dom('.dialog-header').hasText('CANCELED');
   });
@@ -106,7 +106,7 @@ module('Integration: Dialog', function (hooks) {
       <Dialog @parentElement="dummy-dialog" />
     `);
 
-    await click('[data-autoid="confirm-dialog"]');
+    await click('[data-test-confirm-dialog]');
 
     assert.dom('.dialog-header').hasText('CONFIRMED');
   });
@@ -163,6 +163,6 @@ module('Integration: Dialog', function (hooks) {
       <Dialog @parentElement="dummy-dialog" />
     `);
 
-    assert.dom('[data-autoid="cancel-dialog"]').doesNotExist();
+    assert.dom('[data-test-cancel-dialog]').doesNotExist();
   });
 });
