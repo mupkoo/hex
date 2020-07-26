@@ -1,6 +1,5 @@
 import { module, test } from 'qunit';
 import { setupTest } from 'ember-qunit';
-import { DialogMessage } from 'hex/services/dialog';
 
 module('Unit - Service: dialog', function (hooks) {
   setupTest(hooks);
@@ -9,14 +8,13 @@ module('Unit - Service: dialog', function (hooks) {
     this.dialog = this.owner.lookup('service:dialog');
   });
 
-  test('.confirm creates and stores new DialogMessage', function (assert) {
+  test('.confirm creates and stores a new message', function (assert) {
     this.dialog.confirm({
       title: 'Want to be a Jedi?',
       message: 'Confirming you will enter the endless universe of the power.',
       confirmLabel: 'Make me Jedi'
     });
 
-    assert.ok(this.dialog.message instanceof DialogMessage);
     assert.equal(this.dialog.message.title, 'Want to be a Jedi?');
     assert.equal(this.dialog.message.message, 'Confirming you will enter the endless universe of the power.');
     assert.equal(this.dialog.message.confirmLabel, 'Make me Jedi');

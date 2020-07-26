@@ -1,13 +1,5 @@
 import Service from '@ember/service';
-import EmberObject from '@ember/object';
 import { defer } from 'rsvp';
-
-export var DialogMessage = EmberObject.extend({
-  title: null,
-  message: 'Are you sure?',
-  cancelLabel: 'Cancel',
-  confirmLabel: 'Confirm'
-});
 
 export default class DialogService extends Service {
   message = null
@@ -16,7 +8,7 @@ export default class DialogService extends Service {
   confirm(options) {
     if (this.message === null) {
       this._deferred = defer();
-      this.set('message', DialogMessage.create(options));
+      this.set('message', createMessage(options));
     }
 
     return this._deferred.promise;
@@ -44,4 +36,14 @@ export default class DialogService extends Service {
     this._deferred = null;
     this.set('message', null);
   }
+}
+
+function createMessage(attributes) {
+  return {
+    title: null,
+    message: 'Are you sure?',
+    cancelLabel: 'Cancel',
+    confirmLabel: 'Confirm',
+    ...attributes
+  };
 }
