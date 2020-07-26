@@ -1,1 +1,1 @@
-export { default } from "hex/components/dialog";
+export { default } from 'hex/components/dialog';
