@@ -15,7 +15,7 @@ export default class DialogComponent extends Component {
   }
 
   @computed('message.cancelLabel')
-  get displayCancelButton() {
+  get hasCancelButton() {
     return this.message.cancelLabel !== false;
   }
 

@@ -20,7 +20,7 @@
           {{this.message.confirmLabel}}
         </Button>
 
-        {{#if displayCancelButton}}
+        {{#if this.hasCancelButton}}
           <Button {{on "click" this.cancel}} data-test-cancel-dialog>
             {{this.message.cancelLabel}}
           </Button>
