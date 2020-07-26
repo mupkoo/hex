@@ -13,7 +13,7 @@ export default class NotifyController extends Controller {
       message: 'This is a simple dialog message, used for confirming someones actions',
       cancelLabel: 'Dude',
       confirmLabel: 'Sweet'
-    }, () => {
+    }).then(() => {
       this.set('isConfirmed', true);
 
       later(() => {
@@ -23,7 +23,7 @@ export default class NotifyController extends Controller {
   }
 
   @action displayDeleteConfirmation() {
-    this.dialog.confirmDelete(() => {
+    this.dialog.confirmDelete().then(() => {
       this.set('isDeleted', true);
 
       later(() => {

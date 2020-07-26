@@ -4,20 +4,20 @@ A simple service for displaying dialogs.
 
 {{#docs-demo as |demo|}}
   {{#demo.example name="dialog-example.hbs"}}
-    <Button {{ action "displayConfirmation" }}>
+    <Button {{on "click" this.displayConfirmation}}>
       Confirm me
     </Button>
 
-    <Button @danger {{ action "displayDeleteConfirmation" }}>
+    <Button @danger {{on "click" this.displayDeleteConfirmation}}>
       {{svg-jar "trash"}} Delete
     </Button>
 
-    {{#if isConfirmed}}
-      <p>Sweet! You confirmed the message.</p>
+    {{#if this.isConfirmed}}
+      <p class="docs-mt-4 docs-text-sm">Sweet! You confirmed the message.</p>
     {{/if}}
 
-    {{#if isDeleted}}
-      <p>So long my love...</p>
+    {{#if this.isDeleted}}
+      <p class="docs-mt-4 docs-text-sm">So long my love...</p>
     {{/if}}
 
     <Dialog />
