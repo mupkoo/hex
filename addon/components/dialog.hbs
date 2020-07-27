@@ -1,32 +1,35 @@
 {{#if this.hasMessage}}
   <Blanket
-    class="modal-blanket"
     @isTinted={{true}}
     {{did-insert this.onDialogMount}}
     {{will-destroy this.onDialogDismount}}
     test-modal-blanket
   >
-    <div id="dialog" class="dialog" data-test-dialog>
-      {{#if this.message.title}}
-        <header class="dialog-header">{{this.message.title}}</header>
-      {{/if}}
+    <Card id="dialog" class="dialog" data-test-dialog>
+      <CardBody>
+        {{#if this.message.title}}
+          <h3 class="dialog-title">
+            {{this.message.title}}
+          </h3>
+        {{/if}}
 
-      <section class="dialog-content">
-        {{!-- template-lint-disable no-triple-curlies --}}
-        {{{this.message.message}}}
-      </section>
+        <div class="dialog-message">
+          {{!-- template-lint-disable no-triple-curlies --}}
+          {{{this.message.message}}}
+        </div>
+      </CardBody>
 
-      <footer class="dialog-footer">
+      <CardActions class="dialog-actions">
         <Button @primary {{on "click" this.confirm}} data-test-confirm-dialog>
           {{this.message.confirmLabel}}
         </Button>
 
         {{#if this.hasCancelButton}}
-          <Button {{on "click" this.cancel}} data-test-cancel-dialog>
+          <Button @subtle {{on "click" this.cancel}} data-test-cancel-dialog>
             {{this.message.cancelLabel}}
           </Button>
         {{/if}}
-      </footer>
-    </div>
+      </CardActions>
+    </Card>
   </Blanket>
 {{/if}}

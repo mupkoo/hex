@@ -33,7 +33,7 @@ module('Integration: Dialog', function (hooks) {
   test('it displays all the message fields', async function (assert) {
     this.dialog.confirm({
       title: 'Dummy title',
-      message: 'Dummy content',
+      message: 'Dummy message',
       confirmLabel: 'Dummy confirm',
       cancelLabel: 'Dummy cancel'
     });
@@ -43,8 +43,8 @@ module('Integration: Dialog', function (hooks) {
       <Dialog @parentElement="dummy-dialog" />
     `);
 
-    assert.dom('.dialog-header').hasText('Dummy title');
-    assert.dom('.dialog-content').hasText('Dummy content');
+    assert.dom('.dialog-title').hasText('Dummy title');
+    assert.dom('.dialog-message').hasText('Dummy message');
     assert.dom('[data-test-cancel-dialog]').hasText('Dummy cancel');
     assert.dom('[data-test-confirm-dialog]').hasText('Dummy confirm');
   });
