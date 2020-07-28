@@ -1,0 +1,35 @@
+{{#if this.hasMessage}}
+  <Blanket
+    @isTinted={{true}}
+    {{did-insert this.onDialogMount}}
+    {{will-destroy this.onDialogDismount}}
+    test-modal-blanket
+  >
+    <Card id="dialog" class="dialog" data-test-dialog>
+      <CardBody>
+        {{#if this.message.title}}
+          <h3 class="dialog-title">
+            {{this.message.title}}
+          </h3>
+        {{/if}}
+
+        <div class="dialog-message">
+          {{!-- template-lint-disable no-triple-curlies --}}
+          {{{this.message.message}}}
+        </div>
+      </CardBody>
+
+      <CardActions class="dialog-actions">
+        <Button @primary {{on "click" this.confirm}} data-test-confirm-dialog>
+          {{this.message.confirmLabel}}
+        </Button>
+
+        {{#if this.hasCancelButton}}
+          <Button @subtle {{on "click" this.cancel}} data-test-cancel-dialog>
+            {{this.message.cancelLabel}}
+          </Button>
+        {{/if}}
+      </CardActions>
+    </Card>
+  </Blanket>
+{{/if}}
