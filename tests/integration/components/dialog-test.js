@@ -76,7 +76,7 @@ module('Integration: Dialog', function (hooks) {
   test('it triggers the cancel action upon clicking the cancel button', async function (assert) {
     let isCancelTriggered = false;
 
-    this.dialog.confirm().catch(() => isCancelTriggered = true);
+    this.dialog.confirm().onCancel(() => isCancelTriggered = true);
 
     await render(hbs`
       <div id="dummy-dialog"></div>
@@ -121,7 +121,7 @@ module('Integration: Dialog', function (hooks) {
   test('it triggers the cancel action upon hitting ESC', async function (assert) {
     let isCancelTriggered = false;
 
-    this.dialog.confirm().catch(() => isCancelTriggered = true);
+    this.dialog.confirm().onCancel(() => isCancelTriggered = true);
 
     await render(hbs`
       <div id="dummy-dialog"></div>

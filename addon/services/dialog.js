@@ -2,19 +2,15 @@ import Service from '@ember/service';
 
 export default class DialogService extends Service {
   message = null;
-  _promise = null;
+  _handler = null;
 
-  confirm(options) {
-    if (this.message) return this._promise;
+  confirm(options = {}) {
+    if (this.message) return this._handler;
 
     this.set('message', createMessage(options));
+    this._handler = new Handler();
 
-    this._promise = new Promise((resolve, reject) => {
-      this._resolve = resolve;
-      this._reject = reject;
-    });
-
-    return this._promise;
+    return this._handler;
   }
 
   confirmDelete() {
@@ -25,17 +21,64 @@ export default class DialogService extends Service {
     });
   }
 
-  onCancel() {
-    // Catch the error if no catch was implemented
-    this._promise.catch(() => {});
-
-    this._reject();
-    this.set('message', null);
+  onConfirm() {
+    this._handler.confirm();
+    this._reset();
   }
 
-  onConfirm() {
-    this._resolve();
+  onCancel() {
+    this._handler.cancel();
+    this._reset();
+  }
+
+  _reset() {
     this.set('message', null);
+    this._handler = null;
+  }
+}
+
+class Handler extends Promise {
+  defaultCatch = '__HANDLER_DEFAULT_CATCH';
+  hasCancelHandler = false;
+
+  constructor(executor = () => {}) {
+    let resolve;
+    let reject;
+
+    super((_resolve, _reject) => {
+      executor(_resolve, _reject);
+      resolve = _resolve;
+      reject = _reject;
+    });
+
+    this._resolve = resolve;
+    this._reject = reject;
+  }
+
+  confirm() {
+    this._resolve();
+  }
+
+  cancel() {
+    this._reject();
+  }
+
+  onConfirm(handler) {
+    return this.then((result) => {
+      if (!this.isDefaultCatch(result)) handler();
+
+      return result;
+    }).catch(() => this.defaultCatch);
+  }
+
+  onCancel(handler) {
+    return this.then((result) => {
+      if (this.isDefaultCatch(result)) throw 'canceled';
+    }).catch(handler);
+  }
+
+  isDefaultCatch(result) {
+    return result && result.indexOf(this.defaultCatch) >= 0;
   }
 }
 

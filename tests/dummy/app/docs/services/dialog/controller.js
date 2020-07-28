@@ -1,35 +1,44 @@
 // BEGIN-SNIPPET dialog-example.js
 import { action } from '@ember/object';
 import { inject as service } from '@ember/service';
-import { later } from '@ember/runloop';
 import Controller from '@ember/controller';
+import { task } from 'ember-concurrency-decorators';
 
 export default class NotifyController extends Controller {
   @service('dialog') dialog;
 
-  @action displayConfirmation() {
+  @action
+  displayConfirmation() {
+    this.set('message', null);
+
     this.dialog.confirm({
       title: 'How awesome?',
       message: 'This is a simple dialog message, used for confirming someones actions',
       cancelLabel: 'Dude',
       confirmLabel: 'Sweet'
-    }).then(() => {
-      this.set('isConfirmed', true);
-
-      later(() => {
-        this.set('isConfirmed', false);
-      }, 2000);
+    }).onConfirm(() => {
+      this.set('message', 'Sweet! You confirmed the message.');
+    }).onCancel(() => {
+      this.set('message', 'Dialog was dismissed!');
     });
   }
 
-  @action displayDeleteConfirmation() {
-    this.dialog.confirmDelete().then(() => {
-      this.set('isDeleted', true);
+  @action
+  displayDeleteConfirmation() {
+    this.set('message', null);
 
-      later(() => {
-        this.set('isDeleted', false);
-      }, 2000);
+    this.dialog.confirmDelete().onConfirm(() => {
+      this.set('message', 'So long my love...');
     });
+  }
+
+  @task({ drop: true })
+  *dialogTask() {
+    this.set('message', null);
+
+    yield this.dialog.confirm();
+
+    this.set('message', 'Task was confirmed!');
   }
 }
 
