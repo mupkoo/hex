@@ -1,0 +1,30 @@
+.has-dialog {
+  overflow: hidden;
+}
+
+.dialog {
+  top: 50%;
+  transform: translateY(-50%);
+  align-self: center;
+  width: 360px;
+  margin: 0 auto;
+  box-shadow: $shadow-xl;
+  overflow: hidden;
+}
+
+.dialog-title {
+  margin-bottom: .75rem;
+  font-size: $font-size-lg;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.dialog-message {
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.dialog-actions {
+  flex-direction: row-reverse;
+}
