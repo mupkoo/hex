@@ -4,13 +4,16 @@
     <path d="M0 0h24v24H0z" fill="none"/>
   </svg>
 
-  <input
-    type="search"
-    value={{@value}}
-    class="field-control search-field-control"
-    {{on "input" this.handleInputEvent}}
-    ...attributes
-  >
+  <form title="Search form" {{on "submit" this.handleSubmit}}>
+    <input
+      type="search"
+      name="search"
+      value={{@value}}
+      class="field-control search-field-control"
+      {{on "input" this.handleInputEvent}}
+      ...attributes
+    >
+  </form>
 
   {{#if @value}}
     <Button @subtle @circle {{on "click" this.clear}} class="search-field-clear" data-test-clear-search>
