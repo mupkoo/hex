@@ -9,6 +9,7 @@ In that case, the action will be called with the new value.
   {{#demo.example name="search-field-example.hbs"}}
     <SearchField 
       @value={{this.model}}
+      @onChange={{fn (mut this.model)}}
       placeholder="Search the users..."
       class="custom-class"
     />
