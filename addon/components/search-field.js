@@ -12,17 +12,24 @@ import { action } from '@ember/object';
   @public
 */
 export default class SearchFieldComponent extends Component {
-  @action handleInputEvent(e) {
-    this.setValue(e.target.value);
+  @action
+  handleInputEvent(e) {
+    this.safeTrigger('onChange', e.target.value);
   }
 
-  @action clear() {
-    this.setValue('');
+  @action
+  handleSubmit(e) {
+    e.preventDefault();
+
+    this.safeTrigger('onSubmit', e.target.querySelector('input').value);
   }
 
-  setValue(value) {
-    if (this.args.onChange) {
-      this.args.onChange(value);
-    }
+  @action
+  clear() {
+    this.safeTrigger('onChange', '');
+  }
+
+  safeTrigger(callback, value) {
+    if (this.args[callback]) this.args[callback](value);
   }
 }

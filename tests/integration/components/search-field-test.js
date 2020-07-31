@@ -1,6 +1,6 @@
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
-import { click, fillIn, render } from '@ember/test-helpers';
+import { click, fillIn, render, triggerEvent } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 
 module('Integration: SearchField', function (hooks) {
@@ -18,6 +18,20 @@ module('Integration: SearchField', function (hooks) {
     await render(hbs`<SearchField @onChange={{this.onChange}} />`);
 
     await fillIn('input', 'Most gracious');
+
+    assert.verifySteps(['Most gracious']);
+  });
+
+  test('it triggers the passed @onSubmit action on submitting the search form', async function (assert) {
+    this.onSubmit = (value) => assert.step(value);
+
+    await render(hbs`<SearchField @onSubmit={{this.onSubmit}} />`);
+
+    await fillIn('input', 'Most gracious');
+
+    assert.verifySteps([]);
+
+    await triggerEvent('form', 'submit');
 
     assert.verifySteps(['Most gracious']);
   });
