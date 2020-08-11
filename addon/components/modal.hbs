@@ -2,14 +2,13 @@
   <Blanket
     class="modal-blanket"
     @isTinted={{true}}
-    {{on "click" this.handleBlanketClick}}
+    @onClick={{this.handleBlanketClick}}
     {{did-insert this.addClassNameToBody}}
     {{will-destroy this.removeClassNameFromBody}}
     test-modal-blanket
   >
     <div
       class="modal {{this.classNames}}"
-      {{on "click" this.stopModalBodyPropagation}}
       role="button"
       ...attributes
     >

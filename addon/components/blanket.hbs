@@ -1,3 +1,7 @@
-<div class="blanket {{this.classNames}}" ...attributes>
+<div
+  class="blanket {{this.classNames}}"
+  {{on "click" this.handleClick}}
+  ...attributes
+>
   {{yield}}
 </div>
