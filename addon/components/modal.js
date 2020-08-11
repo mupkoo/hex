@@ -56,7 +56,8 @@ export default class ModalComponent extends Component {
     document.body.classList.remove('has-modal');
   }
 
-  @action handleBlanketClick() {
+  @action
+  handleBlanketClick() {
     if (this.isDestroyed || this.isDestroying) return;
 
     if (!this.preventBlanketClose) {
@@ -64,14 +65,10 @@ export default class ModalComponent extends Component {
     }
   }
 
-  @action close() {
+  @action
+  close() {
     if (!this.preventClose) {
       this.args.onClose();
     }
-  }
-
-  @action stopModalBodyPropagation(e) {
-    e.stopPropagation();
-    return false;
   }
 }

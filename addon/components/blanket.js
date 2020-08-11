@@ -1,4 +1,5 @@
 import Component from '@glimmer/component';
+import { action } from '@ember/object';
 import objStr from 'hex/-private/obj-str';
 
 /**
@@ -17,5 +18,12 @@ export default class BlanketComponent extends Component {
       'blanket-tinted': this.args.isTinted,
       'blanket-click-through': this.args.canClickThrough
     });
+  }
+
+  @action
+  handleClick(e) {
+    if (e.currentTarget === e.target && this.args.onClick) {
+      this.args.onClick();
+    }
   }
 }

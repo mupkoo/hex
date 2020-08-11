@@ -1,6 +1,6 @@
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
-import { render } from '@ember/test-helpers';
+import { click, render } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 
 module('Integration: Blanket', function (hooks) {
@@ -43,5 +43,20 @@ module('Integration: Blanket', function (hooks) {
     await render(hbs`<Blanket @canClickThrough={{true}}>Awesome</Blanket>`);
 
     assert.dom('.blanket').hasClass('blanket-click-through');
+  });
+
+  test('it triggers the @onClick callback whenever a user clicks on the blanket itself', async function (assert) {
+    this.dummyClick = () => assert.step('clicked');
+
+    await render(hbs`
+      <Blanket @onClick={{this.dummyClick}} data-test-blanket>
+        <button type="button">Inner Button</button>
+      </Blanket>
+    `);
+
+    await click('[data-test-blanket]');
+    await click('button');
+
+    assert.verifySteps(['clicked']);
   });
 });
