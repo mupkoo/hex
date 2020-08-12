@@ -1,0 +1,73 @@
+// Backgrounds
+$ember-power-select-background-color: $input-background-color;
+$ember-power-select-disabled-background-color: $gray-200;
+$ember-power-select-multiple-selection-background-color: #d5e2f4;
+$ember-power-select-highlighted-background: #d5e2f4;
+$ember-power-select-selected-background: $gray-200;
+
+// Texts
+$ember-power-select-text-color: $input-color;
+$ember-power-select-placeholder-color: $gray-400;
+$ember-power-select-highlighted-color: $input-color;
+$ember-power-select-disabled-option-color: $gray-400;
+$ember-power-select-multiple-selection-color: $input-color;
+
+// Borders
+$ember-power-select-border-color: $input-border-color;
+$ember-power-select-focus-border-color: $primary;
+$ember-power-select-default-border: $input-border-width solid $input-border-color;
+$ember-power-select-default-focus-border: $input-border-width solid $primary;
+$ember-power-select-multiple-option-border: 0;
+
+// Borders radius
+$ember-power-select-default-border-radius: $input-border-radius;
+$ember-power-select-multiple-option-border-radius: .125rem;
+
+// Other
+$ember-power-select-focus-outline: none;
+$ember-power-select-focus-box-shadow: $focus-shadow;
+$ember-basic-dropdown-content-background-color: $white;
+
+.field {
+  .ember-power-select-trigger {
+    min-height: 2.375rem;
+    padding: .375rem 2rem 7px .5rem;
+    font-size: $input-font-size;
+    line-height: 1.5;
+    color: $input-color;
+    background: $gray-50 url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMCAwaDI0djI0SDB6IiBmaWxsPSJub25lIi8+PHBhdGggZmlsbD0iIzQyNTI2ZSIgZD0iTTEyIDUuODNMMTUuMTcgOWwxLjQxLTEuNDFMMTIgMyA3LjQxIDcuNTkgOC44MyA5IDEyIDUuODN6bTAgMTIuMzRMOC44MyAxNWwtMS40MSAxLjQxTDEyIDIxbDQuNTktNC41OUwxNS4xNyAxNSAxMiAxOC4xN3oiLz48L3N2Zz4=) no-repeat right .5rem center;
+    background-size: 1rem 1rem;
+  }
+
+  .ember-power-select-multiple-trigger {
+    padding: .0625rem 2rem .0625rem 0;
+  }
+
+  .ember-power-select-selected-item {
+    margin: 0 .5rem 0 0;
+  }
+
+  .ember-power-select-status-icon {
+    display: none;
+  }
+
+  .ember-power-select-multiple-option {
+    display: inline-flex;
+    flex-direction: row-reverse;
+    gap: .25rem;
+    align-items: center;
+    padding: .125rem .5rem;
+    margin: 0.1875rem 0 .25rem .25rem;
+    line-height: 1.6;
+  }
+}
+
+.ember-power-select-options {
+  .ember-power-select-option {
+    padding: .375rem .5rem 7px;
+    font-size: $input-font-size;
+    line-height: 1.5;
+    color: $input-color;
+  }
+}
+
