@@ -1,32 +1,32 @@
 // Backgrounds
-$ember-power-select-background-color: $input-background-color;
-$ember-power-select-disabled-background-color: $gray-200;
-$ember-power-select-multiple-selection-background-color: #d5e2f4;
-$ember-power-select-highlighted-background: #d5e2f4;
-$ember-power-select-selected-background: $gray-200;
+$ember-power-select-background-color: $input-background-color !default;
+$ember-power-select-disabled-background-color: $gray-200 !default;
+$ember-power-select-multiple-selection-background-color: #d5e2f4 !default;
+$ember-power-select-highlighted-background: #d5e2f4 !default;
+$ember-power-select-selected-background: $gray-200 !default;
 
 // Texts
-$ember-power-select-text-color: $input-color;
-$ember-power-select-placeholder-color: $gray-400;
-$ember-power-select-highlighted-color: $input-color;
-$ember-power-select-disabled-option-color: $gray-400;
-$ember-power-select-multiple-selection-color: $input-color;
+$ember-power-select-text-color: $input-color !default;
+$ember-power-select-placeholder-color: $gray-400 !default;
+$ember-power-select-highlighted-color: $input-color !default;
+$ember-power-select-disabled-option-color: $gray-400 !default;
+$ember-power-select-multiple-selection-color: $input-color !default;
 
 // Borders
-$ember-power-select-border-color: $input-border-color;
-$ember-power-select-focus-border-color: $primary;
-$ember-power-select-default-border: $input-border-width solid $input-border-color;
-$ember-power-select-default-focus-border: $input-border-width solid $primary;
-$ember-power-select-multiple-option-border: 0;
+$ember-power-select-border-color: $input-border-color !default;
+$ember-power-select-focus-border-color: $primary !default;
+$ember-power-select-default-border: $input-border-width solid $input-border-color !default;
+$ember-power-select-default-focus-border: $input-border-width solid $primary !default;
+$ember-power-select-multiple-option-border: 0 !default;
 
 // Borders radius
-$ember-power-select-default-border-radius: $input-border-radius;
-$ember-power-select-multiple-option-border-radius: .125rem;
+$ember-power-select-default-border-radius: $input-border-radius !default;
+$ember-power-select-multiple-option-border-radius: .125rem !default;
 
 // Other
-$ember-power-select-focus-outline: none;
-$ember-power-select-focus-box-shadow: $focus-shadow;
-$ember-basic-dropdown-content-background-color: $white;
+$ember-power-select-focus-outline: none !default;
+$ember-power-select-focus-box-shadow: $focus-shadow !default;
+$ember-basic-dropdown-content-background-color: $white !default;
 
 .field {
   .ember-power-select-trigger {
