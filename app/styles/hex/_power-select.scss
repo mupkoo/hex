@@ -60,6 +60,12 @@ $ember-basic-dropdown-content-background-color: $white;
     margin: 0.1875rem 0 .25rem .25rem;
     line-height: 1.6;
   }
+
+  [aria-disabled=true] {
+    .ember-power-select-multiple-option {
+      background-color: $gray-300;
+    }
+  }
 }
 
 .ember-power-select-options {
