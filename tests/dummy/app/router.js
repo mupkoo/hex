@@ -27,6 +27,7 @@ Router.map(function () {
       this.route('search-field');
       this.route('select-field');
       this.route('text-area-field');
+      this.route('power-select-field');
       this.route('spinner-button');
     });
 
