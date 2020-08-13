@@ -5,10 +5,11 @@
     <Field @label="Power Select" as |id|>
       <PowerSelect 
         @triggerId={{id}}
-        @selected={{this.title}}
-        @options={{array "Jedi Master" "Sith Lord"}}
+        @allowClear={{true}}
         @onChange={{fn (mut this.title)}} 
-        @allowClear={{true}} as |title|
+        @options={{array "Jedi Master" "Sith Lord"}}
+        @searchEnabled={{true}}
+        @selected={{this.title}} as |title|
       >
         {{title}}
       </PowerSelect>
@@ -16,12 +17,13 @@
 
     <Field @label="Power Select Disabled" as |id|>
       <PowerSelect 
-        @disabled={{true}}
         @triggerId={{id}}
-        @selected={{this.title}}
-        @options={{array "Jedi Master" "Sith Lord"}}
+        @allowClear={{true}}
+        @disabled={{true}}
         @onChange={{fn (mut this.title)}} 
-        @allowClear={{true}} as |title|
+        @options={{array "Jedi Master" "Sith Lord"}}
+        @searchEnabled={{true}}
+        @selected={{this.title}} as |title|
       >
         {{title}}
       </PowerSelect>
@@ -29,10 +31,11 @@
 
     <Field @label="Power Select Multiple" as |id|>
       <PowerSelectMultiple 
-        @triggerId={{id}}
-        @selected={{this.jedis}}
+        @triggerId={{id}} 
+        @onChange={{fn (mut this.jedis)}}
         @options={{array "Master Yoda" "Mace Windu" "Obi-Wan Kenobi"}}
-        @onChange={{fn (mut this.jedis)}} as |jedi|
+        @searchEnabled={{true}}
+        @selected={{this.jedis}} as |jedi|
       >
         {{jedi}}
       </PowerSelectMultiple>
