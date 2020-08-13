@@ -18,6 +18,8 @@ $ember-power-select-focus-border-color: $primary !default;
 $ember-power-select-default-border: $input-border-width solid $input-border-color !default;
 $ember-power-select-default-focus-border: $input-border-width solid $primary !default;
 $ember-power-select-multiple-option-border: 0 !default;
+$ember-power-select-search-field-border: 1px solid $input-border-color !default;
+$ember-power-select-search-field-focus-border: 1px solid $input-border-color !default;
 
 // Borders radius
 $ember-power-select-default-border-radius: $input-border-radius !default;
@@ -27,6 +29,7 @@ $ember-power-select-multiple-option-border-radius: .125rem !default;
 $ember-power-select-focus-outline: none !default;
 $ember-power-select-focus-box-shadow: $focus-shadow !default;
 $ember-basic-dropdown-content-background-color: $white !default;
+$ember-power-select-dropdown-margin: -$input-border-width;
 
 .field {
   .ember-power-select-trigger {
@@ -40,7 +43,12 @@ $ember-basic-dropdown-content-background-color: $white !default;
   }
 
   .ember-power-select-multiple-trigger {
-    padding: .0625rem 2rem .0625rem 0;
+    padding: .0625rem 2rem 0 0;
+  }
+
+  .ember-power-select-trigger-multiple-input {
+    padding: .125rem .5rem;
+    margin: 0.1875rem 0 .25rem 0;
   }
 
   .ember-power-select-selected-item {
@@ -68,7 +76,19 @@ $ember-basic-dropdown-content-background-color: $white !default;
   }
 }
 
-.ember-power-select-options {
+.ember-power-select-dropdown {
+  .ember-power-select-search-input {
+    height: 2rem;
+    padding: .1875rem .5rem .25rem; // center the text
+    font-size: $input-font-size;
+    line-height: $input-line-height;
+    color: $input-color;
+
+    &:focus {
+      box-shadow: none;
+    }
+  }
+
   .ember-power-select-option {
     padding: .375rem .5rem 7px;
     font-size: $input-font-size;
