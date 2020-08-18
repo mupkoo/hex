@@ -16,7 +16,7 @@
 
   &[type=checkbox]:checked ~ .custom-field-label::before {
     background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQiIGhlaWdodD0iMTEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTUgMTFMMCA2bDEuNDEtMS40MUw1IDguMTcgMTIuNTkuNTggMTQgMnoiIGZpbGw9IiNmZmYiIGZpbGwtcnVsZT0ibm9uemVybyIvPjwvc3ZnPg==);
-    background-position: (3px - $input-border-width) (4px - $input-border-width);
+    background-position: (0.1875rem - $input-border-width) (0.25rem - $input-border-width);
   }
 
   &[type=radio]:checked ~ .custom-field-label::before {
