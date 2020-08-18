@@ -16,12 +16,12 @@
 
   &[type=checkbox]:checked ~ .custom-field-label::before {
     background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQiIGhlaWdodD0iMTEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTUgMTFMMCA2bDEuNDEtMS40MUw1IDguMTcgMTIuNTkuNTggMTQgMnoiIGZpbGw9IiNmZmYiIGZpbGwtcnVsZT0ibm9uemVybyIvPjwvc3ZnPg==);
-    background-position: 1px 2px;
+    background-position: (0.1875rem - $input-border-width) (0.25rem - $input-border-width);
   }
 
   &[type=radio]:checked ~ .custom-field-label::before {
     background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iMTAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTUgMEMyLjI0IDAgMCAyLjI0IDAgNXMyLjI0IDUgNSA1IDUtMi4yNCA1LTUtMi4yNC01LTUtNXoiIGZpbGw9IiNGRkYiIGZpbGwtcnVsZT0ibm9uemVybyIvPjwvc3ZnPg==);
-    background-position: 4px;
+    background-position: .25rem;
     background-size: .5rem;
   }
 
@@ -76,13 +76,13 @@
     display: block;
     width: 1.25rem;
     height: 1.25rem;
-    border: .125rem solid $gray-400;
+    border: $input-border-width solid $input-border-color;
     background-repeat: no-repeat;
   }
 }
 
 .custom-field-input[type=checkbox] ~ .custom-field-label::before {
-  border-radius: $border-radius;
+  border-radius: $input-border-radius;
 }
 
 .custom-field-input[type=radio] ~ .custom-field-label::before {
