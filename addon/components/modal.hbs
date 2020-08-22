@@ -1,26 +1,15 @@
-<Portal
-  @element={{this.destinationElement}}
+<Blanket
+  @isTinted={{true}}
+  @onClick={{this.handleBlanketClick}}
   @renderInPlace={{this.renderInPlace}}
+  data-test-modal-blanket
 >
-  <Blanket
-    class="modal-blanket"
-    @isTinted={{true}}
-    @onClick={{this.handleBlanketClick}}
-    {{did-insert this.addClassNameToBody}}
-    {{will-destroy this.removeClassNameFromBody}}
-    test-modal-blanket
-  >
-    <div
-      class="modal {{this.classNames}}"
-      role="button"
-      ...attributes
-    >
-      {{yield (hash
-        Header=(component "modal-header" onClose=this.close)
-        Body=(component "modal-body")
-        Footer=(component "modal-footer")
-        actions=(hash close=this.close)
-      )}}
-    </div>
-  </Blanket>
-</Portal>
+  <div class="modal {{this.classNames}}" ...attributes>
+    {{yield (hash
+      Header=(component "modal-header" onClose=this.close)
+      Body=(component "modal-body")
+      Footer=(component "modal-footer")
+      actions=(hash close=this.close)
+    )}}
+  </div>
+</Blanket>

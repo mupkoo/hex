@@ -8,11 +8,13 @@ A component that covers the underlying UI for a layered component.
       {{#if this.showBlanket}}Hide{{else}}Show{{/if}} Blanket
     </Button>
 
-    <Blanket 
-      @isTinted={{this.showBlanket}} 
-      @canClickThrough={{this.canClickThrough}}
-      onclick={{action this.toggleBlanket}}
-    ></Blanket>
+    {{#if this.showBlanket}}
+      <Blanket 
+        @isTinted={{true}} 
+        @canClickThrough={{this.canClickThrough}}
+        onclick={{action this.toggleBlanket}}
+      ></Blanket>
+    {{/if}}
   {{/demo.example}}
 
   {{demo.snippet 'blanket-example.hbs'}}
