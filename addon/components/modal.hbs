@@ -1,4 +1,7 @@
-{{#maybe-in-element this.destinationElement this.renderInPlace}}
+<Portal
+  @element={{this.destinationElement}}
+  @renderInPlace={{this.renderInPlace}}
+>
   <Blanket
     class="modal-blanket"
     @isTinted={{true}}
@@ -20,4 +23,4 @@
       )}}
     </div>
   </Blanket>
-{{/maybe-in-element}}
+</Portal>

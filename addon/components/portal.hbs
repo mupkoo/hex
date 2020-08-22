@@ -1,0 +1,1 @@
+{{#if @renderInPlace}}{{yield}}{{else}}{{#in-element @element insertBefore=null}}{{yield}}{{/in-element}}{{/if}}
