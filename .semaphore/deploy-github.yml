@@ -12,6 +12,7 @@ blocks:
         - name: github
       prologue:
         commands:
+          - sem-version node 10.19.0
           - chmod 0600 ~/.keys/*
           - git clone $SEMAPHORE_GIT_URL
           - cd $SEMAPHORE_GIT_DIR
