@@ -1,3 +1,7 @@
+.has-blanket {
+  overflow: hidden;
+}
+
 .blanket {
   @include transition(
     opacity $transition-duration $ease
@@ -9,6 +13,8 @@
   bottom: 0;
   left: 0;
   opacity: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
   z-index: 960;
 }
 

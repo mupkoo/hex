@@ -1,9 +1,7 @@
 import Component from '@glimmer/component';
 import { action } from '@ember/object';
-import { getOwner } from '@ember/application';
 import booleanArgument from 'hex/-private/boolean-argument';
 import objStr from 'hex/-private/obj-str';
-import testRootElementId from 'hex/-private/test-root-element-id';
 
 /**
   A component that displays content in a layer blocking the interaction with the page.
@@ -37,23 +35,6 @@ export default class ModalComponent extends Component {
       'modal-sm': this.args.small,
       'modal-lg': this.args.large
     });
-  }
-
-  get destinationElement() {
-    return document.getElementById(this._getDestinationElementId());
-  }
-
-  _getDestinationElementId() {
-    let config = getOwner(this).resolveRegistration('config:environment');
-    return testRootElementId(config) || 'hex-modal-parent';
-  }
-
-  addClassNameToBody() {
-    document.body.classList.add('has-modal');
-  }
-
-  removeClassNameFromBody() {
-    document.body.classList.remove('has-modal');
   }
 
   @action

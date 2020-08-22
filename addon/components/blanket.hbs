@@ -1,8 +1,15 @@
-<div
-  class="blanket {{this.classNames}}"
-  role="button"
-  {{on "click" this.handleClick}}
-  ...attributes
+<Portal
+  @element={{this.targetElement}}
+  @renderInPlace={{this.renderInPlace}}
 >
-  {{yield}}
-</div>
+  <div
+    class="blanket {{this.classNames}}"
+    role="button"
+    {{on "click" this.handleClick}}
+    {{did-insert this.addClassNameToBody}}
+    {{will-destroy this.removeClassNameFromBody}}
+    ...attributes
+  >
+    {{yield}}
+  </div>
+</Portal>

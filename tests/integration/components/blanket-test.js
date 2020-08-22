@@ -59,4 +59,32 @@ module('Integration: Blanket', function (hooks) {
 
     assert.verifySteps(['clicked']);
   });
+
+  test('it toggle "has-blanket" class to the body on insert and destroy', async function (assert) {
+    let body = document.querySelector('body');
+    this.isVisible = true;
+
+    await render(hbs`
+      {{#if isVisible}}
+        <Modal />
+      {{/if}}
+    `);
+
+    assert.dom(body).hasClass('has-blanket');
+
+    this.set('isVisible', false);
+    assert.dom(body).doesNotHaveClass('has-blanket');
+  });
+
+  test('it renders the blanket in places if @renderInPlace is present', async function (assert) {
+    await render(hbs`
+      <div data-test-wrapper>
+        <Blanket @renderInPlace>
+          Awesome
+        </Blanket>
+      </div>
+    `);
+
+    assert.dom('[data-test-wrapper]').hasText('Awesome');
+  });
 });
