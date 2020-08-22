@@ -1,5 +1,4 @@
 import Component from '@glimmer/component';
-import { run } from '@ember/runloop';
 import { action, computed } from '@ember/object';
 import { readOnly } from '@ember/object/computed';
 import { inject as service } from '@ember/service';
@@ -28,12 +27,10 @@ export default class DialogComponent extends Component {
   }
 
   @action onDialogMount() {
-    document.body.classList.add('has-dialog');
     this._attachDocumentEventHandler();
   }
 
   @action onDialogDismount() {
-    document.body.classList.remove('has-dialog');
     this._detachDocumentEventHandler();
   }
 
@@ -41,8 +38,8 @@ export default class DialogComponent extends Component {
     this._keyDownHandler = (e) => {
       e.preventDefault();
 
-      if (e.keyCode === 27) run(this.cancel);
-      if (e.keyCode === 13) run(this.confirm);
+      if (e.keyCode === 27) this.cancel();
+      if (e.keyCode === 13) this.confirm();
     };
 
     document.addEventListener('keydown', this._keyDownHandler);

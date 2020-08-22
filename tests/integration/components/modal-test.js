@@ -41,7 +41,7 @@ module('Integration: Modal', function (hooks) {
 
     await render(hbs`<Modal @onClose={{fn (mut this.closeCalled) true}} />`);
 
-    await click('[test-modal-blanket]');
+    await click('[data-test-modal-blanket]');
 
     assert.ok(this.closeCalled);
   });
@@ -51,7 +51,7 @@ module('Integration: Modal', function (hooks) {
 
     await render(hbs`<Modal @preventBlanketClose @onClose={{action (mut this.closeCalled) true}} />`);
 
-    await click('[test-modal-blanket]');
+    await click('[data-test-modal-blanket]');
 
     assert.notOk(this.closeCalled);
   });
@@ -61,7 +61,7 @@ module('Integration: Modal', function (hooks) {
 
     await render(hbs`<Modal @preventBlanketClose={{true}} @onClose={{fn (mut this.closeCalled) true}} />`);
 
-    await click('[test-modal-blanket]');
+    await click('[data-test-modal-blanket]');
 
     assert.notOk(this.closeCalled);
   });
@@ -85,7 +85,7 @@ module('Integration: Modal', function (hooks) {
       </Modal>
     `);
 
-    await click('[test-close-modal]');
+    await click('[data-test-close-modal]');
 
     assert.ok(this.closeCalled);
   });
@@ -99,7 +99,7 @@ module('Integration: Modal', function (hooks) {
       </Modal>
     `);
 
-    await click('[test-close-modal]');
+    await click('[data-test-close-modal]');
 
     assert.notOk(this.closeCalled);
   });
@@ -113,7 +113,7 @@ module('Integration: Modal', function (hooks) {
       </Modal>
     `);
 
-    await click('[test-close-modal]');
+    await click('[data-test-close-modal]');
 
     assert.notOk(this.closeCalled);
   });
@@ -140,22 +140,6 @@ module('Integration: Modal', function (hooks) {
     await render(hbs`<Modal @large={{true}} />`);
 
     assert.dom('.modal').hasClass('modal-lg');
-  });
-
-  test('it toggle "has-modal" class to the body on insert and destroy', async function (assert) {
-    let body = document.querySelector('body');
-    this.isVisible = true;
-
-    await render(hbs`
-      {{#if isVisible}}
-        <Modal />
-      {{/if}}
-    `);
-
-    assert.dom(body).hasClass('has-modal');
-
-    this.set('isVisible', false);
-    assert.dom(body).doesNotHaveClass('has-modal');
   });
 
   test('it renders the modal in places if @renderInPlace is present', async function (assert) {

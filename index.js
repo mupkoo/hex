@@ -11,7 +11,7 @@ module.exports = {
       config._hexContentForInvoked = true;
 
       return `
-        <div id="hex-modal-parent"></div>
+        <div id="hex-blanket-parent"></div>
         ${emberBasicDropdownContentFor}
       `;
     }
