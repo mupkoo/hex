@@ -8,7 +8,7 @@ module.exports = function (deployTarget) {
     git: {
       repo: 'git@github.com:mupkoo/hex.git',
       worktreePath: 'dist-deploy',
-      skipUpload: process.env.DEPLOY_SKIP_UPLOAD
+      skipUpload: Boolean(process.env.DEPLOY_SKIP_UPLOAD)
     }
   };
 
