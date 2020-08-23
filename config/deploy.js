@@ -31,6 +31,8 @@ module.exports = function (deployTarget) {
   }
 
   if (process.env.DEPLOY_KEY) {
+    console.log('Setup deploy key');
+
     ENV['git-ci'] = {
       deployKey: process.env.DEPLOY_KEY
     };
