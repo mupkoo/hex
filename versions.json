@@ -22,5 +22,11 @@
     "name": "Latest",
     "sha": "8e3f1dd1f21628f10640881a4a00b97ea4140db8",
     "tag": "v0.0.1"
+  },
+  "v0.0.1": {
+    "path": "versions/v0.0.1",
+    "name": "v0.0.1",
+    "sha": "8e3f1dd1f21628f10640881a4a00b97ea4140db8",
+    "tag": "v0.0.1"
   }
 }
