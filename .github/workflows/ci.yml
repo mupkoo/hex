@@ -41,8 +41,8 @@ jobs:
       DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
 
     steps:
-      - name: Set ENV
-        ADDON_DOCS_VERSION_PATH
+      # - name: Set ENV
+      #   ADDON_DOCS_VERSION_PATH
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0
