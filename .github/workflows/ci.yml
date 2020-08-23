@@ -31,7 +31,7 @@ jobs:
 
   deploy:
     runs-on: ubuntu-latest
-    needs: test
+    # needs: test
     env:
       ADDON_DOCS_VERSION_PATH: $GITHUB_REF
 
