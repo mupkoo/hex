@@ -7,8 +7,7 @@ module.exports = function (deployTarget) {
 
     git: {
       repo: 'git@github.com:mupkoo/hex.git',
-      worktreePath: 'dist-deploy',
-      skipUpload: Boolean(process.env.DEPLOY_SKIP_UPLOAD)
+      worktreePath: 'dist-deploy'
     }
   };
 
@@ -31,9 +30,9 @@ module.exports = function (deployTarget) {
     // configure other plugins for production deploy target here
   }
 
-  if (process.env.DEPLOY_KEY_PATH) {
+  if (process.env.DEPLOY_KEY) {
     ENV['git-ci'] = {
-      deployKeyPath: process.env.DEPLOY_KEY_PATH
+      deployKey: process.env.DEPLOY_KEY
     };
   }
 
