@@ -5,9 +5,6 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - run: echo ${GITHUB_REF##*/}
-      - run: echo "::set-env name=BRANCH_NAME::$(echo ${GITHUB_REF##*/})"
-      - run: echo $BRANCH_NAME
       - uses: actions/checkout@v2
 
       - name: Setup Node
@@ -37,12 +34,12 @@ jobs:
     needs: test
     if: github.ref == 'refs/heads/master' || startsWith('refs/tags', github.ref)
     env:
-      ADDON_DOCS_VERSION_PATH: master
       DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
 
     steps:
-      # - name: Set ENV
-      #   ADDON_DOCS_VERSION_PATH
+      - run: echo "::set-env name=ADDON_DOCS_VERSION_PATH::$(echo ${GITHUB_REF##*/})"
+      - run: echo $ADDON_DOCS_VERSION_PATH
+
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0
