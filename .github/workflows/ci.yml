@@ -28,3 +28,40 @@ jobs:
 
       - name: Test
         run: yarn test
+
+  deploy:
+    runs-on: ubuntu-latest
+    # needs: test
+    env:
+      DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
+
+    steps:
+      - run: echo ${{ github.event.pull_request.head.ref }}
+      - run: echo ${{ github.ref }}
+      - run: echo ${{ github.base_ref }}
+      - run: echo ${{ github.head_ref }}
+      - run: echo ${{ github.some_other || github.ref }}
+      - run: echo ${GITHUB_HEAD_REF}
+
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 10.19.0
+
+      - name: Node modules cache
+        uses: actions/cache@v2
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-modules-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-node-modules-
+
+      - name: Yarn install
+        run: yarn install
+
+      - name: Deploy
+        run: yarn deploy
