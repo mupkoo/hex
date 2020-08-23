@@ -1,10 +1,13 @@
 name: CI
-on: [pull_request]
+on: push
 
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
+      - run: echo ${GITHUB_REF##*/}
+      - run: echo "::set-env name=BRANCH_NAME::$(echo ${GITHUB_REF##*/})"
+      - run: echo $BRANCH_NAME
       - uses: actions/checkout@v2
 
       - name: Setup Node
@@ -28,3 +31,37 @@ jobs:
 
       - name: Test
         run: yarn test
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: test
+    if: github.ref == 'refs/heads/master' || startsWith('refs/tags', github.ref)
+    env:
+      ADDON_DOCS_VERSION_PATH: master
+      DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
+
+    steps:
+      # - name: Set ENV
+      #   ADDON_DOCS_VERSION_PATH
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 10.19.0
+
+      - name: Node modules cache
+        uses: actions/cache@v2
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-modules-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-node-modules-
+
+      - name: Yarn install
+        run: yarn install
+
+      - name: Deploy
+        run: yarn deploy --verbose
