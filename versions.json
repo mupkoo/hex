@@ -8,7 +8,7 @@
   "refs/heads/deploy-action": {
     "path": "versions/refs/heads/deploy-action",
     "name": "refs/heads/deploy-action",
-    "sha": "e80297847befbb27b61b2808450ad27a7492c282",
+    "sha": "26721f0a8d39b465e9c75c9f3536be8517a42f83",
     "tag": null
   }
 }
