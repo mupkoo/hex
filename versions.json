@@ -4,5 +4,11 @@
     "name": "deploy-action",
     "sha": "27a68386bc053f668da45b8bddd7179de098a1dc",
     "tag": null
+  },
+  "refs/heads/deploy-action": {
+    "path": "versions/refs/heads/deploy-action",
+    "name": "refs/heads/deploy-action",
+    "sha": "e80297847befbb27b61b2808450ad27a7492c282",
+    "tag": null
   }
 }
