@@ -36,6 +36,10 @@ jobs:
       DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
 
     steps:
+      - run: echo ${{ github.event.pull_request.head.ref }}
+      - run: echo $GITHUB_REF
+      - run: echo ${GITHUB_REF#refs/heads/}
+
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0
@@ -56,5 +60,5 @@ jobs:
       - name: Yarn install
         run: yarn install
 
-      - name: Build
+      - name: Deploy
         run: yarn deploy
