@@ -28,3 +28,42 @@ jobs:
 
       - name: Test
         run: yarn test
+
+  deploy:
+    runs-on: ubuntu-latest
+    # needs: test
+    env:
+      ADDON_DOCS_VERSION_PATH: $GITHUB_REF
+
+    steps:
+      - run: echo $ADDON_DOCS_VERSION_PATH
+      - run: echo $GITHUB_REF
+
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 10.19.0
+
+      - name: Node modules cache
+        uses: actions/cache@v2
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-modules-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-node-modules-
+
+      - name: Yarn install
+        run: yarn install
+
+      - name: Build
+        run: DEPLOY_SKIP_UPLOAD=1 yarn deploy
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist-deploy
