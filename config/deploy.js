@@ -3,10 +3,14 @@
 
 module.exports = function (deployTarget) {
   let ENV = {
-    build: {}
+    build: {},
 
-    // include other plugin configuration that applies to all deploy targets here
+    git: {
+      repo: 'git@github.com:mupkoo/hex.git',
+      worktreePath: 'dist-deploy'
+    }
   };
+
 
   if (deployTarget === 'development') {
     ENV.build.environment = 'development';
@@ -26,13 +30,11 @@ module.exports = function (deployTarget) {
     // configure other plugins for production deploy target here
   }
 
-  if (process.env.DEPLOY_KEY_PATH) {
-    ENV['git-ci'] = {
-      deployKeyPath: process.env.DEPLOY_KEY_PATH
-    };
+  if (process.env.DEPLOY_KEY) {
+    console.log('dummy', process.env.DEPLOY_KEY);
 
-    ENV.git = {
-      repo: 'git@github.com:mupkoo/hex.git'
+    ENV['git-ci'] = {
+      deployKey: process.env.DEPLOY_KEY
     };
   }
 
