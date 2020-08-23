@@ -12,7 +12,6 @@ jobs:
       - run: echo ${{ github.ref }}
       - run: echo ${{ github.base_ref }}
       - run: echo ${{ github.head_ref }}
-      - run: echo ${{ ${GITHUB_REF#refs/heads/} }}
       - run: echo ${GITHUB_REF#refs/heads/}
 
       - uses: actions/checkout@v2
