@@ -2,7 +2,7 @@
   "deploy-action": {
     "path": "versions/deploy-action",
     "name": "deploy-action",
-    "sha": "60b4fa5768b22f3eddc437cbd03eb9e7f68b5085",
+    "sha": "27a68386bc053f668da45b8bddd7179de098a1dc",
     "tag": null
   }
 }
