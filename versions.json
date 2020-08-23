@@ -1,16 +1,4 @@
 {
-  "deploy-action": {
-    "path": "versions/deploy-action",
-    "name": "deploy-action",
-    "sha": "27a68386bc053f668da45b8bddd7179de098a1dc",
-    "tag": null
-  },
-  "refs/heads/deploy-action": {
-    "path": "versions/refs/heads/deploy-action",
-    "name": "refs/heads/deploy-action",
-    "sha": "26721f0a8d39b465e9c75c9f3536be8517a42f83",
-    "tag": null
-  },
   "master": {
     "path": "versions/master",
     "name": "master",
