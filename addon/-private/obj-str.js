@@ -19,10 +19,20 @@ export default function objStr(obj) {
   let classNames = '';
 
   Object.keys(obj).forEach((key) => {
-    if (obj[key] || obj[key] === '') {
+    if (checkValue(obj[key])) {
       classNames += ' ' + key;
     }
   });
 
   return classNames.trim();
+}
+
+/**
+  Return true if the given value is truthy or an empty string
+
+  @param {any} value
+  @return {boolean}
+*/
+export function checkValue(value) {
+  return Boolean(value) || value === '';
 }

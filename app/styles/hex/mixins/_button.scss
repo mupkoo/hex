@@ -58,6 +58,66 @@
   }
 }
 
+@mixin button-variant-outline(
+  $color,
+  $text-color: $color,
+  $focus: rgba($color, $focus-shadow-opacity),
+  $hover-background: $color,
+  $hover-border: $color,
+  $active-background: darken($color, 6%),
+  $active-border: darken($color, 6%)
+) {
+  color: $text-color;
+  background-color: transparent;
+  border-color: $color;
+
+  svg {
+    fill: $text-color;
+  }
+
+  &:hover {
+    color: color-yiq($hover-background);
+    background-color: $hover-background;
+    border-color: $hover-border;
+
+    svg {
+      fill: color-yiq($hover-background);
+    }
+  }
+
+  &:focus,
+  &.focus {
+    box-shadow: 0 0 0 $focus-shadow-width $focus;
+  }
+
+  // Disabled comes first so active can properly restyle
+  &.disabled,
+  &:disabled {
+    color: $text-color;
+    background-color: transparent;
+    border-color: $color;
+
+    svg {
+      fill: $text-color;
+    }
+  }
+
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled).active {
+    color: color-yiq($active-background);
+    background-color: $active-background;
+    border-color: $active-border;
+
+    svg {
+      fill: color-yiq($active-background);
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 $focus-shadow-width $focus;
+    }
+  }
+}
+
 @mixin button-size($padding-y, $padding-x, $font-size, $line-height, $border-radius) {
   padding: $padding-y $padding-x;
   font-size: $font-size;
