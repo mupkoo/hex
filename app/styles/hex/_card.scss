@@ -3,7 +3,7 @@
   border-radius: $border-radius-lg;
   background-clip: border-box;
   background-color: $white;
-  box-shadow: 0 0 0 1px $gray-100, $shadow-xl;
+  box-shadow: $card-shadow;
 }
 
 .card-body {
