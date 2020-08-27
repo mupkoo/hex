@@ -7,7 +7,7 @@
   margin: .25rem 0;
   padding: .5rem 0;
   background-color: $white;
-  box-shadow: 0 0 0 1px $gray-100, $shadow-xl;
+  box-shadow: $dropdown-shadow;
   border-radius: $border-radius-sm;
 
   &.ember-basic-dropdown-content--above {
