@@ -40,6 +40,7 @@ Router.map(function () {
   this.route('sandbox', function () {
     this.route('alert');
     this.route('button');
+    this.route('button-outline');
     this.route('button-circle');
     this.route('card');
     this.route('fields');

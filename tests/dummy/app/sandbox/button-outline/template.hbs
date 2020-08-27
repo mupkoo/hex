@@ -1,0 +1,18 @@
+<h1>Button</h1>
+
+{{#each this.buttons key="@index" as |variant|}}
+  <div class="docs-flex docs-w-full docs-mb-4">
+    <div class="docs-w-1/4">
+      <button type="button" class="btn btn-outline-{{variant}}">{{capitalize variant}}</button>
+    </div>
+    <div class="docs-w-1/4">
+      <button type="button" class="btn btn-outline-{{variant}} focus">{{capitalize variant}}</button>
+    </div>
+    <div class="docs-w-1/4">
+      <button type="button" class="btn btn-outline-{{variant}} active">{{capitalize variant}}</button>
+    </div>
+    <div class="docs-w-1/4">
+      <button type="button" class="btn btn-outline-{{variant}}" disabled>{{capitalize variant}}</button>
+    </div>
+  </div>
+{{/each}}

@@ -106,6 +106,34 @@ fieldset:disabled a.btn {
   @include button-variant($warning, $warning);
 }
 
+.btn-outline-default {
+  @include button-variant-outline(
+    $gray-200,
+    $text,
+    rgba($primary, $focus-shadow-opacity),
+    $gray-100,
+    $gray-100,
+    $gray-300,
+    $gray-300
+  );
+}
+
+.btn-outline-primary {
+  @include button-variant-outline($primary);
+}
+
+.btn-outline-success {
+  @include button-variant-outline($success);
+}
+
+.btn-outline-danger {
+  @include button-variant-outline($danger);
+}
+
+.btn-outline-warning {
+  @include button-variant-outline($warning);
+}
+
 // Make a button look and behave like a link
 .btn-link {
   background-color: transparent;
