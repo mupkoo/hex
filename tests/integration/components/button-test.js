@@ -30,48 +30,112 @@ module('Integration: Button', function (hooks) {
     await render(hbs`<Button @primary>Awesome</Button>`);
 
     assert.dom('button').hasClass('btn-primary');
+    assert.dom('button').doesNotHaveClass('btn-outline-primary');
   });
 
   test('it adds "btn-primary" class if @primary is true', async function (assert) {
     await render(hbs`<Button @primary={{true}}>Awesome</Button>`);
 
     assert.dom('button').hasClass('btn-primary');
+    assert.dom('button').doesNotHaveClass('btn-outline-primary');
   });
 
   test('it adds "btn-success" class if @success is set', async function (assert) {
     await render(hbs`<Button @success>Awesome</Button>`);
 
     assert.dom('button').hasClass('btn-success');
+    assert.dom('button').doesNotHaveClass('btn-outline-success');
   });
 
   test('it adds "btn-success" class if @success is true', async function (assert) {
     await render(hbs`<Button @success={{true}}>Awesome</Button>`);
 
     assert.dom('button').hasClass('btn-success');
+    assert.dom('button').doesNotHaveClass('btn-outline-success');
   });
 
   test('it adds "btn-danger" class if @danger is set', async function (assert) {
     await render(hbs`<Button @danger>Awesome</Button>`);
 
     assert.dom('button').hasClass('btn-danger');
+    assert.dom('button').doesNotHaveClass('btn-outline-danger');
   });
 
   test('it adds "btn-danger" class if @danger is true', async function (assert) {
     await render(hbs`<Button @danger={{true}}>Awesome</Button>`);
 
     assert.dom('button').hasClass('btn-danger');
+    assert.dom('button').doesNotHaveClass('btn-outline-danger');
   });
 
   test('it adds "btn-warning" class if @warning is set', async function (assert) {
     await render(hbs`<Button @warning>Awesome</Button>`);
 
     assert.dom('button').hasClass('btn-warning');
+    assert.dom('button').doesNotHaveClass('btn-outline-warning');
   });
 
   test('it adds "btn-warning" class if @warning is true', async function (assert) {
     await render(hbs`<Button @warning={{true}}>Awesome</Button>`);
 
     assert.dom('button').hasClass('btn-warning');
+    assert.dom('button').doesNotHaveClass('btn-outline-warning');
+  });
+
+  test('it adds "btn-outline-primary" class if @outline and @primary are set', async function (assert) {
+    await render(hbs`<Button @outline @primary>Awesome</Button>`);
+
+    assert.dom('button').hasClass('btn-outline-primary');
+    assert.dom('button').doesNotHaveClass('btn-primary');
+  });
+
+  test('it adds "btn-outline-primary" class if @outline and @primary are true', async function (assert) {
+    await render(hbs`<Button @outline={{true}} @primary={{true}}>Awesome</Button>`);
+
+    assert.dom('button').hasClass('btn-outline-primary');
+    assert.dom('button').doesNotHaveClass('btn-primary');
+  });
+
+  test('it adds "btn-outline-success" class if @outline and @success are set', async function (assert) {
+    await render(hbs`<Button @outline @success>Awesome</Button>`);
+
+    assert.dom('button').hasClass('btn-outline-success');
+    assert.dom('button').doesNotHaveClass('btn-success');
+  });
+
+  test('it adds "btn-outline-success" class if @outline and @success are true', async function (assert) {
+    await render(hbs`<Button @outline={{true}} @success={{true}}>Awesome</Button>`);
+
+    assert.dom('button').hasClass('btn-outline-success');
+    assert.dom('button').doesNotHaveClass('btn-success');
+  });
+
+  test('it adds "btn-outline-danger" class if @outline and @danger are set', async function (assert) {
+    await render(hbs`<Button @outline @danger>Awesome</Button>`);
+
+    assert.dom('button').hasClass('btn-outline-danger');
+    assert.dom('button').doesNotHaveClass('btn-danger');
+  });
+
+  test('it adds "btn-outline-danger" class if @outline and @danger are true', async function (assert) {
+    await render(hbs`<Button @outline={{true}} @danger={{true}}>Awesome</Button>`);
+
+    assert.dom('button').hasClass('btn-outline-danger');
+    assert.dom('button').doesNotHaveClass('btn-danger');
+  });
+
+  test('it adds "btn-outline-warning" class if @outline and @warning are set', async function (assert) {
+    await render(hbs`<Button @outline @warning>Awesome</Button>`);
+
+    assert.dom('button').hasClass('btn-outline-warning');
+    assert.dom('button').doesNotHaveClass('btn-warning');
+  });
+
+  test('it adds "btn-outline-warning" class if @outline and @warning are true', async function (assert) {
+    await render(hbs`<Button @outline={{true}} @warning={{true}}>Awesome</Button>`);
+
+    assert.dom('button').hasClass('btn-outline-warning');
+    assert.dom('button').doesNotHaveClass('btn-warning');
   });
 
   test('it adds "btn-subtle" class if @subtle is set', async function (assert) {

@@ -1,5 +1,5 @@
 import Component from '@glimmer/component';
-import objStr from 'hex/-private/obj-str';
+import objStr, { checkValue } from 'hex/-private/obj-str';
 
 /**
   A button component
@@ -13,11 +13,17 @@ import objStr from 'hex/-private/obj-str';
 */
 export default class ButtonComponent extends Component {
   get classNames() {
+    let outline = checkValue(this.args.outline);
+
     return objStr({
-      'btn-primary': this.args.primary,
-      'btn-success': this.args.success,
-      'btn-danger': this.args.danger,
-      'btn-warning': this.args.warning,
+      'btn-primary': !outline && checkValue(this.args.primary),
+      'btn-success': !outline && checkValue(this.args.success),
+      'btn-danger': !outline && checkValue(this.args.danger),
+      'btn-warning': !outline && checkValue(this.args.warning),
+      'btn-outline-primary': outline && checkValue(this.args.primary),
+      'btn-outline-success': outline && checkValue(this.args.success),
+      'btn-outline-danger': outline && checkValue(this.args.danger),
+      'btn-outline-warning': outline && checkValue(this.args.warning),
       'btn-subtle': this.args.subtle,
       'btn-link': this.args.link,
       'btn-sm': this.args.small,
