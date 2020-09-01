@@ -1,12 +1,17 @@
 <BasicDropdown
   @class="dropdown"
+  @disabled={{this.disabled}}
   @horizontalPosition={{this.horizontalPosition}}
-  @verticalPosition={{this.verticalPosition}}
+  @initiallyOpened={{@initiallyOpened}}
   @matchTriggerWidth={{this.matchTriggerWidth}}
   @renderInPlace={{this.renderInPlace}}
-  @disabled={{this.disabled}}
+  @verticalPosition={{this.verticalPosition}}
 as |d|>
   {{yield (hash
+    actions=d.actions
+    disabled=d.disabled
+    isOpen=d.isOpen
+    uniqueId=d.uniqueId
     Trigger=(component d.Trigger defaultClass=(concat "btn" (if d.isOpen " active") (if d.disabled " disabled")))
     Content=(component d.Content defaultClass="dropdown-content")
   )}}
