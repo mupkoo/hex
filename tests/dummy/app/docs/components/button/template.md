@@ -89,6 +89,12 @@ component while a given action is running
     <Button @danger @isLoading={{this.isLoading}}>Danger</Button>
     <Button @warning @isLoading={{this.isLoading}}>Warning</Button>
     <Button @subtle @isLoading={{this.isLoading}}>Subtle</Button>
+    <br><br>
+    <Button @small @isLoading={{this.isLoading}}>Default</Button>
+    <Button @primary @small @isLoading={{this.isLoading}}>Primary</Button>
+    <Button @danger @small @isLoading={{this.isLoading}}>Danger</Button>
+    <Button @warning @small @isLoading={{this.isLoading}}>Warning</Button>
+    <Button @subtle @small @isLoading={{this.isLoading}}>Subtle</Button>
   {{/demo.example}}
 
   {{demo.snippet "button-spinner-example.hbs"}}
