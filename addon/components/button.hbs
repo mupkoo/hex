@@ -1,3 +1,18 @@
-<button type={{this.type}} class="btn {{this.classNames}}" ...attributes>
-  {{yield}}
+<button
+  type={{this.type}}
+  class="btn {{this.classNames}}"
+  disabled={{this.isDisabled}}
+  ...attributes
+>
+  {{#if this.hasSpinner}}
+    {{#if @isLoading}}
+      <Spinner />
+    {{/if}}
+
+    <span class="btn-spinner-label {{if @isLoading "-is-loading"}}">
+      {{yield}}
+    </span>
+  {{else}}
+    {{yield}}
+  {{/if}}
 </button>

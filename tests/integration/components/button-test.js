@@ -209,4 +209,32 @@ module('Integration: Button', function (hooks) {
 
     assert.dom('button').hasClass('btn-block');
   });
+
+  test('it adds "btn-spinner" class if @isLoading is defined', async function (assert) {
+    await render(hbs`
+      <Button @isLoading={{true}}>Awesome</Button>
+      <Button @isLoading={{false}}>Awesome</Button>
+      <Button @isLoading={{null}}>Awesome</Button>
+      <Button data-test-undefined>Awesome</Button>
+    `);
+
+    assert.dom('button.btn-spinner').exists({ count: 3 });
+    assert.dom('[data-test-undefined]').doesNotHaveClass('.btn-spinner');
+  });
+
+  test('it renders a button in normal state if @isLoading is false', async function (assert) {
+    await render(hbs`<Button @isLoading={{false}}>Save</Button>`);
+
+    assert.dom('button').isNotDisabled();
+    assert.dom('button .spinner').doesNotExist();
+    assert.dom('.btn-spinner-label').doesNotHaveClass('-is-loading');
+  });
+
+  test('it renders a button in loading state if @isLoading is true', async function (assert) {
+    await render(hbs`<Button @isLoading={{true}}>Save</Button>`);
+
+    assert.dom('button').isDisabled();
+    assert.dom('button .spinner').exists();
+    assert.dom('.btn-spinner-label').hasClass('-is-loading');
+  });
 });

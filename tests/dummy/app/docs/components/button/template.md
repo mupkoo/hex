@@ -73,3 +73,24 @@ The button components should work well with SVG icons. The default behavior is f
 
   {{demo.snippet 'buttons-with-icons.hbs'}}
 {{/docs-demo}}
+
+# Loading variant
+
+A handy variant of the button that displays a 
+<LinkTo @route="docs.components.spinner">`<Spinner />`</LinkTo>
+component while a given action is running
+
+{{#docs-demo as |demo|}}
+  {{#demo.example name="button-spinner-example.hbs"}}
+    <Button {{on "click" this.toggleState}}>Toggle</Button>
+    <br><br>
+    <Button @isLoading={{this.isLoading}}>Default</Button>
+    <Button @primary @isLoading={{this.isLoading}}>Primary</Button>
+    <Button @danger @isLoading={{this.isLoading}}>Danger</Button>
+    <Button @warning @isLoading={{this.isLoading}}>Warning</Button>
+    <Button @subtle @isLoading={{this.isLoading}}>Subtle</Button>
+  {{/demo.example}}
+
+  {{demo.snippet "button-spinner-example.hbs"}}
+  {{demo.snippet "button-spinner-example.js"}}
+{{/docs-demo}}

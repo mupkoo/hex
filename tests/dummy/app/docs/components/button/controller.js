@@ -1,8 +1,8 @@
-// BEGIN-SNIPPET spinner-button-example.js
+// BEGIN-SNIPPET button-spinner-example.js
 import Controller from '@ember/controller';
 import { action } from '@ember/object';
 
-export default class SpinnerButtonController extends Controller {
+export default class ButtonController extends Controller {
   isLoading = true;
 
   @action toggleState() {
