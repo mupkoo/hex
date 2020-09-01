@@ -29,8 +29,17 @@ export default class ButtonComponent extends Component {
       'btn-sm': this.args.small,
       'btn-lg': this.args.large,
       'btn-circle': this.args.circle,
-      'btn-block': this.args.block
+      'btn-block': this.args.block,
+      'btn-spinner': this.hasSpinner
     });
+  }
+
+  get hasSpinner() {
+    return typeof this.args.isLoading !== 'undefined';
+  }
+
+  get isDisabled() {
+    return this.args.isLoading || this.args.disabled;
   }
 
   // Looks like you cannot overwrite the `type` attribute via `...attributes`
