@@ -1,26 +1,30 @@
 <h1>Circle Button</h1>
 
 {{#each this.buttons key="@index" as |variant|}}
-  <div class="docs-flex docs-w-full docs-mb-4">
-    <div class="docs-w-1/4">
-      <button type="button" class="btn btn-circle btn-{{variant}}">
-        {{svg-jar "edit"}}
-      </button>
-    </div>
-    <div class="docs-w-1/4">
-      <button type="button" class="btn btn-circle btn-{{variant}} focus">
-        {{svg-jar "close"}}
-      </button>
-    </div>
-    <div class="docs-w-1/4">
-      <button type="button" class="btn btn-circle btn-{{variant}} active">
-        {{svg-jar "code"}}
-      </button>
-    </div>
-    <div class="docs-w-1/4">
-      <button type="button" class="btn btn-circle btn-{{variant}}" disabled>
-        {{svg-jar "trash"}}
-      </button>
-    </div>
+  <div class="docs-flex docs-w-full docs-items-center docs-mb-4 docs-gap-2">
+    <button type="button" class="btn btn-circle btn-{{variant}}">
+      {{svg-jar "edit"}}
+    </button>
+    <button type="button" class="btn btn-circle btn-{{variant}} focus">
+      {{svg-jar "close"}}
+    </button>
+    <button type="button" class="btn btn-circle btn-{{variant}} active">
+      {{svg-jar "code"}}
+    </button>
+    <button type="button" class="btn btn-circle btn-{{variant}} disabled">
+      {{svg-jar "trash"}}
+    </button>
+    <button type="button" class="btn btn-sm btn-circle btn-{{variant}}">
+      {{svg-jar "edit"}}
+    </button>
+    <button type="button" class="btn btn-sm btn-circle btn-{{variant}} focus">
+      {{svg-jar "close"}}
+    </button>
+    <button type="button" class="btn btn-sm btn-circle btn-{{variant}} active">
+      {{svg-jar "code"}}
+    </button>
+    <button type="button" class="btn btn-sm btn-circle btn-{{variant}} disabled">
+      {{svg-jar "trash"}}
+    </button>
   </div>
 {{/each}}
