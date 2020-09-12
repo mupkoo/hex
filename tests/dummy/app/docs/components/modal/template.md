@@ -4,15 +4,15 @@ A component that displays content in a layer blocking the interaction with the p
 
 {{#docs-demo as |demo|}}
   {{#demo.example name="modal-example.hbs"}}
-    <Button {{on "click" this.showModal}}>
+    <Button {{on "click" this.showModal}} data-test-normal>
       Show Modal
     </Button>
 
-    <Button {{on "click" this.showSmallModal}}>
+    <Button {{on "click" this.showSmallModal}} data-test-small>
       Show Small Modal
     </Button>
 
-    <Button {{on "click" this.showLargeModal}}>
+    <Button {{on "click" this.showLargeModal}} data-test-large>
       Show Large Modal
     </Button>
 
