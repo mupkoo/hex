@@ -2,7 +2,7 @@
 
 {{#docs-demo as |demo|}}
   {{#demo.example name="power-select-field-example.hbs"}}
-    <Field @label="Power Select" as |id|>
+    <Field @label="Power Select" data-test-single as |id|>
       <PowerSelect 
         @triggerId={{id}}
         @allowClear={{true}}
@@ -29,7 +29,7 @@
       </PowerSelect>
     </Field>
 
-    <Field @label="Power Select Multiple" as |id|>
+    <Field @label="Power Select Multiple" data-test-multiple as |id|>
       <PowerSelectMultiple 
         @triggerId={{id}} 
         @onChange={{fn (mut this.jedis)}}
