@@ -33,7 +33,7 @@ export default class ModalComponent extends Component {
   get classNames() {
     return objStr({
       'modal-sm': this.args.small,
-      'modal-lg': this.args.large
+      'modal-lg': this.args.large,
     });
   }
 

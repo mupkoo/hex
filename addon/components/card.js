@@ -8,5 +8,4 @@ import Component from '@glimmer/component';
   @class Card
   @public
 */
-export default class CardComponent extends Component {
-}
+export default class CardComponent extends Component {}

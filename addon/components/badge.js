@@ -20,7 +20,7 @@ export default class BadgeComponent extends Component {
       'badge-warning': this.args.warning,
       'badge-info': this.args.info,
       'badge-light': this.args.light,
-      'badge-dark': this.args.dark
+      'badge-dark': this.args.dark,
     });
   }
 }

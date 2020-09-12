@@ -1,4 +1,3 @@
 import Component from '@ember/component';
 
-export default class ModalHeaderComponent extends Component {
-}
+export default class ModalHeaderComponent extends Component {}

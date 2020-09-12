@@ -12,7 +12,7 @@ import objStr from 'hex/-private/obj-str';
 export default class SpinnerComponent extends Component {
   get classNames() {
     return objStr({
-      inverted: this.args.inverted
+      inverted: this.args.inverted,
     });
   }
 

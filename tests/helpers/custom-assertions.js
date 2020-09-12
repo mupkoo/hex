@@ -6,7 +6,7 @@ QUnit.assert.contain = function (a, b, message) {
       result: a[key] === b[key],
       actual: a[key],
       expected: b[key],
-      message: message || `object has '${key}' with value of '${b[key]}'`
+      message: message || `object has '${key}' with value of '${b[key]}'`,
     });
   });
 };

@@ -12,6 +12,6 @@ export default Controller.extend({
     'outline-danger',
     'warning',
     'outline-warning',
-    'subtle'
-  ])
+    'subtle',
+  ]),
 });

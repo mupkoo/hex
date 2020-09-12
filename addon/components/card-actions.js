@@ -13,5 +13,4 @@ import Component from '@glimmer/component';
   @class CardActions
   @public
 */
-export default class CardActionsComponent extends Component {
-}
+export default class CardActionsComponent extends Component {}

@@ -29,7 +29,10 @@ export default class NotifyService extends Service {
     @returns {void}
   */
   remove(messageToBeRemoved) {
-    this.set('messages', this.messages.filter((message) => messageToBeRemoved != message));
+    this.set(
+      'messages',
+      this.messages.filter((message) => messageToBeRemoved != message)
+    );
   }
 
   /**

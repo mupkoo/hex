@@ -14,7 +14,7 @@ import requirejs from 'require';
 export default function testRootElementId(config) {
   let id;
 
-  if (config.environment === 'test' && DEBUG && (typeof FastBoot === 'undefined')) {
+  if (config.environment === 'test' && DEBUG && typeof FastBoot === 'undefined') {
     if (requirejs.has('@ember/test-helpers/dom/get-root-element')) {
       try {
         id = requirejs('@ember/test-helpers/dom/get-root-element').default().id;

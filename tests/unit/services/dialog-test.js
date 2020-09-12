@@ -12,20 +12,25 @@ module('Unit - Service: dialog', function (hooks) {
     this.dialog.confirm({
       title: 'Want to be a Jedi?',
       message: 'Confirming you will enter the endless universe of the power.',
-      confirmLabel: 'Make me Jedi'
+      confirmLabel: 'Make me Jedi',
     });
 
     assert.equal(this.dialog.message.title, 'Want to be a Jedi?');
-    assert.equal(this.dialog.message.message, 'Confirming you will enter the endless universe of the power.');
+    assert.equal(
+      this.dialog.message.message,
+      'Confirming you will enter the endless universe of the power.'
+    );
     assert.equal(this.dialog.message.confirmLabel, 'Make me Jedi');
   });
 
   test('.confirm setting the message second time resets the values to the default once', function (assert) {
-    this.dialog.confirm({
-      title: 'Want to be a Jedi?',
-      message: 'Confirming you will enter the endless universe of the power.',
-      confirmLabel: 'Make me Jedi'
-    }).onConfirm(() => {});
+    this.dialog
+      .confirm({
+        title: 'Want to be a Jedi?',
+        message: 'Confirming you will enter the endless universe of the power.',
+        confirmLabel: 'Make me Jedi',
+      })
+      .onConfirm(() => {});
 
     this.dialog.onCancel();
     this.dialog.confirm();
@@ -56,13 +61,16 @@ module('Unit - Service: dialog', function (hooks) {
     this.dialog.confirmDelete();
 
     assert.equal(this.dialog.message.title, 'Are you sure?');
-    assert.equal(this.dialog.message.message, 'Deleting a record is final and deleted records cannot be restored.');
+    assert.equal(
+      this.dialog.message.message,
+      'Deleting a record is final and deleted records cannot be restored.'
+    );
     assert.equal(this.dialog.message.confirmLabel, 'Delete');
   });
 
   test('.onConfirm resolves the promise like object', async function (assert) {
     let isThenTriggered = false;
-    let result = this.dialog.confirm().then(() => isThenTriggered = true);
+    let result = this.dialog.confirm().then(() => (isThenTriggered = true));
 
     this.dialog.onConfirm();
     await result;
@@ -72,7 +80,7 @@ module('Unit - Service: dialog', function (hooks) {
 
   test('.onConfirm triggers the onConfirm callbacks', async function (assert) {
     let isOnConfirmTriggered = false;
-    let result = this.dialog.confirm().onConfirm(() => isOnConfirmTriggered = true);
+    let result = this.dialog.confirm().onConfirm(() => (isOnConfirmTriggered = true));
 
     this.dialog.onConfirm();
     await result;
@@ -90,12 +98,15 @@ module('Unit - Service: dialog', function (hooks) {
   test('.onConfirm does not trigger the onCancel handler', function (assert) {
     let done = assert.async();
 
-    this.dialog.confirm().onConfirm(() => {
-      assert.ok(true);
-      done();
-    }).onCancel(() => {
-      assert.notOk(true, 'onCancel was triggered');
-    });
+    this.dialog
+      .confirm()
+      .onConfirm(() => {
+        assert.ok(true);
+        done();
+      })
+      .onCancel(() => {
+        assert.notOk(true, 'onCancel was triggered');
+      });
 
     this.dialog.onConfirm();
   });
@@ -103,12 +114,15 @@ module('Unit - Service: dialog', function (hooks) {
   test('.onConfirm does not trigger the onCancel handler even if it is defined first', function (assert) {
     let done = assert.async();
 
-    this.dialog.confirm().onCancel(() => {
-      assert.notOk(true, 'onCancel was triggered');
-    }).onConfirm(() => {
-      assert.ok(true);
-      done();
-    });
+    this.dialog
+      .confirm()
+      .onCancel(() => {
+        assert.notOk(true, 'onCancel was triggered');
+      })
+      .onConfirm(() => {
+        assert.ok(true);
+        done();
+      });
 
     this.dialog.onConfirm();
   });
@@ -134,12 +148,15 @@ module('Unit - Service: dialog', function (hooks) {
   test('.onCancel does not trigger the onConfirm handler', function (assert) {
     let done = assert.async();
 
-    this.dialog.confirm().onConfirm(() => {
-      assert.notOk(true, 'onConfirm was triggered');
-    }).onCancel(() => {
-      assert.ok(true);
-      done();
-    });
+    this.dialog
+      .confirm()
+      .onConfirm(() => {
+        assert.notOk(true, 'onConfirm was triggered');
+      })
+      .onCancel(() => {
+        assert.ok(true);
+        done();
+      });
 
     this.dialog.onCancel();
   });

@@ -11,16 +11,19 @@ export default class NotifyController extends Controller {
   displayConfirmation() {
     this.set('message', null);
 
-    this.dialog.confirm({
-      title: 'How awesome?',
-      message: 'This is a simple dialog message, used for confirming someones actions',
-      cancelLabel: 'Dude',
-      confirmLabel: 'Sweet'
-    }).onConfirm(() => {
-      this.set('message', 'Sweet! You confirmed the message.');
-    }).onCancel(() => {
-      this.set('message', 'Dialog was dismissed!');
-    });
+    this.dialog
+      .confirm({
+        title: 'How awesome?',
+        message: 'This is a simple dialog message, used for confirming someones actions',
+        cancelLabel: 'Dude',
+        confirmLabel: 'Sweet',
+      })
+      .onConfirm(() => {
+        this.set('message', 'Sweet! You confirmed the message.');
+      })
+      .onCancel(() => {
+        this.set('message', 'Dialog was dismissed!');
+      });
   }
 
   @action
