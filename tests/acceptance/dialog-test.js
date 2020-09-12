@@ -15,7 +15,6 @@ module('Acceptance: dialog', function (hooks) {
     await click('[data-test-confirm]');
     await click('[data-test-cancel-dialog]');
     assert.dom('[data-test-message]').hasText('Dialog was dismissed!');
-
   });
 
   test('it works with task instance that does not have a catch block', async function (assert) {

@@ -17,7 +17,7 @@ export default class SelectFieldComponent extends Component {
     return this.args.options.map(([value, label]) => ({
       value,
       label,
-      selected: value === this.args.selected
+      selected: value === this.args.selected,
     }));
   }
 

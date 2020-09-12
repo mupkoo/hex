@@ -29,7 +29,7 @@ module('Acceptance: Percy', function (hooks) {
 
         await click('[data-test-large]');
         await percySnapshot('/docs/modal/large');
-      }
+      },
     },
     { url: '/docs/components/spinner' },
     { url: '/docs/components/checkbox', setup: () => click('label') },
@@ -50,7 +50,7 @@ module('Acceptance: Percy', function (hooks) {
         await percySnapshot('/docs/power-select-field/multiple');
 
         await selectChoose('[data-test-multiple]', 'Kenobi');
-      }
+      },
     },
     {
       url: '/docs/services/dialog',
@@ -60,7 +60,7 @@ module('Acceptance: Percy', function (hooks) {
         await click('[data-test-confirm-dialog]');
 
         await click('[data-test-delete]');
-      }
+      },
     },
     {
       url: '/docs/services/notify',
@@ -68,7 +68,7 @@ module('Acceptance: Percy', function (hooks) {
         await click('[data-test-show-info]');
         await click('[data-test-show-success]');
         await click('[data-test-show-danger]');
-      }
+      },
     },
     { url: '/sandbox/alert' },
     { url: '/sandbox/button' },
@@ -76,7 +76,7 @@ module('Acceptance: Percy', function (hooks) {
     { url: '/sandbox/button-circle' },
     { url: '/sandbox/card' },
     { url: '/sandbox/fields' },
-    { url: '/sandbox/input' }
+    { url: '/sandbox/input' },
   ];
 
   for (let { url, setup } of cases) {

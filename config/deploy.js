@@ -7,10 +7,9 @@ module.exports = function (deployTarget) {
 
     git: {
       repo: 'git@github.com:mupkoo/hex.git',
-      worktreePath: 'dist-deploy'
-    }
+      worktreePath: 'dist-deploy',
+    },
   };
-
 
   if (deployTarget === 'development') {
     ENV.build.environment = 'development';
@@ -34,7 +33,7 @@ module.exports = function (deployTarget) {
     console.log('Setup deploy key');
 
     ENV['git-ci'] = {
-      deployKey: process.env.DEPLOY_KEY
+      deployKey: process.env.DEPLOY_KEY,
     };
   }
 

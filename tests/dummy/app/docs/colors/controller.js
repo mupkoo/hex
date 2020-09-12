@@ -12,7 +12,7 @@ export default Controller.extend({
     'gray-700',
     'gray-800',
     'gray-900',
-    'black'
+    'black',
   ]),
 
   colors: Object.freeze([
@@ -25,9 +25,10 @@ export default Controller.extend({
     'yellow',
     'green',
     'teal',
-    'cyan'
+    'cyan',
   ]),
 
+  // prettier-ignore
   theme: Object.freeze([
     'primary',
     'success',
@@ -35,6 +36,6 @@ export default Controller.extend({
     'warning',
     'danger',
     'light',
-    'dark'
-  ])
+    'dark',
+  ]),
 });

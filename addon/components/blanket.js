@@ -21,7 +21,7 @@ export default class BlanketComponent extends Component {
   get classNames() {
     return objStr({
       'blanket-tinted': this.args.isTinted,
-      'blanket-click-through': this.args.canClickThrough
+      'blanket-click-through': this.args.canClickThrough,
     });
   }
 

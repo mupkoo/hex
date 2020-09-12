@@ -9,7 +9,7 @@ module('Integration: SelectField', function (hooks) {
   hooks.beforeEach(function () {
     this.options = [
       ['jedi', 'Jedi Knight'],
-      ['sith', 'Sith Lord']
+      ['sith', 'Sith Lord'],
     ];
   });
 
@@ -80,7 +80,9 @@ module('Integration: SelectField', function (hooks) {
     this.selected = 'sith';
     this.onChange = (selected) => assert.step(selected);
 
-    await render(hbs`<SelectField @selected={{this.selected}} @options={{this.options}} @onChange={{this.onChange}} />`);
+    await render(hbs`
+      <SelectField @selected={{this.selected}} @options={{this.options}} @onChange={{this.onChange}} />
+    `);
 
     await fillIn('select', 'jedi');
 
@@ -89,7 +91,9 @@ module('Integration: SelectField', function (hooks) {
   });
 
   test('it passes the attributes to the select', async function (assert) {
-    await render(hbs`<SelectField data-test-select disabled={{true}} required={{true}} @options={{this.options}} />`);
+    await render(hbs`
+      <SelectField data-test-select disabled={{true}} required={{true}} @options={{this.options}} />
+    `);
 
     assert.dom('select').hasAttribute('data-test-select');
     assert.dom('select').hasAttribute('disabled');
@@ -100,7 +104,9 @@ module('Integration: SelectField', function (hooks) {
     this.selected = 'jedi';
     this.onChange = (e) => this.set('selected', e.target.value);
 
-    await render(hbs`<SelectField selected={{this.selected}} {{on "change" this.onChange}} @options={{this.options}} />`);
+    await render(hbs`
+      <SelectField selected={{this.selected}} {{on "change" this.onChange}} @options={{this.options}} />
+    `);
 
     assert.dom('select').hasValue(this.selected);
 

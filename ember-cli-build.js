@@ -6,8 +6,8 @@ const nodeSass = require('node-sass');
 module.exports = function (defaults) {
   let app = new EmberAddon(defaults, {
     sassOptions: {
-      implementation: nodeSass
-    }
+      implementation: nodeSass,
+    },
   });
 
   return app.toTree();

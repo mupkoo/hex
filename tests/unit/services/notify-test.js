@@ -22,7 +22,7 @@ module('Unit/Service: notify', function (hooks) {
       text: 'Test message',
       type: 'info',
       isSticky: true,
-      closeAfter: 2500
+      closeAfter: 2500,
     });
   });
 
@@ -42,7 +42,7 @@ module('Unit/Service: notify', function (hooks) {
 
     assert.contain(this.notify.messages[0], {
       text: 'An info message',
-      type: 'info'
+      type: 'info',
     });
   });
 
@@ -51,7 +51,7 @@ module('Unit/Service: notify', function (hooks) {
 
     assert.contain(this.notify.messages[0], {
       text: 'A success message',
-      type: 'success'
+      type: 'success',
     });
   });
 
@@ -60,7 +60,7 @@ module('Unit/Service: notify', function (hooks) {
 
     assert.contain(this.notify.messages[0], {
       text: 'A danger message',
-      type: 'danger'
+      type: 'danger',
     });
   });
 });
