@@ -58,6 +58,11 @@
     height: 1.125rem;
     margin: 0;
   }
+
+  &.btn-sm {
+    padding: .25rem;
+    border-radius: 50%;
+  }
 }
 
 // Future-proof disabling of clicks on `<a>` elements
@@ -166,6 +171,11 @@ fieldset:disabled a.btn {
 
 .btn-sm {
   @include button-size(.25rem, .75rem, .75rem, 1.428571429, $border-radius-sm);
+
+  svg {
+    width: .875rem;
+    height: .875rem;
+  }
 }
 
 .btn-lg {
