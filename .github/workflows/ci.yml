@@ -26,8 +26,15 @@ jobs:
       - name: Lint
         run: yarn lint
 
+      - name: Set PERCY_BRANCH
+        run: echo "::set-env name=PERCY_BRANCH::$(echo ${GITHUB_REF##*/})"
+
+      - run: echo $PERCY_BRANCH
+
       - name: Test
-        run: yarn test
+        run: npx percy exec -- yarn test
+        env:
+          PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
 
   deploy:
     runs-on: ubuntu-latest
