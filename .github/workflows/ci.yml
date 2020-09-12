@@ -27,7 +27,9 @@ jobs:
         run: yarn lint
 
       - name: Test
-        run: yarn test
+        run: npx percy exec -- yarn test
+        env:
+          PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
 
   deploy:
     runs-on: ubuntu-latest
