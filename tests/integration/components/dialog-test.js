@@ -35,7 +35,7 @@ module('Integration: Dialog', function (hooks) {
       title: 'Dummy title',
       message: 'Dummy message',
       confirmLabel: 'Dummy confirm',
-      cancelLabel: 'Dummy cancel'
+      cancelLabel: 'Dummy cancel',
     });
 
     await render(hbs`
@@ -51,7 +51,7 @@ module('Integration: Dialog', function (hooks) {
 
   test('it renders the passed HTML to the body', async function (assert) {
     this.dialog.confirm({
-      message: '<span id="dialog-span">Awesome</span>'
+      message: '<span id="dialog-span">Awesome</span>',
     });
 
     await render(hbs`
@@ -76,7 +76,7 @@ module('Integration: Dialog', function (hooks) {
   test('it triggers the cancel action upon clicking the cancel button', async function (assert) {
     let isCancelTriggered = false;
 
-    this.dialog.confirm().onCancel(() => isCancelTriggered = true);
+    this.dialog.confirm().onCancel(() => (isCancelTriggered = true));
 
     await render(hbs`
       <div id="dummy-dialog"></div>
@@ -91,7 +91,7 @@ module('Integration: Dialog', function (hooks) {
   test('it triggers the confirm action upon clicking the confirm button', async function (assert) {
     let isConfirmTriggered = false;
 
-    this.dialog.confirm().then(() => isConfirmTriggered = true);
+    this.dialog.confirm().then(() => (isConfirmTriggered = true));
 
     await render(hbs`
       <div id="dummy-dialog"></div>
@@ -121,7 +121,7 @@ module('Integration: Dialog', function (hooks) {
   test('it triggers the cancel action upon hitting ESC', async function (assert) {
     let isCancelTriggered = false;
 
-    this.dialog.confirm().onCancel(() => isCancelTriggered = true);
+    this.dialog.confirm().onCancel(() => (isCancelTriggered = true));
 
     await render(hbs`
       <div id="dummy-dialog"></div>
@@ -136,7 +136,7 @@ module('Integration: Dialog', function (hooks) {
   test('it triggers the confirm action upon hitting ENTER', async function (assert) {
     let isConfirmTriggered = false;
 
-    this.dialog.confirm().then(() => isConfirmTriggered = true);
+    this.dialog.confirm().then(() => (isConfirmTriggered = true));
 
     await render(hbs`
       <div id="dummy-dialog"></div>
@@ -150,7 +150,7 @@ module('Integration: Dialog', function (hooks) {
 
   test('it does not render cancel button if cancelLabel is set to false', async function (assert) {
     this.dialog.confirm({
-      cancelLabel: false
+      cancelLabel: false,
     });
 
     await render(hbs`

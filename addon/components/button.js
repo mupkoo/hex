@@ -30,7 +30,7 @@ export default class ButtonComponent extends Component {
       'btn-lg': this.args.large,
       'btn-circle': this.args.circle,
       'btn-block': this.args.block,
-      'btn-spinner': this.hasSpinner
+      'btn-spinner': this.hasSpinner,
     });
   }
 

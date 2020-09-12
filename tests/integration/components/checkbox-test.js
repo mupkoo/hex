@@ -23,7 +23,9 @@ module('Integration: Checkbox', function (hooks) {
 
   test('it triggers the passed @onChange action on input', async function (assert) {
     let checked;
-    this.onChange = (value) => { checked = value; };
+    this.onChange = (value) => {
+      checked = value;
+    };
 
     await render(hbs`<Checkbox @checked={{false}} @onChange={{this.onChange}} />`);
 
@@ -35,7 +37,9 @@ module('Integration: Checkbox', function (hooks) {
   test('it does not mutate the @checked if @onChange is provided', async function (assert) {
     let checked;
     this.checked = true;
-    this.onChange = (value) => { checked = value; };
+    this.onChange = (value) => {
+      checked = value;
+    };
 
     await render(hbs`<Checkbox @checked={{this.checked}} @onChange={{this.onChange}} />`);
 

@@ -49,7 +49,9 @@ module('Integration: SearchField', function (hooks) {
   });
 
   test('it passes the attributes to the input', async function (assert) {
-    await render(hbs`<SearchField data-test-input type="number" min="1" max="5" required={{true}} />`);
+    await render(hbs`
+      <SearchField data-test-input type="number" min="1" max="5" required={{true}} />
+    `);
 
     assert.dom('input').hasAttribute('data-test-input');
     assert.dom('input').hasAttribute('required');

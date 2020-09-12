@@ -17,7 +17,7 @@ export default class DialogService extends Service {
     return this.confirm({
       title: 'Are you sure?',
       message: 'Deleting a record is final and deleted records cannot be restored.',
-      confirmLabel: 'Delete'
+      confirmLabel: 'Delete',
     });
   }
 
@@ -88,6 +88,6 @@ function createMessage(attributes) {
     message: 'Are you sure?',
     cancelLabel: 'Cancel',
     confirmLabel: 'Confirm',
-    ...attributes
+    ...attributes,
   };
 }
