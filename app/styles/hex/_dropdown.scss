@@ -1,21 +1,20 @@
 .dropdown {
-
 }
 
 .dropdown-content {
   min-width: 12rem;
-  margin: .25rem 0;
-  padding: .5rem 0;
+  margin: 0.25rem 0;
+  padding: 0.5rem 0;
   background-color: $white;
   box-shadow: $dropdown-shadow;
   border-radius: $border-radius-sm;
 
   &.ember-basic-dropdown-content--above {
-    margin-top: -.25rem;
+    margin-top: -0.25rem;
   }
 
   hr {
-    margin: .5rem 0;
+    margin: 0.5rem 0;
   }
 }
 
@@ -25,11 +24,11 @@
 
   display: block;
   width: 100%;
-  padding: .375rem 1.5rem;
+  padding: 0.375rem 1.5rem;
   border: 0;
   background-color: transparent;
   color: $text;
-  font-size: $font-size;
+  font-size: 0.875rem;
   text-align: left;
   white-space: nowrap;
 
@@ -46,28 +45,55 @@
 .ember-basic-dropdown-content--below {
   transform-origin: 0 0;
 
-  &.ember-basic-dropdown--transitioning-in { animation: drop-fade-below $transition-duration $ease-in; }
-  &.ember-basic-dropdown--transitioning-out { animation: drop-fade-below $transition-duration reverse $ease-out; }
+  &.ember-basic-dropdown--transitioning-in {
+    animation: drop-fade-below $transition-duration $ease-in;
+  }
+
+  &.ember-basic-dropdown--transitioning-out {
+    animation: drop-fade-below $transition-duration reverse $ease-out;
+  }
 }
 
 .ember-basic-dropdown-content--above {
   transform-origin: 100% 100%;
 
-  &.ember-basic-dropdown--transitioning-in { animation: drop-fade-above $transition-duration $ease-in; }
-  &.ember-basic-dropdown--transitioning-out { animation: drop-fade-above $transition-duration reverse $ease-out; }
+  &.ember-basic-dropdown--transitioning-in {
+    animation: drop-fade-above $transition-duration $ease-in;
+  }
+
+  &.ember-basic-dropdown--transitioning-out {
+    animation: drop-fade-above $transition-duration reverse $ease-out;
+  }
 }
 
 .ember-basic-dropdown-content--in-place {
-  &.ember-basic-dropdown--transitioning-in { animation: drop-fade-below $transition-duration $ease-in; }
-  &.ember-basic-dropdown--transitioning-out { animation: drop-fade-below $transition-duration reverse $ease-out; }
+  &.ember-basic-dropdown--transitioning-in {
+    animation: drop-fade-below $transition-duration $ease-in;
+  }
+
+  &.ember-basic-dropdown--transitioning-out {
+    animation: drop-fade-below $transition-duration reverse $ease-out;
+  }
 }
 
 @keyframes drop-fade-below {
-  0%   { opacity: 0; transform: scale(1, .95) translateY(-.5rem); }
-  100% { opacity: 1; transform: scale(1, 1) translateY(0); }
+  0% {
+    opacity: 0;
+    transform: scale(1, 0.95) translateY(-0.5rem);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1, 1) translateY(0);
+  }
 }
 
 @keyframes drop-fade-above {
-  0%   { opacity: 0; transform: scale(1, .95) translateY(.5rem); }
-  100% { opacity: 1; transform: scale(1, 1) translateY(0); }
+  0% {
+    opacity: 0;
+    transform: scale(1, 0.95) translateY(0.5rem);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1, 1) translateY(0);
+  }
 }
