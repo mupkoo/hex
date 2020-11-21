@@ -1,27 +1,28 @@
 @mixin button-variant(
   $background,
   $border,
+  $color: color-yiq($background),
   $focus: rgba($border, $focus-shadow-opacity),
   $hover-background: lighten($background, 6%),
   $hover-border: lighten($border, 6%),
   $active-background: darken($background, 6%),
   $active-border: darken($border, 6%)
 ) {
-  color: color-yiq($background);
+  color: $color;
   background-color: $background;
   border-color: $border;
 
   svg {
-    fill: color-yiq($background);
+    fill: $color;
   }
 
   &:hover {
-    color: color-yiq($hover-background);
+    color: $color;
     background-color: $hover-background;
     border-color: $hover-border;
 
     svg {
-      fill: color-yiq($hover-background);
+      fill: $color;
     }
   }
 
@@ -33,23 +34,23 @@
   // Disabled comes first so active can properly restyle
   &.disabled,
   &:disabled {
-    color: color-yiq($background);
+    color: $color;
     background-color: $background;
     border-color: $border;
 
     svg {
-      fill: color-yiq($background);
+      fill: $color;
     }
   }
 
   &:not(:disabled):not(.disabled):active,
   &:not(:disabled):not(.disabled).active {
-    color: color-yiq($active-background);
+    color: $color;
     background-color: $active-background;
     border-color: $active-border;
 
     svg {
-      fill: color-yiq($active-background);
+      fill: $color;
     }
 
     &:focus {

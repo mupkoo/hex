@@ -17,9 +17,11 @@ $indigo:                     #6610f2 !default;
 $purple:                     #5243aa !default;
 $pink:                       #e83e8c !default;
 $red:                        #de350c !default;
+$darken-red:                 darken($red, 6%) !default;
 $orange:                     #fd7e14 !default;
-$yellow:                     #ffab02 !default;
+$yellow:                     #ff8b00 !default;
 $green:                      #00875a !default;
+$darken-green:               darken($green, 3%) !default;
 $teal:                       #00a3bf !default;
 $cyan:                       #00c7e6 !default;
 
