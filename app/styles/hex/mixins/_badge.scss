@@ -1,18 +1,19 @@
 @mixin badge-variant(
   $background,
+  $color: $white,
   $focus: rgba($background, $focus-shadow-opacity),
   $hover-background: lighten($background, 6%),
   $hover-border: lighten($background, 6%),
   $active-background: darken($background, 6%),
   $active-border: darken($background, 6%)
 ) {
-  color: color-yiq($background);
+  color: $color;
   background-color: $background;
 
   @at-root {
     a#{&} {
       &:hover {
-        color: color-yiq($hover-background);
+        color: $color;
         background-color: $hover-background;
         border-color: $hover-border;
       }
