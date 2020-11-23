@@ -103,8 +103,8 @@ fieldset:disabled a.btn {
 
 .btn-success {
   @include button-variant(
-    mix($success, $white, 15%),
-    mix($success, $white, 15%),
+    $light-green,
+    $light-green,
     $darken-green,
     rgba($success, $focus-shadow-opacity),
     mix($success, $white, 10%),
@@ -116,8 +116,8 @@ fieldset:disabled a.btn {
 
 .btn-danger {
   @include button-variant(
-    mix($danger, $white, 15%),
-    mix($danger, $white, 15%),
+    $light-red,
+    $light-red,
     $darken-red,
     rgba($danger, $focus-shadow-opacity),
     mix($danger, $white, 10%),
