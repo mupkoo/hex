@@ -7,6 +7,12 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+
+      - name: Set deploy version path
+        run: echo "ADDON_DOCS_VERSION_PATH=$(echo ${GITHUB_REF##*/})" >> $GITHUB_ENV
+
+      - run: echo $ADDON_DOCS_VERSION_PATH
+
       - name: Setup Node
         uses: actions/setup-node@v1
         with:
@@ -58,7 +64,7 @@ jobs:
         run: yarn install
 
       - name: Set deploy version path
-        run: echo "::set-env name=ADDON_DOCS_VERSION_PATH::$(echo ${GITHUB_REF##*/})"
+        run: echo "ADDON_DOCS_VERSION_PATH=$(echo ${GITHUB_REF##*/})" >> $GITHUB_ENV
 
       - run: echo $ADDON_DOCS_VERSION_PATH
 
