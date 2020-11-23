@@ -1,38 +1,38 @@
 .badge {
-  @include badge-variant($gray-200);
+  @include badge-variant($gray-200, $gray-700);
   @include transition(
     background-color $transition-duration $ease,
-    box-shadow $transition-duration $ease,
+    box-shadow $transition-duration $ease
   );
 
-  padding: .25em .5em;
+  padding: 0.25em 0.5em;
   border-radius: $border-radius;
-  font-size: .75em;
+  font-size: 0.75em;
   font-weight: 500;
 }
 
 .badge-primary {
-  @include badge-variant($primary);
+  @include badge-variant($light-blue, $primary);
 }
 
 .badge-success {
-  @include badge-variant($success);
+  @include badge-variant($light-green, $darken-green);
 }
 
 .badge-danger {
-  @include badge-variant($danger);
+  @include badge-variant($light-red, $darken-red);
 }
 
 .badge-warning {
-  @include badge-variant($warning);
+  @include badge-variant($light-yellow, $darken-yellow);
 }
 
 .badge-info {
-  @include badge-variant($info);
+  @include badge-variant($light-cyan, $darken-cyan);
 }
 
 .badge-light {
-  @include badge-variant($gray-50);
+  @include badge-variant($gray-50, $gray-700);
 }
 
 .badge-dark {

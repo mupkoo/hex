@@ -13,17 +13,24 @@ $gray-900:                   #091e42 !default;
 $black:                      #000 !default;
 
 $blue:                       #0252cc !default;
+$light-blue:                 mix($blue, $white, 15%) !default;
 $indigo:                     #6610f2 !default;
 $purple:                     #5243aa !default;
 $pink:                       #e83e8c !default;
 $red:                        #de350c !default;
+$light-red:                  mix($red, $white, 15%) !default;
 $darken-red:                 darken($red, 6%) !default;
 $orange:                     #fd7e14 !default;
 $yellow:                     #ff8b00 !default;
+$light-yellow:               mix($yellow, $white, 15%) !default;
+$darken-yellow:              darken($yellow, 18%) !default;
 $green:                      #00875a !default;
+$light-green:                mix($green, $white, 15%) !default;
 $darken-green:               darken($green, 3%) !default;
 $teal:                       #00a3bf !default;
 $cyan:                       #00c7e6 !default;
+$light-cyan:                 mix($cyan, $white, 15%) !default;
+$darken-cyan:                darken($cyan, 18%) !default;
 
 $primary:                    $blue !default;
 $success:                    $green !default;
