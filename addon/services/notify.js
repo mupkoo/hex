@@ -1,9 +1,10 @@
 import Ember from 'ember';
 import Service from '@ember/service';
+import { tracked } from '@glimmer/tracking';
 import guid from 'hex/-private/guid';
 
 export default class NotifyService extends Service {
-  messages = [];
+  @tracked messages = [];
 
   /**
     Push a message to the notify massages
@@ -19,7 +20,7 @@ export default class NotifyService extends Service {
     let { type = 'info', isSticky = Ember.testing, closeAfter = 2500 } = options;
     let message = { id: guid(), text, type, isSticky, closeAfter };
 
-    this.set('messages', [...this.messages, message]);
+    this.messages = [...this.messages, message];
   }
 
   /**
@@ -29,10 +30,7 @@ export default class NotifyService extends Service {
     @returns {void}
   */
   remove(messageToBeRemoved) {
-    this.set(
-      'messages',
-      this.messages.filter((message) => messageToBeRemoved != message)
-    );
+    this.messages = this.messages.filter((message) => messageToBeRemoved != message);
   }
 
   /**

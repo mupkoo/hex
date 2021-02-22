@@ -1,3 +1,3 @@
-import Component from '@glimmer/component';
+import templateOnly from '@ember/component/template-only';
 
-export default class ModalFooterComponent extends Component {}
+export default templateOnly();
