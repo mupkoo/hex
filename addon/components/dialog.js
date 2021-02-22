@@ -1,19 +1,19 @@
 import Component from '@glimmer/component';
-import { action, computed } from '@ember/object';
-import { readOnly } from '@ember/object/computed';
+import { action } from '@ember/object';
 import { inject as service } from '@ember/service';
 import { isEmpty } from '@ember/utils';
 
 export default class DialogComponent extends Component {
   @service('dialog') dialog;
-  @readOnly('dialog.message') message;
 
-  @computed('message')
+  get message() {
+    return this.dialog.message;
+  }
+
   get hasMessage() {
     return !isEmpty(this.message);
   }
 
-  @computed('message.cancelLabel')
   get hasCancelButton() {
     return this.message.cancelLabel !== false;
   }

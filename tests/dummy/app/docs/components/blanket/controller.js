@@ -1,13 +1,14 @@
 import Controller from '@ember/controller';
+import { tracked } from '@glimmer/tracking';
 
 export default class BlanketController extends Controller {
-  canClickThrough = true;
-  showBlanket = false;
+  @tracked canClickThrough = true;
+  @tracked showBlanket = false;
 
   // BEGIN-SNIPPET blanket-example.ts
   toggleBlanket() {
-    this.set('canClickThrough', !this.canClickThrough);
-    this.set('showBlanket', !this.showBlanket);
+    this.canClickThrough = !this.canClickThrough;
+    this.showBlanket = !this.showBlanket;
   }
 
   // END-SNIPPET

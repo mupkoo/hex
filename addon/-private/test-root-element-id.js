@@ -18,6 +18,7 @@ export default function testRootElementId(config) {
     if (requirejs.has('@ember/test-helpers/dom/get-root-element')) {
       try {
         id = requirejs('@ember/test-helpers/dom/get-root-element').default().id;
+        // eslint-disable-next-line no-empty
       } catch (e) {}
     }
 

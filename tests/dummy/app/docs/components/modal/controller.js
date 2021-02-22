@@ -1,22 +1,29 @@
 // BEGIN-SNIPPET modal-example.js
 import Controller from '@ember/controller';
 import { action } from '@ember/object';
+import { tracked } from '@glimmer/tracking';
 
 export default class ModalController extends Controller {
-  isModalVisible = false;
-  isSmall = false;
-  isLarge = false;
+  @tracked isModalVisible = false;
+  @tracked isSmall = false;
+  @tracked isLarge = false;
 
   @action showModal() {
-    this.setProperties({ isModalVisible: true, isSmall: false, isLarge: false });
+    this.isModalVisible = true;
+    this.isSmall = false;
+    this.isLarge = false;
   }
 
   @action showSmallModal() {
-    this.setProperties({ isModalVisible: true, isSmall: true, isLarge: false });
+    this.isModalVisible = true;
+    this.isSmall = true;
+    this.isLarge = false;
   }
 
   @action showLargeModal() {
-    this.setProperties({ isModalVisible: true, isSmall: false, isLarge: true });
+    this.isModalVisible = true;
+    this.isSmall = false;
+    this.isLarge = true;
   }
 }
 

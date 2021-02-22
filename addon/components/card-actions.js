@@ -1,4 +1,4 @@
-import Component from '@glimmer/component';
+import templateOnly from '@ember/component/template-only';
 
 /**
   A component used as a footer for the Card component.
@@ -13,4 +13,4 @@ import Component from '@glimmer/component';
   @class CardActions
   @public
 */
-export default class CardActionsComponent extends Component {}
+export default templateOnly();
