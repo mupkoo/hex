@@ -2,14 +2,16 @@
 import { action } from '@ember/object';
 import { inject as service } from '@ember/service';
 import Controller from '@ember/controller';
+import { tracked } from '@glimmer/tracking';
 import { task } from 'ember-concurrency';
 
 export default class NotifyController extends Controller {
   @service('dialog') dialog;
+  @tracked message;
 
   @action
   displayConfirmation() {
-    this.set('message', null);
+    this.message = null;
 
     this.dialog
       .confirm({
@@ -19,25 +21,25 @@ export default class NotifyController extends Controller {
         confirmLabel: 'Sweet',
       })
       .onConfirm(() => {
-        this.set('message', 'Sweet! You confirmed the message.');
+        this.message = 'Sweet! You confirmed the message.';
       })
       .onCancel(() => {
-        this.set('message', 'Dialog was dismissed!');
+        this.message = 'Dialog was dismissed!';
       });
   }
 
   @action
   displayDeleteConfirmation() {
-    this.set('message', null);
+    this.message = null;
 
     this.dialog.confirmDelete().onConfirm(() => {
-      this.set('message', 'So long my love...');
+      this.message = 'So long my love...';
     });
   }
 
   @task({ drop: true })
   *dialogTask() {
-    this.set('message', null);
+    this.message = null;
 
     try {
       yield this.dialog.confirm();
@@ -45,7 +47,7 @@ export default class NotifyController extends Controller {
       return;
     }
 
-    this.set('message', 'Task was confirmed!');
+    this.message = 'Task was confirmed!';
   }
 }
 
