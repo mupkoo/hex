@@ -39,7 +39,11 @@ export default class NotifyController extends Controller {
   *dialogTask() {
     this.set('message', null);
 
-    yield this.dialog.confirm();
+    try {
+      yield this.dialog.confirm();
+    } catch (e) {
+      return;
+    }
 
     this.set('message', 'Task was confirmed!');
   }
