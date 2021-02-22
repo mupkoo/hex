@@ -2,6 +2,7 @@
 
 module.exports = {
   extends: 'octane',
+
   rules: {
     'attribute-indentation': false,
   },

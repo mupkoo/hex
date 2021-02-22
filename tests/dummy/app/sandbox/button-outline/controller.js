@@ -1,5 +1,5 @@
 import Controller from '@ember/controller';
 
-export default Controller.extend({
-  buttons: Object.freeze(['default', 'primary', 'success', 'danger', 'warning']),
-});
+export default class extends Controller {
+  buttons = ['default', 'primary', 'success', 'danger', 'warning'];
+}

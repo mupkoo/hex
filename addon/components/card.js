@@ -1,4 +1,4 @@
-import Component from '@glimmer/component';
+import templateOnly from '@ember/component/template-only';
 
 /**
   A component for displaying content in a separate section.
@@ -8,4 +8,4 @@ import Component from '@glimmer/component';
   @class Card
   @public
 */
-export default class CardComponent extends Component {}
+export default templateOnly();
