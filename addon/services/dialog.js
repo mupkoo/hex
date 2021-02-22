@@ -1,13 +1,14 @@
 import Service from '@ember/service';
+import { tracked } from '@glimmer/tracking';
 
 export default class DialogService extends Service {
-  message = null;
+  @tracked message = null;
   _handler = null;
 
   confirm(options = {}) {
     if (this.message) return this._handler;
 
-    this.set('message', createMessage(options));
+    this.message = createMessage(options);
     this._handler = new Handler();
 
     return this._handler;
@@ -32,7 +33,7 @@ export default class DialogService extends Service {
   }
 
   _reset() {
-    this.set('message', null);
+    this.message = null;
     this._handler = null;
   }
 }

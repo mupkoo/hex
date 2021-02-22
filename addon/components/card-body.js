@@ -1,4 +1,4 @@
-import Component from '@glimmer/component';
+import templateOnly from '@ember/component/template-only';
 
 /**
   A body component for the card
@@ -10,4 +10,4 @@ import Component from '@glimmer/component';
   @class CardBody
   @public
 */
-export default class CardBodyComponent extends Component {}
+export default templateOnly();
