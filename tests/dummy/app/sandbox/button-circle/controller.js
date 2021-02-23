@@ -1,7 +1,7 @@
 import Controller from '@ember/controller';
 
-export default Controller.extend({
-  buttons: Object.freeze([
+export default class extends Controller {
+  buttons = [
     'default',
     'outline-default',
     'primary',
@@ -13,5 +13,5 @@ export default Controller.extend({
     'warning',
     'outline-warning',
     'subtle',
-  ]),
-});
+  ];
+}

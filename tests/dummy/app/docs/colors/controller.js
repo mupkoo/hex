@@ -1,7 +1,7 @@
 import Controller from '@ember/controller';
 
-export default Controller.extend({
-  grays: Object.freeze([
+export default class extends Controller {
+  grays = [
     'white',
     'gray-100',
     'gray-200',
@@ -13,23 +13,12 @@ export default Controller.extend({
     'gray-800',
     'gray-900',
     'black',
-  ]),
+  ];
 
-  colors: Object.freeze([
-    'blue',
-    'indigo',
-    'purple',
-    'pink',
-    'red',
-    'orange',
-    'yellow',
-    'green',
-    'teal',
-    'cyan',
-  ]),
+  colors = ['blue', 'indigo', 'purple', 'pink', 'red', 'orange', 'yellow', 'green', 'teal', 'cyan'];
 
   // prettier-ignore
-  theme: Object.freeze([
+  theme = [
     'primary',
     'success',
     'info',
@@ -37,5 +26,5 @@ export default Controller.extend({
     'danger',
     'light',
     'dark',
-  ]),
-});
+  ];
+}
