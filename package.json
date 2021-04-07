@@ -26,6 +26,7 @@
     "start": "ember serve",
     "test": "ember test -r dot",
     "test:ember-compatibility": "ember try:each",
+    "test:try:one": "ember try:one",
     "deploy": "ember deploy production"
   },
   "dependencies": {
@@ -36,9 +37,11 @@
   "devDependencies": {
     "@ember/optional-features": "^2.0.0",
     "@ember/test-helpers": "^2.2.0",
+    "@embroider/test-setup": "^0.39.1",
     "@glimmer/component": "^1.0.3",
     "@glimmer/tracking": "^1.0.3",
-    "@percy/ember": "^2.1.4",
+    "@percy/cli": "^1.0.0-beta.46",
+    "@percy/ember": "^3.0.0-beta.0",
     "babel-eslint": "^10.1.0",
     "broccoli-asset-rev": "^3.0.0",
     "ember-auto-import": "^1.10.1",
