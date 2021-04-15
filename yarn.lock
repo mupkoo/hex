@@ -1771,10 +1771,10 @@
   resolved "https://registry.yarnpkg.com/@percy/dom/-/dom-1.0.0-beta.46.tgz#2594532718611e98355388a85fd684389e0bf6c8"
   integrity sha512-UuDF3G2whvNo7jbhGId8bq0uE1EW2jDc+d7byYua0ksvI0gBfJza+DxleRkwXC2eWMbQcbD1kV+FXDKsYzVdEQ==
 
-"@percy/ember@^3.0.0-beta.0":
-  version "3.0.0-beta.0"
-  resolved "https://registry.yarnpkg.com/@percy/ember/-/ember-3.0.0-beta.0.tgz#02722ee7d35efa61c41879e4d0ea85e3301e391c"
-  integrity sha512-+o5Q3l/7Kz1EJIgQr+mlFByePcECg6qATDBQEUge8ykFUKmwrb5vNaHdlEuBshWWXuRA/4P7CS9JY9WptQjT+w==
+"@percy/ember@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@percy/ember/-/ember-3.0.0.tgz#4e89148e139d42b88e93526d47bf29d39a24094f"
+  integrity sha512-0QuQLtfeX7Xf2dOfrs6v5IEABSQuFimZDSgPMHaEGV9hOze+J7YKeWtpzBOCjcaaT36JRVdNwA+SdMX0gALP6A==
   dependencies:
     "@percy/sdk-utils" "^1.0.0-beta.46"
     ember-cli-babel "^7.26.3"
