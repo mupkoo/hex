@@ -48,7 +48,7 @@ module('Unit/Service: notify', function (hooks) {
     assert.equal(this.notify.messages[1].text, 'Three');
   });
 
-  test('.show returns message that can be passed to .remove', async function (assert) {
+  test('.show returns a message that can be passed to .remove', async function (assert) {
     const message = this.notify.show('Test');
     this.notify.remove(message);
 
