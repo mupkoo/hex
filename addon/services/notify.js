@@ -14,13 +14,15 @@ export default class NotifyService extends Service {
     @param {string} options.info The type of the notification
     @param {Boolean} options.isSticky Should the notification be sticky
     @param {number} options.closeAfter Close after in milliseconds
-    @returns {void}
+    @returns {Object}
   */
   show(text, options = {}) {
     let { type = 'info', isSticky = Ember.testing, closeAfter = 2500 } = options;
     let message = { id: guid(), text, type, isSticky, closeAfter };
 
     this.messages = [...this.messages, message];
+
+    return message;
   }
 
   /**
@@ -38,10 +40,10 @@ export default class NotifyService extends Service {
 
     @param {string} text The notification text
     @param {Object} options The options for the notification
-    @returns {void}
+    @returns {Object}
   */
   info(text, options = {}) {
-    this.show(text, { ...options, type: 'info' });
+    return this.show(text, { ...options, type: 'info' });
   }
 
   /**
@@ -49,10 +51,10 @@ export default class NotifyService extends Service {
 
     @param {string} text The notification text
     @param {Object} options The options for the notification
-    @returns {void}
+    @returns {Object}
   */
   success(text, options = {}) {
-    this.show(text, { ...options, type: 'success' });
+    return this.show(text, { ...options, type: 'success' });
   }
 
   /**
@@ -60,9 +62,9 @@ export default class NotifyService extends Service {
 
     @param {string} text The notification text
     @param {Object} options The options for the notification
-    @returns {void}
+    @returns {Object}
   */
   danger(text, options = {}) {
-    this.show(text, { ...options, type: 'danger' });
+    return this.show(text, { ...options, type: 'danger' });
   }
 }
