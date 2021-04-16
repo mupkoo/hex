@@ -64,6 +64,7 @@ jobs:
           path: node_modules
           key: ${{ runner.os }}-${{ matrix.ember-try-scenario }}-node-modules-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
+            ${{ runner.os }}-node-modules-${{ hashFiles('**/yarn.lock') }}
             ${{ runner.os }}-node-modules-
 
       - run: npx ember try:one ${{ matrix.ember-try-scenario }} --skip-cleanup
