@@ -62,14 +62,11 @@ jobs:
         uses: actions/cache@v2
         with:
           path: node_modules
-          key: ${{ runner.os }}-node-modules-${{ hashFiles('**/yarn.lock') }}
+          key: ${{ runner.os }}-${{ matrix.ember-try-scenario }}-node-modules-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-node-modules-
 
-      - name: Yarn install
-        run: yarn install
-
-      - run: yarn test:try:one ${{ matrix.ember-try-scenario }} --skip-cleanup
+      - run: npx ember try:one ${{ matrix.ember-try-scenario }} --skip-cleanup
 
   deploy:
     runs-on: ubuntu-latest
