@@ -42,7 +42,7 @@ module('Integration: Checkbox', function (hooks) {
 
     await click('input');
 
-    assert.equal(checked, true);
+    assert.true(checked);
   });
 
   test('it does not mutate the @checked if @onChange is provided', async function (assert) {
@@ -56,8 +56,8 @@ module('Integration: Checkbox', function (hooks) {
 
     await click('input');
 
-    assert.equal(checked, false);
-    assert.equal(this.checked, true);
+    assert.false(checked);
+    assert.true(this.checked);
   });
 
   test('it passes the attributes to the input', async function (assert) {
@@ -78,6 +78,6 @@ module('Integration: Checkbox', function (hooks) {
     await click('input');
 
     assert.dom('input').isNotChecked();
-    assert.equal(this.checked, false);
+    assert.false(this.checked);
   });
 });
