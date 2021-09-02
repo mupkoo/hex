@@ -12,15 +12,13 @@ module('Integration: Button', function (hooks) {
     assert.dom('button').hasAttribute('type', 'button');
   });
 
-  // TODO: Looks like this is an Ember bug
-  // https://github.com/emberjs/ember.js/issues/18232
-  // test('it overwrites the default type, if one is given', async function (assert) {
-  //   await render(hbs`<Button type="submit">Sweet</Button>`);
-
-  //   assert.dom('button').hasAttribute('type', 'submit');
-  // });
-
   test('it overwrites the default type, if one is given', async function (assert) {
+    await render(hbs`<Button type="submit">Sweet</Button>`);
+
+    assert.dom('button').hasAttribute('type', 'submit');
+  });
+
+  test('it overwrites the default type via an argument', async function (assert) {
     await render(hbs`<Button @type="submit">Sweet</Button>`);
 
     assert.dom('button').hasAttribute('type', 'submit');
