@@ -1,38 +1,5 @@
-hex
-==============================================================================
+# Hex
 
-[Short description of the addon.]
-
-
-Compatibility
-------------------------------------------------------------------------------
-
-* Ember.js v3.20 or above
-* Ember CLI v3.20 or above
-* Node.js v12 or above
-
-
-Installation
-------------------------------------------------------------------------------
-
-```
-ember install hex
-```
-
-
-Usage
-------------------------------------------------------------------------------
-
-[Longer description of how to use the addon in apps.]
-
-
-Contributing
-------------------------------------------------------------------------------
-
-See the [Contributing](CONTRIBUTING.md) guide for details.
-
-
-License
-------------------------------------------------------------------------------
-
-This project is licensed under the [MIT License](LICENSE.md).
+[![CI](https://github.com/mupkoo/hex/actions/workflows/ci.yml/badge.svg)](https://github.com/mupkoo/hex/actions/workflows/ci.yml)
+[![Build Status](https://mupkoo.semaphoreci.com/badges/hex/branches/master.svg?style=shields&key=2cc751be-4ddb-408f-9946-6db7bf033c21)](https://mupkoo.semaphoreci.com/projects/hex)
+[![This project is using Percy.io for visual regression testing.](https://percy.io/static/images/percy-badge.svg)](https://percy.io/b2951898/Hex)
