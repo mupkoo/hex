@@ -97,6 +97,7 @@ module('Unit - Service: dialog', function (hooks) {
 
   test('.onConfirm does not trigger the onCancel handler', function (assert) {
     let done = assert.async();
+    assert.expect(1);
 
     this.dialog
       .confirm()
@@ -113,6 +114,7 @@ module('Unit - Service: dialog', function (hooks) {
 
   test('.onConfirm does not trigger the onCancel handler even if it is defined first', function (assert) {
     let done = assert.async();
+    assert.expect(1);
 
     this.dialog
       .confirm()
@@ -129,6 +131,7 @@ module('Unit - Service: dialog', function (hooks) {
 
   test('.onCancel triggers the onCancel callbacks', function (assert) {
     let done = assert.async();
+    assert.expect(1);
 
     this.dialog.confirm().onCancel(() => {
       assert.ok(true, 'onCancel was triggered');
@@ -147,6 +150,7 @@ module('Unit - Service: dialog', function (hooks) {
 
   test('.onCancel does not trigger the onConfirm handler', function (assert) {
     let done = assert.async();
+    assert.expect(1);
 
     this.dialog
       .confirm()
