@@ -8,8 +8,7 @@ module('Integration: NotifyMessage', function (hooks) {
 
   hooks.beforeEach(function () {
     this.message = {
-      text:
-        'You either die a web developer, or live long enough to call yourself software engineer',
+      text: 'You either die a web developer, or live long enough to call yourself software engineer',
       type: 'info',
       isSticky: true,
       closeAfter: 5,

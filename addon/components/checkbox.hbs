@@ -9,6 +9,10 @@
   >
 
   <label for={{this.guid}} class="custom-field-label">
-    {{@label}}
+    {{#if (has-block)}}
+      {{yield}}
+    {{else}}
+      {{@label}}
+    {{/if}}
   </label>
 </div>

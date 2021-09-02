@@ -12,6 +12,17 @@ module('Integration: Checkbox', function (hooks) {
     assert.dom('label').hasText('Remember?');
   });
 
+  test('it yields the given block instead of rendering the label if passed', async function (assert) {
+    await render(hbs`
+      <Checkbox @label="Remember?">
+        This is the <strong>block</strong>
+      </Checkbox>
+    `);
+
+    assert.dom('label').hasText('This is the block');
+    assert.dom('label strong').hasText('block');
+  });
+
   test('it sets the for and id attribute of the label and the input', async function (assert) {
     await render(hbs`<Checkbox @label="Awesome" />`);
 
@@ -31,7 +42,7 @@ module('Integration: Checkbox', function (hooks) {
 
     await click('input');
 
-    assert.equal(checked, true);
+    assert.true(checked);
   });
 
   test('it does not mutate the @checked if @onChange is provided', async function (assert) {
@@ -45,8 +56,8 @@ module('Integration: Checkbox', function (hooks) {
 
     await click('input');
 
-    assert.equal(checked, false);
-    assert.equal(this.checked, true);
+    assert.false(checked);
+    assert.true(this.checked);
   });
 
   test('it passes the attributes to the input', async function (assert) {
@@ -67,6 +78,6 @@ module('Integration: Checkbox', function (hooks) {
     await click('input');
 
     assert.dom('input').isNotChecked();
-    assert.equal(this.checked, false);
+    assert.false(this.checked);
   });
 });
