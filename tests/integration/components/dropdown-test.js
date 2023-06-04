@@ -75,6 +75,7 @@ module('Integration: Dropdown', function (hooks) {
     this.disabled = false;
 
     await render(hbs`
+      {{! template-lint-disable no-inline-styles }}
       <div style="margin: 10rem 0;">
         <Dropdown
           @horizontalPosition="right"
