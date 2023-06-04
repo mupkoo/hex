@@ -2,8 +2,8 @@
 
 HTML `<input type="checkbox">` wrapper.
 
-{{#docs-demo as |demo|}}
-  {{#demo.example name="checkbox-example.hbs"}}
+<DocsDemo as |demo|>
+  <demo.example @name="checkbox-example.hbs">
     <Checkbox
       @label="Shall we?"
       @checked={{this.checked}}
@@ -17,7 +17,7 @@ HTML `<input type="checkbox">` wrapper.
       Current value: {{this.checked}}<br>
       Debug: {{this.currentEvent}}
     </div>
-  {{/demo.example}}
+  </demo.example>
 
-  {{demo.snippet "checkbox-example.hbs"}}
-{{/docs-demo}}
+  <demo.snippet @name="checkbox-example.hbs" />
+</DocsDemo>

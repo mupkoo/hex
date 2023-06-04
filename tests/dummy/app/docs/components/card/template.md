@@ -2,8 +2,8 @@
 
 A component for displaying content in a separate section.
 
-{{#docs-demo as |demo|}}
-  {{#demo.example name="card-example.hbs"}}
+<DocsDemo as |demo|>
+  <demo.example @name="card-example.hbs">
     <Card>
       <CardBody>
         <h3 class="card-title">Technolojesus</h3>
@@ -15,7 +15,7 @@ A component for displaying content in a separate section.
         <Button>Cancel</Button>
       </CardActions>
     </Card>
-  {{/demo.example}}
+  </demo.example>
 
-  {{demo.snippet "card-example.hbs"}}
-{{/docs-demo}}
+  <demo.snippet @name="card-example.hbs" />
+</DocsDemo>
