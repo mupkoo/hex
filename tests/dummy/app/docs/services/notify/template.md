@@ -2,8 +2,8 @@
 
 A simple service for displaying toast messages.
 
-{{#docs-demo as |demo|}}
-  {{#demo.example name="notify-example.hbs"}}
+<DocsDemo as |demo|>
+  <demo.example @name="notify-example.hbs">
     <Button @primary {{on "click" this.showInfoMessage}} data-test-show-info>
       Info Message
     </Button>
@@ -17,8 +17,8 @@ A simple service for displaying toast messages.
     </Button>
 
     <Notify />
-  {{/demo.example}}
+  </demo.example>
 
-  {{demo.snippet "notify-example.hbs"}}
-  {{demo.snippet "notify-example.js"}}
-{{/docs-demo}}
+  <demo.snippet @name="notify-example.hbs" />
+  <demo.snippet @name="notify-example.js" />
+</DocsDemo>
