@@ -50,7 +50,7 @@ module('Integration: Modal', function (hooks) {
     this.closeCalled = false;
 
     await render(hbs`
-      <Modal @preventBlanketClose @onClose={{action (mut this.closeCalled) true}} />
+      <Modal @preventBlanketClose @onClose={{fn (mut this.closeCalled) true}} />
     `);
 
     await click('[data-test-modal-blanket]');
@@ -73,7 +73,7 @@ module('Integration: Modal', function (hooks) {
   test('it does not propagate the click on the modal to the blanket', async function (assert) {
     this.closeCalled = false;
 
-    await render(hbs`<Modal @onClose={{action (mut this.closeCalled) true}} />`);
+    await render(hbs`<Modal @onClose={{fn (mut this.closeCalled) true}} />`);
 
     await click('.modal');
 
@@ -84,7 +84,7 @@ module('Integration: Modal', function (hooks) {
     this.closeCalled = false;
 
     await render(hbs`
-      <Modal @onClose={{action (mut this.closeCalled) true}} as |m|>
+      <Modal @onClose={{fn (mut this.closeCalled) true}} as |m|>
         <m.Header>Sweet</m.Header>
       </Modal>
     `);

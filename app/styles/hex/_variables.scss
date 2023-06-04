@@ -1,3 +1,5 @@
+@use "sass:math";
+
 // Colors
 $white:                      #fff !default;
 $gray-50:                    #fafbfc !default;
@@ -77,7 +79,7 @@ $line-height:                1.5 !default;
 // Fields
 $input-color:                $text !default;
 $input-font-size:            $font-size-sm !default;
-$input-line-height:          1.25rem/$input-font-size !default;
+$input-line-height:          math.div(1.25rem, $input-font-size) !default;
 $input-background-color:     $gray-50 !default;
 $input-border-color:         $gray-400 !default;
 $input-border-radius:        $border-radius !default;

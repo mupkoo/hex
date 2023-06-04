@@ -2,8 +2,8 @@
 
 A component that displays content in a layer blocking the interaction with the page.
 
-{{#docs-demo as |demo|}}
-  {{#demo.example name="modal-example.hbs"}}
+<DocsDemo as |demo|>
+  <demo.example @name="modal-example.hbs">
     <Button {{on "click" this.showModal}} data-test-normal>
       Show Modal
     </Button>
@@ -16,7 +16,7 @@ A component that displays content in a layer blocking the interaction with the p
       Show Large Modal
     </Button>
 
-    {{#if isModalVisible}}
+    {{#if this.isModalVisible}}
       <Modal 
         @small={{this.isSmall}} 
         @large={{this.isLarge}} 
@@ -36,8 +36,8 @@ A component that displays content in a layer blocking the interaction with the p
         </m.Footer>
       </Modal>
     {{/if}}
-  {{/demo.example}}
+  </demo.example>
 
-  {{demo.snippet "modal-example.hbs"}}
-  {{demo.snippet "modal-example.js"}}
-{{/docs-demo}}
+  <demo.snippet @name="modal-example.hbs" />
+  <demo.snippet @name="modal-example.js" />
+</DocsDemo>
