@@ -11,7 +11,7 @@ blocks:
       jobs:
         - name: Install deps
           commands:
-            - sem-version node 14.15.5
+            - sem-version node 16.20.0
             - checkout
             - cache restore
             - yarn install
@@ -21,7 +21,7 @@ blocks:
     task:
       prologue:
         commands:
-          - sem-version node 14.15.5
+          - sem-version node 16.20.0
           - checkout
           - cache restore
       jobs:
