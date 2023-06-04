@@ -1,14 +1,9 @@
 'use strict';
 
 const EmberAddon = require('ember-cli/lib/broccoli/ember-addon');
-const nodeSass = require('node-sass');
 
 module.exports = function (defaults) {
-  let app = new EmberAddon(defaults, {
-    sassOptions: {
-      implementation: nodeSass,
-    },
-  });
+  let app = new EmberAddon(defaults, {});
 
   /*
     This build file specifies the options for the dummy test app of this

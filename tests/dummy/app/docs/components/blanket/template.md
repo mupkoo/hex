@@ -2,9 +2,9 @@
 
 A component that covers the underlying UI for a layered component.
 
-{{#docs-demo as |demo|}}
-  {{#demo.example name='blanket-example.hbs'}}
-    <Button onclick={{action this.toggleBlanket}}>
+<DocsDemo as |demo|>
+  <demo.example @name="blanket-example.hbs">
+    <Button {{on "click" this.toggleBlanket}}>
       {{#if this.showBlanket}}Hide{{else}}Show{{/if}} Blanket
     </Button>
 
@@ -12,11 +12,11 @@ A component that covers the underlying UI for a layered component.
       <Blanket 
         @isTinted={{true}} 
         @canClickThrough={{this.canClickThrough}}
-        onclick={{action this.toggleBlanket}}
-      ></Blanket>
+        @onClick={{this.toggleBlanket}}
+      />
     {{/if}}
-  {{/demo.example}}
+  </demo.example>
 
-  {{demo.snippet 'blanket-example.hbs'}}
-  {{demo.snippet 'blanket-example.ts'}}
-{{/docs-demo}}
+  <demo.snippet @name="blanket-example.hbs" />
+  <demo.snippet @name="blanket-example.ts" />
+</DocsDemo>
