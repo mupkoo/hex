@@ -17,9 +17,9 @@ blocks:
           - git clone $SEMAPHORE_GIT_URL
           - cd $SEMAPHORE_GIT_DIR
           - git checkout $SEMAPHORE_GIT_BRANCH
-          - cache restore node-modules-$SEMAPHORE_GIT_BRANCH-$(checksum yarn.lock),node-modules-$SEMAPHORE_GIT_BRANCH,node-modules-master
+          - cache restore node-modules-$SEMAPHORE_GIT_BRANCH-$(checksum pnpm-lock.yaml),node-modules-$SEMAPHORE_GIT_BRANCH,node-modules-master
       jobs:
         - name: GitHub pages
           commands:
             - echo $DEPLOY_KEY_PATH
-            - yarn deploy
+            - pnpm deploy
