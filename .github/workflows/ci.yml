@@ -12,22 +12,33 @@ jobs:
         with:
           node-version: 16.20.0
 
-      - name: Node modules cache
-        uses: actions/cache@v2
+      - uses: pnpm/action-setup@v2
+        name: Install pnpm
         with:
-          path: node_modules
-          key: ${{ runner.os }}-node-modules-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-node-modules-
+          version: 8
+          run_install: false
 
-      - name: Yarn install
-        run: yarn install
+      - name: Get pnpm store directory
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+
+      - uses: actions/cache@v3
+        name: Setup pnpm cache
+        with:
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: Install dependencies
+        run: pnpm install
 
       - name: Lint
-        run: yarn lint
+        run: pnpm lint
 
       - name: Test
-        run: yarn run percy exec -- yarn test -r dot
+        run: pnpm run percy exec -- pnpm test -r dot
         env:
           PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
 
@@ -41,21 +52,27 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Setup Node
-        uses: actions/setup-node@v1
+      - uses: pnpm/action-setup@v2
+        name: Install pnpm
         with:
-          node-version: 16.20.0
+          version: 8
+          run_install: false
 
-      - name: Node modules cache
-        uses: actions/cache@v2
+      - name: Get pnpm store directory
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+
+      - uses: actions/cache@v3
+        name: Setup pnpm cache
         with:
-          path: node_modules
-          key: ${{ runner.os }}-node-modules-${{ hashFiles('**/yarn.lock') }}
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
-            ${{ runner.os }}-node-modules-
+            ${{ runner.os }}-pnpm-store-
 
-      - name: Yarn install
-        run: yarn install
+      - name: Install dependencies
+        run: pnpm install
 
       - name: Set deploy version path
         run: echo "ADDON_DOCS_VERSION_PATH=$(echo ${GITHUB_REF##*/})" >> $GITHUB_ENV
@@ -63,6 +80,6 @@ jobs:
       - run: echo $ADDON_DOCS_VERSION_PATH
 
       - name: Deploy
-        run: yarn deploy --verbose
+        run: pnpm deploy --verbose
         env:
           DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
