@@ -80,6 +80,6 @@ jobs:
       - run: echo $ADDON_DOCS_VERSION_PATH
 
       - name: Deploy
-        run: pnpm deploy --verbose
+        run: pnpm run deploy --verbose
         env:
           DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
