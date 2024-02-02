@@ -5,8 +5,8 @@ Styled search field component.
 The passed `@value` is mutated, unless `@onChange` action is provided.
 In that case, the action will be called with the new value.
 
-{{#docs-demo as |demo|}}
-  {{#demo.example name="search-field-example.hbs"}}
+<DocsDemo as |demo|>
+  <demo.example @name="search-field-example.hbs">
     <SearchField 
       @value={{this.model}}
       @onChange={{fn (mut this.model)}}
@@ -18,8 +18,8 @@ In that case, the action will be called with the new value.
       Debug: {{this.currentEvent}}<br>
       Current value: {{this.model}}
     </div>
-  {{/demo.example}}
+  </demo.example>
 
-  {{demo.snippet "search-field-example.hbs"}}
-  {{demo.snippet "search-field-example.js"}}
-{{/docs-demo}}
+  <demo.snippet @name="search-field-example.hbs" />
+  <demo.snippet @name="search-field-example.js" />
+</DocsDemo>

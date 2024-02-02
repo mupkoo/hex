@@ -2,8 +2,8 @@
 
 A simple service for displaying dialogs.
 
-{{#docs-demo as |demo|}}
-  {{#demo.example name="dialog-example.hbs"}}
+<DocsDemo as |demo|>
+  <demo.example @name="dialog-example.hbs">
     <Button {{on "click" this.displayConfirmation}} data-test-confirm>
       Confirm me
     </Button>
@@ -23,8 +23,8 @@ A simple service for displaying dialogs.
     {{/if}}
 
     <Dialog />
-  {{/demo.example}}
+  </demo.example>
 
-  {{demo.snippet "dialog-example.hbs"}}
-  {{demo.snippet "dialog-example.js"}}
-{{/docs-demo}}
+  <demo.snippet @name="dialog-example.hbs" />
+  <demo.snippet @name="dialog-example.js" />
+</DocsDemo>
