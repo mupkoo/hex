@@ -20,7 +20,7 @@ module('Integration: Spinner', function (hooks) {
   });
 
   test('it uses the passed size', async function (assert) {
-    await render(hbs`<Spinner @size=48 />`);
+    await render(hbs`<Spinner @size={{48}} />`);
 
     assert.dom('svg').hasAttribute('width', '48');
     assert.dom('svg').hasAttribute('height', '48');

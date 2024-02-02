@@ -2,8 +2,8 @@
 
 A dropdown component, based on [ember-basic-dropdown](https://github.com/cibernox/ember-basic-dropdown)
 
-{{#docs-demo as |demo|}}
-  {{#demo.example name="dropdown-example.hbs"}}
+<DocsDemo as |demo|>
+  <demo.example @name="dropdown-example.hbs">
     <Dropdown as |d|>
       <d.Trigger>Toggle</d.Trigger>
 
@@ -14,7 +14,7 @@ A dropdown component, based on [ember-basic-dropdown](https://github.com/ciberno
         <div class="dropdown-item">Two</div>
       </d.Content>
     </Dropdown>
-  {{/demo.example}}
+  </demo.example>
 
-  {{demo.snippet "dropdown-example.hbs"}}
-{{/docs-demo}}
+  <demo.snippet @name="dropdown-example.hbs" />
+</DocsDemo>

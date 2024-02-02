@@ -7,8 +7,8 @@ the property will get updated in the input event. If you want to manually handle
 this, you can provide `@onChange` handler which will return the value of the input.
 This is more or less equal to `oninput={{action (mut this.value) value="target.value"}}`.
 
-{{#docs-demo as |demo|}}
-  {{#demo.example name="input-field-example.hbs"}}
+<DocsDemo as |demo|>
+  <demo.example @name="input-field-example.hbs">
     <InputField 
       @label="Secret" 
       @value={{this.model}}
@@ -22,8 +22,8 @@ This is more or less equal to `oninput={{action (mut this.value) value="target.v
       Debug: {{this.currentEvent}}<br>
       Current value: {{this.model}}
     </div>
-  {{/demo.example}}
+  </demo.example>
 
-  {{demo.snippet "input-field-example.hbs"}}
-  {{demo.snippet "input-field-example.js"}}
-{{/docs-demo}}
+  <demo.snippet @name="input-field-example.hbs" />
+  <demo.snippet @name="input-field-example.js" />
+</DocsDemo>

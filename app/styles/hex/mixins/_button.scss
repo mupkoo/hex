@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 @mixin button-variant(
   $background,
   $border,
@@ -126,8 +128,8 @@
   border-radius: $border-radius;
 
   svg {
-    height: (18 / 14) * $font-size;
-    width: (18 / 14) * $font-size;
+    height: math.div(18, 14) * $font-size;
+    width: math.div(18, 14) * $font-size;
   }
 }
 

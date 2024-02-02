@@ -1,32 +1,32 @@
 <DocsViewer as |viewer|>
   <viewer.nav as |nav|>
-    {{nav.section "Introduction"}}
-    {{nav.item "Introduction" "docs.index"}}
-    {{nav.item "Colors" "docs.colors"}}
+    <nav.section @label="Introduction" />
+    <nav.item @label="Introduction" @route="docs.index" />
+    <nav.item @label="Colors" @route="docs.colors" />
 
-    {{nav.section "Components"}}
-    {{nav.item "Alert" "docs.components.alert"}}
-    {{nav.item "Badge" "docs.components.badge"}}
-    {{nav.item "Blanket" "docs.components.blanket"}}
-    {{nav.item "Button" "docs.components.button"}}
-    {{nav.item "Card" "docs.components.card"}}
-    {{nav.item "Dropdown" "docs.components.dropdown"}}
-    {{nav.item "EmptyState" "docs.components.empty-state"}}
-    {{nav.item "Modal" "docs.components.modal"}}
-    {{nav.item "Spinner" "docs.components.spinner"}}
+    <nav.section @label="Components" />
+    <nav.item @label="Alert" @route="docs.components.alert" />
+    <nav.item @label="Badge" @route="docs.components.badge" />
+    <nav.item @label="Blanket" @route="docs.components.blanket" />
+    <nav.item @label="Button" @route="docs.components.button" />
+    <nav.item @label="Card" @route="docs.components.card" />
+    <nav.item @label="Dropdown" @route="docs.components.dropdown" />
+    <nav.item @label="EmptyState" @route="docs.components.empty-state" />
+    <nav.item @label="Modal" @route="docs.components.modal" />
+    <nav.item @label="Spinner" @route="docs.components.spinner" />
 
-    {{nav.section "Form Controls"}}
-    {{nav.item "Checkbox" "docs.components.checkbox"}}
-    {{nav.item "Field" "docs.components.field"}}
-    {{nav.item "Input Field" "docs.components.input-field"}}
-    {{nav.item "Search Field" "docs.components.search-field"}}
-    {{nav.item "Select Field" "docs.components.select-field"}}
-    {{nav.item "TextArea Field" "docs.components.text-area-field"}}
-    {{nav.item "Power Select Field" "docs.components.power-select-field"}}
+    <nav.section @label="Form Controls" />
+    <nav.item @label="Checkbox" @route="docs.components.checkbox" />
+    <nav.item @label="Field" @route="docs.components.field" />
+    <nav.item @label="Input Field" @route="docs.components.input-field" />
+    <nav.item @label="Search Field" @route="docs.components.search-field" />
+    <nav.item @label="Select Field" @route="docs.components.select-field" />
+    <nav.item @label="TextArea Field" @route="docs.components.text-area-field" />
+    <nav.item @label="Power Select Field" @route="docs.components.power-select-field" />
 
-    {{nav.section "Services"}}
-    {{nav.item "dialog" "docs.services.dialog"}}
-    {{nav.item "notify" "docs.services.notify"}}
+    <nav.section @label="Services" />
+    <nav.item @label="dialog" @route="docs.services.dialog" />
+    <nav.item @label="notify" @route="docs.services.notify" />
   </viewer.nav>
 
   <viewer.main class="docs-w-full">
