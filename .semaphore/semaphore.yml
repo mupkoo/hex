@@ -11,31 +11,31 @@ blocks:
       jobs:
         - name: Install deps
           commands:
-            - sem-version node 14.15.5
+            - sem-version node 16.20.0
             - checkout
             - cache restore
-            - yarn install
+            - pnpm install
             - cache store
 
   - name: Test
     task:
       prologue:
         commands:
-          - sem-version node 14.15.5
+          - sem-version node 16.20.0
           - checkout
           - cache restore
       jobs:
         - name: Everything
           commands:
-            - yarn test -r dot
+            - pnpm test -r dot
 
         - name: ESLint
           commands:
-            - yarn lint:js
+            - pnpm lint:js
 
         - name: Template Lint
           commands:
-            - yarn lint:hbs
+            - pnpm lint:hbs
 
 promotions:
   - name: Deploy to GitHub

@@ -7,8 +7,8 @@ the property will get updated in the change event. If you want to manually handl
 this, you can provide `@onChange` handler which will return the value of the select.
 This is more or less equal to `onchange={{action (mut this.selected) value="target.value"}}`.
 
-{{#docs-demo as |demo|}}
-  {{#demo.example name="select-field-example.hbs"}}
+<DocsDemo as |demo|>
+  <demo.example @name="select-field-example.hbs">
     <SelectField 
       @label="Where is the love?" 
       @selected={{this.model}}
@@ -25,8 +25,8 @@ This is more or less equal to `onchange={{action (mut this.selected) value="targ
       Debug: {{this.currentEvent}}<br>
       Current value: {{this.model}}
     </div>
-  {{/demo.example}}
+  </demo.example>
 
-  {{demo.snippet "select-field-example.hbs"}}
-  {{demo.snippet "select-field-example.js"}}
-{{/docs-demo}}
+  <demo.snippet @name="select-field-example.hbs" />
+  <demo.snippet @name="select-field-example.js" />
+</DocsDemo>

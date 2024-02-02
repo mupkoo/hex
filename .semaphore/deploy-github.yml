@@ -12,14 +12,14 @@ blocks:
         - name: github
       prologue:
         commands:
-          - sem-version node 14.15.5
+          - sem-version node 16.20.0
           - chmod 0600 ~/.keys/*
           - git clone $SEMAPHORE_GIT_URL
           - cd $SEMAPHORE_GIT_DIR
           - git checkout $SEMAPHORE_GIT_BRANCH
-          - cache restore node-modules-$SEMAPHORE_GIT_BRANCH-$(checksum yarn.lock),node-modules-$SEMAPHORE_GIT_BRANCH,node-modules-master
+          - cache restore node-modules-$SEMAPHORE_GIT_BRANCH-$(checksum pnpm-lock.yaml),node-modules-$SEMAPHORE_GIT_BRANCH,node-modules-master
       jobs:
         - name: GitHub pages
           commands:
             - echo $DEPLOY_KEY_PATH
-            - yarn deploy
+            - pnpm deploy
