@@ -38,7 +38,7 @@ jobs:
         run: pnpm lint
 
       - name: Test
-        run: pnpm run percy exec -- pnpm test -r dot
+        run: pnpm exec percy exec -- pnpm test -r dot
         env:
           PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
 
