@@ -1,7 +1,7 @@
 # Power Select
 
-{{#docs-demo as |demo|}}
-  {{#demo.example name="power-select-field-example.hbs"}}
+<DocsDemo as |demo|>
+  <demo.example @name="power-select-field-example.hbs">
     <Field @label="Power Select" data-test-single as |id|>
       <PowerSelect 
         @triggerId={{id}}
@@ -57,8 +57,8 @@
       Title: {{this.title}}<br>
       Jedis: {{this.jedis}}
     </div>
-  {{/demo.example}}
+  </demo.example>
 
-  {{demo.snippet "power-select-field-example.hbs"}}
-  {{demo.snippet "power-select-field-example.js"}}
-{{/docs-demo}}
+  <demo.snippet @name="power-select-field-example.hbs" />
+  <demo.snippet @name="power-select-field-example.js" />
+</DocsDemo>

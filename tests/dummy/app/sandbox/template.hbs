@@ -1,16 +1,17 @@
 <DocsViewer as |viewer|>
-  <viewer.nav root="sandbox" project={{null}} as |nav|>
-    {{nav.section "Sandbox"}}
-    {{nav.item "Welcome" "sandbox.index"}}
-    {{nav.item "Alert" "sandbox.alert"}}
-    {{nav.item "Button" "sandbox.button"}}
-    {{nav.item "Button Outline" "sandbox.button-outline"}}
-    {{nav.item "Button Circle" "sandbox.button-circle"}}
-    {{nav.item "Card" "sandbox.card"}}
-    {{nav.item "Fields" "sandbox.fields"}}
-    {{nav.item "Input" "sandbox.input"}}
-    {{nav.item "Modal" "sandbox.modal"}}
-    {{nav.item "Spinner" "sandbox.spinner"}}
+  <viewer.nav @root="sandbox" @project={{null}} as |nav|>
+    <nav.section @label="Sandbox" />
+
+    <nav.item @label="Welcome" @route="sandbox.index" />
+    <nav.item @label="Alert" @route="sandbox.alert" />
+    <nav.item @label="Button" @route="sandbox.button" />
+    <nav.item @label="Button Outline" @route="sandbox.button-outline" />
+    <nav.item @label="Button Circle" @route="sandbox.button-circle" />
+    <nav.item @label="Card" @route="sandbox.card" />
+    <nav.item @label="Fields" @route="sandbox.fields" />
+    <nav.item @label="Input" @route="sandbox.input" />
+    <nav.item @label="Modal" @route="sandbox.modal" />
+    <nav.item @label="Spinner" @route="sandbox.spinner" />
   </viewer.nav>
 
   <viewer.main class="docs-w-full">

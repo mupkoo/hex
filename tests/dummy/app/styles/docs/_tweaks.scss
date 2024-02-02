@@ -1,3 +1,10 @@
 pre {
   margin-bottom: 0; // Remove the reboot.scss margin's
 }
+
+.docs-md .ember-basic-dropdown-trigger {
+  ul,
+  li {
+    margin-bottom: 0;
+  }
+}

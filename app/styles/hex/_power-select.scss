@@ -23,7 +23,7 @@ $ember-power-select-search-field-focus-border: 1px solid $input-border-color !de
 
 // Borders radius
 $ember-power-select-default-border-radius: $input-border-radius !default;
-$ember-power-select-multiple-option-border-radius: .125rem !default;
+$ember-power-select-multiple-option-border-radius: 0.125rem !default;
 
 // Other
 $ember-power-select-focus-outline: none !default;
@@ -34,25 +34,27 @@ $ember-power-select-dropdown-margin: -$input-border-width;
 .field {
   .ember-power-select-trigger {
     min-height: 2.375rem;
-    padding: .375rem 2rem 7px .5rem;
+    padding: 0.375rem 2rem 7px 0.5rem;
     font-size: $input-font-size;
     line-height: 1.5;
     color: $input-color;
-    background: $gray-50 url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMCAwaDI0djI0SDB6IiBmaWxsPSJub25lIi8+PHBhdGggZmlsbD0iIzQyNTI2ZSIgZD0iTTEyIDUuODNMMTUuMTcgOWwxLjQxLTEuNDFMMTIgMyA3LjQxIDcuNTkgOC44MyA5IDEyIDUuODN6bTAgMTIuMzRMOC44MyAxNWwtMS40MSAxLjQxTDEyIDIxbDQuNTktNC41OUwxNS4xNyAxNSAxMiAxOC4xN3oiLz48L3N2Zz4=) no-repeat right .5rem center;
+    background: $gray-50
+      url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMCAwaDI0djI0SDB6IiBmaWxsPSJub25lIi8+PHBhdGggZmlsbD0iIzQyNTI2ZSIgZD0iTTEyIDUuODNMMTUuMTcgOWwxLjQxLTEuNDFMMTIgMyA3LjQxIDcuNTkgOC44MyA5IDEyIDUuODN6bTAgMTIuMzRMOC44MyAxNWwtMS40MSAxLjQxTDEyIDIxbDQuNTktNC41OUwxNS4xNyAxNSAxMiAxOC4xN3oiLz48L3N2Zz4=)
+      no-repeat right 0.5rem center;
     background-size: 1rem 1rem;
   }
 
   .ember-power-select-multiple-trigger {
-    padding: .0625rem 2rem 0 0;
+    padding: 0.0625rem 2rem 0.25rem 0;
   }
 
   .ember-power-select-trigger-multiple-input {
-    padding: .125rem .5rem;
-    margin: 0.1875rem 0 .25rem 0;
+    padding: 0.25rem 0.5rem;
+    margin: 0;
   }
 
   .ember-power-select-selected-item {
-    margin: 0 .5rem 0 0;
+    margin: 0 0.5rem 0 0;
   }
 
   .ember-power-select-status-icon {
@@ -62,14 +64,14 @@ $ember-power-select-dropdown-margin: -$input-border-width;
   .ember-power-select-multiple-option {
     display: inline-flex;
     flex-direction: row-reverse;
-    gap: .25rem;
+    gap: 0.25rem;
     align-items: center;
-    padding: .125rem .5rem;
-    margin: 0.1875rem 0 .25rem .25rem;
+    padding: 0.125rem 0.5rem;
+    margin: 0.1875rem 0 0.25rem 0.25rem;
     line-height: 1.6;
   }
 
-  [aria-disabled=true] {
+  [aria-disabled='true'] {
     .ember-power-select-multiple-option {
       background-color: $gray-300;
     }
@@ -79,7 +81,7 @@ $ember-power-select-dropdown-margin: -$input-border-width;
 .ember-power-select-dropdown {
   .ember-power-select-search-input {
     height: 2rem;
-    padding: .1875rem .5rem .25rem; // center the text
+    padding: 0.1875rem 0.5rem 0.25rem; // center the text
     font-size: $input-font-size;
     line-height: $input-line-height;
     color: $input-color;
@@ -90,10 +92,9 @@ $ember-power-select-dropdown-margin: -$input-border-width;
   }
 
   .ember-power-select-option {
-    padding: .375rem .5rem 7px;
+    padding: 0.375rem 0.5rem 7px;
     font-size: $input-font-size;
     line-height: 1.5;
     color: $input-color;
   }
 }
-
