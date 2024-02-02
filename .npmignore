@@ -14,14 +14,16 @@
 /.eslintignore
 /.eslintrc.js
 /.git/
+/.github/
 /.gitignore
 /.prettierignore
 /.prettierrc.js
+/.stylelintignore
+/.stylelintrc.js
 /.template-lintrc.js
 /.travis.yml
 /.watchmanconfig
 /bower.json
-/config/ember-try.js
 /ember-cli-build.js
 /testem.js
 /tests/
@@ -32,5 +34,7 @@
 # ember-try
 /.node_modules.ember-try/
 /bower.json.ember-try
+/npm-shrinkwrap.json.ember-try
 /package.json.ember-try
-/config/addon-docs.js
+/config/addon-docs.js/package-lock.json.ember-try
+/yarn.lock.ember-try
